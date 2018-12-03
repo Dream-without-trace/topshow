@@ -1,0 +1,21 @@
+spring:
+  profiles: dev
+  datasource:
+    url: jdbc:mysql://ip:端口/topshow?useSSL=false
+    username: topshow
+    password: 2ydHyeNjTy5EOwgG
+    driver-class-name: com.mysql.jdbc.Driver
+    tomcat:
+      max-idle: 10
+      max-active: 10
+      initial-size: 5
+      test-while-idle: true
+  redis:
+    port: 6380
+    host: ip
+    password: q7FIqKnrILC98sTeb2Z2
+    database: 15
+    timeout: 5000ms
+
+swagger:
+  show: true

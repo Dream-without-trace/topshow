@@ -1,0 +1,145 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "com.luwei.module.qiniu.QiNiuProperties",
+      "name": "luwei.module.qiniu",
+      "type": "com.luwei.module.qiniu.QiNiuProperties"
+    },
+    {
+      "sourceType": "com.luwei.module.shiro.base.ShiroModuleProperties",
+      "name": "luwei.module.shiro",
+      "type": "com.luwei.module.shiro.base.ShiroModuleProperties"
+    },
+    {
+      "sourceType": "com.luwei.module.alisms.AliSmsProperties",
+      "name": "luwei.module.sms",
+      "type": "com.luwei.module.alisms.AliSmsProperties"
+    },
+    {
+      "sourceType": "com.luwei.common.property.AppProperties",
+      "name": "topshow",
+      "type": "com.luwei.common.property.AppProperties"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "com.luwei.module.qiniu.QiNiuProperties",
+      "name": "luwei.module.qiniu.access-key",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.luwei.module.qiniu.QiNiuProperties",
+      "name": "luwei.module.qiniu.bucket",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.luwei.module.qiniu.QiNiuProperties",
+      "name": "luwei.module.qiniu.link-address",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.luwei.module.qiniu.QiNiuProperties",
+      "name": "luwei.module.qiniu.secret-key",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.luwei.module.shiro.base.ShiroModuleProperties",
+      "name": "luwei.module.shiro.anon-urls",
+      "type": "java.util.List<java.lang.String>"
+    },
+    {
+      "sourceType": "com.luwei.module.shiro.base.ShiroModuleProperties",
+      "name": "luwei.module.shiro.auth-urls",
+      "type": "java.util.List<java.lang.String>"
+    },
+    {
+      "sourceType": "com.luwei.module.shiro.base.ShiroModuleProperties",
+      "defaultValue": 30,
+      "name": "luwei.module.shiro.cache-days",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.luwei.module.shiro.base.ShiroModuleProperties",
+      "name": "luwei.module.shiro.cors-urls",
+      "type": "java.util.List<java.lang.String>"
+    },
+    {
+      "sourceType": "com.luwei.module.shiro.base.ShiroModuleProperties",
+      "defaultValue": false,
+      "name": "luwei.module.shiro.multi-login",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "com.luwei.module.shiro.base.ShiroModuleProperties",
+      "defaultValue": "#*&@IQ)",
+      "name": "luwei.module.shiro.rule",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.luwei.module.shiro.base.ShiroModuleProperties",
+      "defaultValue": "auth.token:",
+      "name": "luwei.module.shiro.token-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.luwei.module.shiro.base.ShiroModuleProperties",
+      "name": "luwei.module.shiro.token-prefix",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.luwei.module.alisms.AliSmsProperties",
+      "name": "luwei.module.sms.access-key-id",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.luwei.module.alisms.AliSmsProperties",
+      "name": "luwei.module.sms.access-key-secret",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.luwei.module.alisms.AliSmsProperties",
+      "defaultValue": 4,
+      "name": "luwei.module.sms.captcha-length",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.luwei.module.alisms.AliSmsProperties",
+      "defaultValue": 5,
+      "name": "luwei.module.sms.expire-time",
+      "type": "java.lang.Long"
+    },
+    {
+      "sourceType": "com.luwei.module.alisms.AliSmsProperties",
+      "defaultValue": "phone.captcha",
+      "name": "luwei.module.sms.redis-prefix",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.luwei.module.alisms.AliSmsProperties",
+      "name": "luwei.module.sms.sign-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.luwei.module.alisms.AliSmsProperties",
+      "name": "luwei.module.sms.template-code",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.luwei.module.alisms.AliSmsProperties",
+      "defaultValue": "code",
+      "name": "luwei.module.sms.template-code-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.luwei.common.property.AppProperties",
+      "name": "topshow.auth-redirect-url",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.luwei.common.property.AppProperties",
+      "name": "topshow.wx",
+      "type": "com.luwei.common.property.WxProperties"
+    }
+  ]
+}

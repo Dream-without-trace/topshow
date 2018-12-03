@@ -1,0 +1,321 @@
+2018-11-30 16:34:34.843 - INFO 9200 [           main] com.luwei.WebApplication                 : Starting WebApplication on PC-20170920CQZX with PID 9200 (D:\idea\project\topshow\web\target\classes started by Administrator in D:\idea\project\topshow)
+2018-11-30 16:34:34.851 - INFO 9200 [           main] com.luwei.WebApplication                 : The following profiles are active: pro
+2018-11-30 16:34:34.906 - INFO 9200 [           main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@366c4480: startup date [Fri Nov 30 16:34:34 CST 2018]; root of context hierarchy
+2018-11-30 16:34:35.980 - INFO 9200 [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2018-11-30 16:34:36.186 - INFO 9200 [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2018-11-30 16:34:36.227 - INFO 9200 [           main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.luwei.models.activity.ActivityDao.
+2018-11-30 16:34:36.228 - INFO 9200 [           main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.luwei.models.activity.category.ActivityCategoryDao.
+2018-11-30 16:34:36.228 - INFO 9200 [           main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.luwei.models.activity.order.ActivityOrderDao.
+2018-11-30 16:34:36.229 - INFO 9200 [           main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.luwei.models.activity.series.ActivitySeriesDao.
+2018-11-30 16:34:36.229 - INFO 9200 [           main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.luwei.models.address.AddressDao.
+2018-11-30 16:34:36.229 - INFO 9200 [           main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.luwei.models.area.AreaDao.
+2018-11-30 16:34:36.229 - INFO 9200 [           main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.luwei.models.banner.BannerDao.
+2018-11-30 16:34:36.230 - INFO 9200 [           main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.luwei.models.bill.BillDao.
+2018-11-30 16:34:36.230 - INFO 9200 [           main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.luwei.models.collect.CollectDao.
+2018-11-30 16:34:36.230 - INFO 9200 [           main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.luwei.models.coupon.CouponDao.
+2018-11-30 16:34:36.230 - INFO 9200 [           main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.luwei.models.evaluate.EvaluateDao.
+2018-11-30 16:34:36.231 - INFO 9200 [           main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.luwei.models.goods.category.GoodsCategoryDao.
+2018-11-30 16:34:36.231 - INFO 9200 [           main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.luwei.models.goods.GoodsDao.
+2018-11-30 16:34:36.232 - INFO 9200 [           main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.luwei.models.integralbill.IntegralBillDao.
+2018-11-30 16:34:36.233 - INFO 9200 [           main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.luwei.models.manager.ManagerDao.
+2018-11-30 16:34:36.234 - INFO 9200 [           main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.luwei.models.order.detail.OrderDetailDao.
+2018-11-30 16:34:36.234 - INFO 9200 [           main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.luwei.models.order.OrderDao.
+2018-11-30 16:34:36.235 - INFO 9200 [           main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.luwei.models.photo.PhotoDao.
+2018-11-30 16:34:36.235 - INFO 9200 [           main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.luwei.models.property.PropertyDao.
+2018-11-30 16:34:36.235 - INFO 9200 [           main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.luwei.models.refund.RefundDao.
+2018-11-30 16:34:36.235 - INFO 9200 [           main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.luwei.models.shopping.ShoppingDao.
+2018-11-30 16:34:36.236 - INFO 9200 [           main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.luwei.models.specification.SpecificationDao.
+2018-11-30 16:34:36.237 - INFO 9200 [           main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.luwei.models.store.StoreDao.
+2018-11-30 16:34:36.237 - INFO 9200 [           main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.luwei.models.task.TaskRepository.
+2018-11-30 16:34:36.237 - INFO 9200 [           main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.luwei.models.user.coupon.UserCouponDao.
+2018-11-30 16:34:36.237 - INFO 9200 [           main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.luwei.models.user.receiving.ReceivingAddressDao.
+2018-11-30 16:34:36.238 - INFO 9200 [           main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.luwei.models.user.UserDao.
+2018-11-30 16:34:36.625 - INFO 9200 [           main] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfig' of type [com.luwei.module.shiro.base.ShiroConfig$$EnhancerBySpringCGLIB$$1f9288f0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-11-30 16:34:36.700 - INFO 9200 [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.context.properties.ConversionServiceDeducer$Factory' of type [org.springframework.boot.context.properties.ConversionServiceDeducer$Factory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-11-30 16:34:36.711 - INFO 9200 [           main] trationDelegate$BeanPostProcessorChecker : Bean 'shiroModuleProperties' of type [com.luwei.module.shiro.base.ShiroModuleProperties$$EnhancerBySpringCGLIB$$9b05308d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-11-30 16:34:36.715 - INFO 9200 [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration' of type [org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration$$EnhancerBySpringCGLIB$$17f48ffb] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-11-30 16:34:36.726 - INFO 9200 [           main] trationDelegate$BeanPostProcessorChecker : Bean 'spring.redis-org.springframework.boot.autoconfigure.data.redis.RedisProperties' of type [org.springframework.boot.autoconfigure.data.redis.RedisProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-11-30 16:34:36.736 - INFO 9200 [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.data.redis.LettuceConnectionConfiguration' of type [org.springframework.boot.autoconfigure.data.redis.LettuceConnectionConfiguration$$EnhancerBySpringCGLIB$$37772309] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-11-30 16:34:36.832 - INFO 9200 [           main] trationDelegate$BeanPostProcessorChecker : Bean 'lettuceClientResources' of type [io.lettuce.core.resource.DefaultClientResources] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-11-30 16:34:36.947 - INFO 9200 [           main] trationDelegate$BeanPostProcessorChecker : Bean 'redisConnectionFactory' of type [org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-11-30 16:34:36.977 - INFO 9200 [           main] trationDelegate$BeanPostProcessorChecker : Bean 'stringRedisTemplate' of type [org.springframework.data.redis.core.StringRedisTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-11-30 16:34:36.978 - INFO 9200 [           main] trationDelegate$BeanPostProcessorChecker : Bean 'tokenRealm' of type [com.luwei.module.shiro.base.TokenRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-11-30 16:34:37.462 - INFO 9200 [           main] trationDelegate$BeanPostProcessorChecker : Bean 'defaultSessionManager' of type [org.apache.shiro.session.mgt.DefaultSessionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-11-30 16:34:37.462 - WARN 9200 [           main] o.a.s.web.mgt.DefaultWebSecurityManager  : The org.apache.shiro.web.mgt.DefaultWebSecurityManager implementation expects SessionManager instances that implement the org.apache.shiro.web.session.mgt.WebSessionManager interface.  The configured instance is of type [org.apache.shiro.session.mgt.DefaultSessionManager] which does not implement this interface..  This may cause unexpected behavior.
+2018-11-30 16:34:37.471 - INFO 9200 [           main] trationDelegate$BeanPostProcessorChecker : Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-11-30 16:34:37.472 - INFO 9200 [           main] com.luwei.module.shiro.base.ShiroConfig  : Mapped "{[/api/banner]}"
+2018-11-30 16:34:37.472 - INFO 9200 [           main] com.luwei.module.shiro.base.ShiroConfig  : Mapped "{[/api/file/upload/**]}"
+2018-11-30 16:34:37.472 - INFO 9200 [           main] com.luwei.module.shiro.base.ShiroConfig  : Mapped "{[/api/sms/send]}"
+2018-11-30 16:34:37.473 - INFO 9200 [           main] com.luwei.module.shiro.base.ShiroConfig  : Mapped "{[/api/wx/login]}"
+2018-11-30 16:34:37.473 - INFO 9200 [           main] com.luwei.module.shiro.base.ShiroConfig  : Mapped "{[/api/wx/token]}"
+2018-11-30 16:34:37.473 - INFO 9200 [           main] com.luwei.module.shiro.base.ShiroConfig  : Mapped "{[/api/wx/openid]}"
+2018-11-30 16:34:37.473 - INFO 9200 [           main] com.luwei.module.shiro.base.ShiroConfig  : Mapped "{[/api/pay/*]}"
+2018-11-30 16:34:37.473 - INFO 9200 [           main] com.luwei.module.shiro.base.ShiroConfig  : Mapped "{[/api/wx]}"
+2018-11-30 16:34:37.473 - INFO 9200 [           main] com.luwei.module.shiro.base.ShiroConfig  : Mapped "{[/api/**]}"
+2018-11-30 16:34:37.552 - INFO 9200 [           main] trationDelegate$BeanPostProcessorChecker : Bean 'advisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-11-30 16:34:37.585 - INFO 9200 [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$225d64bf] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-11-30 16:34:38.249 - INFO 9200 [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9095 (http)
+2018-11-30 16:34:38.264 - INFO 9200 [           main] o.a.coyote.http11.Http11NioProtocol      : Initializing ProtocolHandler ["http-nio-9095"]
+2018-11-30 16:34:38.276 - INFO 9200 [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-11-30 16:34:38.276 - INFO 9200 [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.34
+2018-11-30 16:34:38.281 - INFO 9200 [ost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_144\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;D:\maven\apache-maven-3.5.2\bin;D:\mysql-5.6.37\bin;C:\Program Files\Java\jdk1.8.0_144\bin;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;D:\Program Files\Git\cmd;D:\Program Files\TortoiseSVN\bin;D:\Program Files\nodejs\;C:\Program Files (x86)\Microsoft SQL Server\80\Tools\Binn\;D:\Program Files\Microsoft SQL Server\90\DTS\Binn\;D:\Program Files\Microsoft SQL Server\90\Tools\binn\;D:\Program Files\Microsoft SQL Server (x86)\90\Tools\binn\;D:\Program Files\Microsoft SQL Server (x86)\90\DTS\Binn\;D:\Program Files\Microsoft SQL Server (x86)\90\Tools\Binn\VSShell\Common7\IDE\;C:\Program Files (x86)\Microsoft Visual Studio 8\Common7\IDE\PrivateAssemblies\;;d:\Program Files (x86)\Microsoft VS Code\bin;C:\Users\Administrator\AppData\Roaming\npm;.]
+2018-11-30 16:34:38.420 - INFO 9200 [ost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-11-30 16:34:38.421 - INFO 9200 [ost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3514 ms
+2018-11-30 16:34:38.541 - INFO 9200 [ost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2018-11-30 16:34:38.547 - INFO 9200 [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-11-30 16:34:38.547 - INFO 9200 [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-11-30 16:34:38.547 - INFO 9200 [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-11-30 16:34:38.547 - INFO 9200 [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-11-30 16:34:38.548 - INFO 9200 [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'shiroFilter' to: [/*]
+2018-11-30 16:34:38.787 - INFO 9200 [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2018-11-30 16:34:40.383 - INFO 9200 [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2018-11-30 16:34:40.469 - INFO 9200 [           main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-11-30 16:34:40.487 - INFO 9200 [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-11-30 16:34:40.583 - INFO 9200 [           main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.2.17.Final}
+2018-11-30 16:34:40.586 - INFO 9200 [           main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2018-11-30 16:34:40.650 - INFO 9200 [           main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-11-30 16:34:40.799 - INFO 9200 [           main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2018-11-30 16:34:45.382 - INFO 9200 [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-11-30 16:34:45.779 - INFO 9200 [           main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2018-11-30 16:34:47.624 - INFO 9200 [           main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2018-11-30 16:34:47.639 - INFO 9200 [           main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2018-11-30 16:34:47.639 - INFO 9200 [           main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.3.0 created.
+2018-11-30 16:34:47.640 - INFO 9200 [           main] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
+2018-11-30 16:34:47.640 - INFO 9200 [           main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.0) 'schedulerFactoryBean' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2018-11-30 16:34:47.640 - INFO 9200 [           main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'schedulerFactoryBean' initialized from an externally provided properties instance.
+2018-11-30 16:34:47.640 - INFO 9200 [           main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.3.0
+2018-11-30 16:34:47.641 - INFO 9200 [           main] org.quartz.core.QuartzScheduler          : JobFactory set to: com.luwei.task.JobFactory@5d8a1456
+2018-11-30 16:34:48.211 - WARN 9200 [           main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2018-11-30 16:34:48.344 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/category/list],methods=[GET]}" onto public java.util.List<com.luwei.services.activity.category.web.ActivityCategoryListVO> com.luwei.controller.ActivityCategoryController.list()
+2018-11-30 16:34:48.349 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/activity/list],methods=[GET]}" onto public org.springframework.data.domain.Page<com.luwei.services.activity.web.ActivityWebListVO> com.luwei.controller.ActivityController.list(java.lang.Integer,java.lang.Integer,org.springframework.data.domain.Pageable)
+2018-11-30 16:34:48.350 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/activity/search],methods=[GET]}" onto public org.springframework.data.domain.Page<com.luwei.services.activity.web.ActivityWebListVO> com.luwei.controller.ActivityController.search(java.lang.Integer,java.lang.String,org.springframework.data.domain.Pageable)
+2018-11-30 16:34:48.350 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/activity/commit],methods=[POST]}" onto public com.luwei.common.Response com.luwei.controller.ActivityController.commit(com.luwei.services.activity.order.web.ActivityAddDTO,javax.servlet.http.HttpServletRequest) throws java.lang.Exception
+2018-11-30 16:34:48.350 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/activity/handpick],methods=[GET]}" onto public com.luwei.services.activity.web.HandpickVO com.luwei.controller.ActivityController.handpick(java.lang.Integer,java.lang.Integer)
+2018-11-30 16:34:48.350 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/activity/series],methods=[GET]}" onto public java.util.List<com.luwei.services.activity.series.web.ActivitySeriesListVO> com.luwei.controller.ActivityController.seriesActivity(java.lang.Integer,java.lang.Integer)
+2018-11-30 16:34:48.351 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/activity/apply],methods=[POST]}" onto public com.luwei.services.activity.web.ActivityApplyVO com.luwei.controller.ActivityController.applyActivity(java.lang.Integer)
+2018-11-30 16:34:48.351 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/activity/affirm],methods=[POST]}" onto public com.luwei.services.activity.web.ActivityAffirmVO com.luwei.controller.ActivityController.affirmActivity(com.luwei.services.activity.web.ActivityApplyDTO)
+2018-11-30 16:34:48.351 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/activity/city],methods=[GET]}" onto public java.util.List<com.luwei.services.area.web.CityListVO> com.luwei.controller.ActivityController.activityCityList()
+2018-11-30 16:34:48.351 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/activity/recommend],methods=[GET]}" onto public org.springframework.data.domain.Page<com.luwei.services.activity.web.ActivityWebListVO> com.luwei.controller.ActivityController.recommend(java.lang.Integer,org.springframework.data.domain.Pageable)
+2018-11-30 16:34:48.352 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/activity/like],methods=[GET]}" onto public org.springframework.data.domain.Page<com.luwei.services.activity.web.ActivityWebListVO> com.luwei.controller.ActivityController.guessLike(java.lang.Integer,org.springframework.data.domain.Pageable)
+2018-11-30 16:34:48.352 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/activity/detail],methods=[GET]}" onto public com.luwei.services.activity.web.ActivityDetailVO com.luwei.controller.ActivityController.activityWebDetail(java.lang.Integer,java.lang.Integer)
+2018-11-30 16:34:48.354 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/activity/series/list],methods=[GET]}" onto public java.util.List<com.luwei.services.activity.series.web.SeriesListVO> com.luwei.controller.ActivityController.seriesActivityList()
+2018-11-30 16:34:48.354 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/activity/category],methods=[GET]}" onto public org.springframework.data.domain.Page<com.luwei.services.activity.web.ActivityWebListVO> com.luwei.controller.ActivityController.activityCategoryPage(java.lang.Integer,java.lang.Integer,org.springframework.data.domain.Pageable)
+2018-11-30 16:34:48.357 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/activity/order],methods=[DELETE]}" onto public void com.luwei.controller.ActivityOrderController.delete(java.lang.Integer,java.lang.Integer)
+2018-11-30 16:34:48.357 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/activity/order/detail],methods=[GET]}" onto public com.luwei.services.activity.web.ActivityAffirmVO com.luwei.controller.ActivityOrderController.activityOrderDetail(java.lang.Integer)
+2018-11-30 16:34:48.358 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/activity/order/one],methods=[GET]}" onto public com.luwei.services.activity.order.web.ActivityOrderWebPageVO com.luwei.controller.ActivityOrderController.findOne(java.lang.Integer,java.lang.Integer)
+2018-11-30 16:34:48.358 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/activity/order/page],methods=[GET]}" onto public org.springframework.data.domain.Page<com.luwei.services.activity.order.web.ActivityOrderWebPageVO> com.luwei.controller.ActivityOrderController.page(org.springframework.data.domain.Pageable,java.lang.Integer,com.luwei.common.enums.status.ActivityOrderStatus)
+2018-11-30 16:34:48.360 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/area],methods=[GET]}" onto public java.util.List<com.luwei.services.area.cms.ProvinceVO> com.luwei.controller.AreaController.allArea()
+2018-11-30 16:34:48.361 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/area/one],methods=[GET]}" onto public com.luwei.services.area.cms.DistrictVO com.luwei.controller.AreaController.findOne(java.lang.Integer)
+2018-11-30 16:34:48.361 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/banner],methods=[GET]}" onto public org.springframework.data.domain.Page<com.luwei.services.banner.web.BannerWebVO> com.luwei.controller.BannerController.homePage(org.springframework.data.domain.Pageable,com.luwei.common.enums.type.BannerType,java.lang.Integer)
+2018-11-30 16:34:48.363 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/collect],methods=[DELETE]}" onto public void com.luwei.controller.CollectController.delete(java.util.Set<java.lang.Integer>,com.luwei.common.enums.type.CollectType,java.lang.Integer)
+2018-11-30 16:34:48.363 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/collect],methods=[GET]}" onto public org.springframework.data.domain.Page<com.luwei.services.collect.web.CollectWebListVO> com.luwei.controller.CollectController.list(com.luwei.common.enums.type.CollectType,java.lang.Integer,org.springframework.data.domain.Pageable)
+2018-11-30 16:34:48.363 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/collect],methods=[PUT]}" onto public void com.luwei.controller.CollectController.save(java.lang.Integer,com.luwei.common.enums.type.CollectType,java.lang.Integer)
+2018-11-30 16:34:48.364 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/coupon/detail],methods=[GET]}" onto public com.luwei.services.coupon.web.CouponDetailWebVO com.luwei.controller.CouponController.detail(java.lang.Integer)
+2018-11-30 16:34:48.364 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/coupon/buy],methods=[POST]}" onto public com.luwei.common.Response<java.lang.String> com.luwei.controller.CouponController.buyCoupon(com.luwei.models.user.coupon.web.UserCouponAddDTO)
+2018-11-30 16:34:48.364 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/coupon/page],methods=[GET]}" onto public org.springframework.data.domain.Page<com.luwei.services.coupon.web.CouponWebVO> com.luwei.controller.CouponController.page(org.springframework.data.domain.Pageable,com.luwei.common.enums.type.SortType)
+2018-11-30 16:34:48.365 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/evaluate],methods=[POST]}" onto public com.luwei.common.Response com.luwei.controller.EvaluateController.save(com.luwei.services.evaluate.web.EvaluateDTO)
+2018-11-30 16:34:48.365 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/evaluate],methods=[GET]}" onto public org.springframework.data.domain.Page<com.luwei.services.evaluate.web.EvaluateWebListVO> com.luwei.controller.EvaluateController.findEvaluate(org.springframework.data.domain.Pageable,java.lang.Integer,com.luwei.common.enums.type.EvaluateType)
+2018-11-30 16:34:48.366 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/goods/category/list],methods=[GET]}" onto public java.util.List<com.luwei.services.category.web.CategoryListVO> com.luwei.controller.GoodsCategoryController.list()
+2018-11-30 16:34:48.367 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/goods/detail],methods=[GET]}" onto public com.luwei.services.goods.web.GoodsDetailVO com.luwei.controller.GoodsController.detail(java.lang.Integer,java.lang.Integer)
+2018-11-30 16:34:48.367 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/goods/recommend],methods=[GET]}" onto public org.springframework.data.domain.Page<com.luwei.services.goods.web.StoreGoodsListVO> com.luwei.controller.GoodsController.recommend(org.springframework.data.domain.Pageable)
+2018-11-30 16:34:48.368 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/goods/like],methods=[GET]}" onto public org.springframework.data.domain.Page<com.luwei.services.goods.web.StoreGoodsListVO> com.luwei.controller.GoodsController.guessLike(java.lang.Integer,org.springframework.data.domain.Pageable)
+2018-11-30 16:34:48.368 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/goods/category/page],methods=[GET]}" onto public org.springframework.data.domain.Page<com.luwei.services.goods.web.StoreGoodsListVO> com.luwei.controller.GoodsController.categoryPage(java.lang.Integer,org.springframework.data.domain.Pageable)
+2018-11-30 16:34:48.369 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/integral/page],methods=[GET]}" onto public org.springframework.data.domain.Page<com.luwei.services.integral.bill.web.IntegralBillWebPageVO> com.luwei.controller.IntegralController.page(org.springframework.data.domain.Pageable,com.luwei.common.enums.type.BillType,java.lang.Integer)
+2018-11-30 16:34:48.370 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/order],methods=[DELETE]}" onto public void com.luwei.controller.OrderController.delete(java.util.Set<java.lang.Integer>)
+2018-11-30 16:34:48.370 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/order/cancel],methods=[DELETE]}" onto public com.luwei.services.order.web.OrderWebPageVO com.luwei.controller.OrderController.cancel(java.lang.Integer)
+2018-11-30 16:34:48.370 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/order/create],methods=[POST]}" onto public com.luwei.services.order.web.AffirmOrderVO com.luwei.controller.OrderController.commit(com.luwei.services.order.web.OrderAddOneDTO)
+2018-11-30 16:34:48.371 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/order/pay],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.String> com.luwei.controller.OrderController.payGoodsOrder(com.luwei.services.order.web.GoodsOrderPayDTO,javax.servlet.http.HttpServletRequest)
+2018-11-30 16:34:48.371 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/order/receiving],methods=[PUT]}" onto public com.luwei.common.Response com.luwei.controller.OrderController.receiving(java.lang.Integer)
+2018-11-30 16:34:48.371 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/order/address],methods=[PUT]}" onto public com.luwei.common.Response com.luwei.controller.OrderController.updateAddress(java.util.Set<java.lang.Integer>,java.lang.String,java.lang.String,java.lang.String)
+2018-11-30 16:34:48.371 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/order/one],methods=[GET]}" onto public com.luwei.services.order.web.OrderWebPageVO com.luwei.controller.OrderController.findOne(java.lang.Integer,java.lang.Integer)
+2018-11-30 16:34:48.371 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/order/page],methods=[GET]}" onto public org.springframework.data.domain.Page<com.luwei.services.order.web.OrderWebPageVO> com.luwei.controller.OrderController.page(org.springframework.data.domain.Pageable,java.lang.Integer,com.luwei.common.enums.status.OrderStatus)
+2018-11-30 16:34:48.372 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/order/detail],methods=[GET]}" onto public com.luwei.services.order.detail.web.OrderDetailSimpleVO com.luwei.controller.OrderDetailController.findOne(java.lang.Integer)
+2018-11-30 16:34:48.372 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/order/detail/unread],methods=[GET]}" onto public com.luwei.services.order.web.AffirmOrderVO com.luwei.controller.OrderDetailController.unreadOrderDetail(java.lang.Integer,java.lang.Integer)
+2018-11-30 16:34:48.373 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/photo],methods=[POST]}" onto public void com.luwei.controller.PhotoController.save(com.luwei.services.photo.web.PhotoUploadDTO)
+2018-11-30 16:34:48.373 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/photo/page],methods=[GET]}" onto public org.springframework.data.domain.Page<com.luwei.services.photo.web.PhotoWebPageVO> com.luwei.controller.PhotoController.page(org.springframework.data.domain.Pageable,java.lang.Integer)
+2018-11-30 16:34:48.373 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/refund],methods=[POST]}" onto public java.lang.Object com.luwei.controller.RefundController.refund(com.luwei.services.refund.web.RefundAddDTO)
+2018-11-30 16:34:48.374 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/shopping],methods=[PUT]}" onto public com.luwei.services.shopping.web.ShoppingPageVO com.luwei.controller.ShoppingController.update(com.luwei.services.shopping.web.ShoppingEditDTO)
+2018-11-30 16:34:48.374 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/shopping],methods=[DELETE]}" onto public void com.luwei.controller.ShoppingController.delete(java.util.Set<java.lang.Integer>,java.lang.Integer)
+2018-11-30 16:34:48.374 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/shopping],methods=[POST]}" onto public void com.luwei.controller.ShoppingController.save(com.luwei.services.shopping.web.ShoppingAddDTO)
+2018-11-30 16:34:48.374 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/shopping/clearing],methods=[POST]}" onto public com.luwei.services.order.web.AffirmOrderVO com.luwei.controller.ShoppingController.clearing(com.luwei.services.order.web.OrderAddDTO)
+2018-11-30 16:34:48.374 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/shopping/page],methods=[GET]}" onto public org.springframework.data.domain.Page<com.luwei.services.shopping.web.ShoppingPageVO> com.luwei.controller.ShoppingController.page(org.springframework.data.domain.Pageable,java.lang.Integer)
+2018-11-30 16:34:48.375 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sms/send],methods=[GET]}" onto public void com.luwei.controller.SmsController.sendCode(java.lang.String) throws com.aliyuncs.exceptions.ClientException
+2018-11-30 16:34:48.375 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/store],methods=[GET]}" onto public com.luwei.services.store.web.StoreWebDetailVO com.luwei.controller.StoreController.storeDetail(java.lang.Integer,com.luwei.common.enums.type.SortType,com.luwei.common.enums.type.SortType,org.springframework.data.domain.Pageable)
+2018-11-30 16:34:48.376 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/template],methods=[PUT]}" onto public void com.luwei.controller.TemplateController.update(java.lang.Object)
+2018-11-30 16:34:48.376 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/template],methods=[DELETE]}" onto public void com.luwei.controller.TemplateController.delete(java.util.Set<java.lang.Integer>)
+2018-11-30 16:34:48.376 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/template],methods=[POST]}" onto public void com.luwei.controller.TemplateController.save(java.lang.Object)
+2018-11-30 16:34:48.376 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/template],methods=[GET]}" onto public void com.luwei.controller.TemplateController.findOne(java.lang.Integer)
+2018-11-30 16:34:48.376 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/template/page],methods=[GET]}" onto public void com.luwei.controller.TemplateController.page(org.springframework.data.domain.Pageable,java.lang.Object)
+2018-11-30 16:34:48.378 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/binding],methods=[PUT]}" onto public com.luwei.common.Response<java.lang.String> com.luwei.controller.UserController.binding(java.lang.String,java.lang.Integer,java.lang.String)
+2018-11-30 16:34:48.378 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user],methods=[PUT]}" onto public void com.luwei.controller.UserController.editUser(com.luwei.services.user.web.UserInfoAddDTO)
+2018-11-30 16:34:48.378 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user],methods=[GET]}" onto public com.luwei.services.user.web.UserInfoVO com.luwei.controller.UserController.findUser(java.lang.Integer)
+2018-11-30 16:34:48.378 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/address],methods=[GET]}" onto public com.luwei.services.user.address.web.UserAddressVO com.luwei.controller.UserController.userAddress(java.lang.Integer)
+2018-11-30 16:34:48.379 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/integral/total],methods=[GET]}" onto public com.luwei.common.Response<java.lang.Integer> com.luwei.controller.UserController.findOne(java.lang.Integer)
+2018-11-30 16:34:48.379 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/receiving],methods=[PUT]}" onto public com.luwei.services.user.address.web.UserAddressVO com.luwei.controller.UserController.addReceivingAddress(com.luwei.services.user.address.web.UserReceivingAddDTO)
+2018-11-30 16:34:48.379 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/wx/login],methods=[POST]}" onto public com.luwei.services.user.web.UserWebVO com.luwei.controller.WxController.login(com.luwei.services.weixin.pojos.WxUserDTO)
+2018-11-30 16:34:48.379 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/wx/openid],methods=[GET]}" onto public com.luwei.services.weixin.pojos.OpenidVO com.luwei.controller.WxController.openid(java.lang.String)
+2018-11-30 16:34:48.380 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/wx/binding],methods=[PUT]}" onto public com.luwei.common.Response com.luwei.controller.WxController.bingingPhone(com.luwei.services.weixin.pojos.PhoneNumDTO) throws java.lang.Exception
+2018-11-30 16:34:48.380 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/pay/notify],methods=[POST || GET]}" onto public void com.luwei.controller.WxPayController.wxNotify(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.lang.Exception
+2018-11-30 16:34:48.380 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/pay/pay],methods=[POST || GET]}" onto public java.util.Map<java.lang.String, java.lang.String> com.luwei.controller.WxPayController.wxPay(javax.servlet.http.HttpServletRequest,java.lang.String) throws java.lang.Exception
+2018-11-30 16:34:48.383 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/file/upload/single],methods=[POST]}" onto public com.luwei.module.qiniu.FileVO com.luwei.module.qiniu.QiNiuController.single(org.springframework.web.multipart.MultipartFile)
+2018-11-30 16:34:48.383 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/file/upload/batch],methods=[POST]}" onto public com.luwei.module.qiniu.FileVO com.luwei.module.qiniu.QiNiuController.batch(org.springframework.web.multipart.MultipartFile[])
+2018-11-30 16:34:48.384 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/file/upload/token],methods=[GET]}" onto public com.luwei.module.qiniu.QiNiuToken com.luwei.module.qiniu.QiNiuController.getToken(java.lang.String)
+2018-11-30 16:34:48.384 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/file/upload/stream],methods=[POST]}" onto public com.luwei.module.qiniu.FileVO com.luwei.module.qiniu.QiNiuController.uploadByStream(java.io.InputStream)
+2018-11-30 16:34:48.386 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources]}" onto public org.springframework.http.ResponseEntity<java.util.List<springfox.documentation.swagger.web.SwaggerResource>> springfox.documentation.swagger.web.ApiResourceController.swaggerResources()
+2018-11-30 16:34:48.387 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources/configuration/ui]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.UiConfiguration> springfox.documentation.swagger.web.ApiResourceController.uiConfiguration()
+2018-11-30 16:34:48.388 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources/configuration/security]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.SecurityConfiguration> springfox.documentation.swagger.web.ApiResourceController.securityConfiguration()
+2018-11-30 16:34:48.390 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-11-30 16:34:48.390 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-11-30 16:34:48.586 - INFO 9200 [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService
+2018-11-30 16:34:48.592 - INFO 9200 [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'taskExecutor'
+2018-11-30 16:34:48.640 - INFO 9200 [           main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2018-11-30 16:34:48.737 - INFO 9200 [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-11-30 16:34:48.886 - INFO 9200 [           main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@366c4480: startup date [Fri Nov 30 16:34:34 CST 2018]; root of context hierarchy
+2018-11-30 16:34:48.959 - INFO 9200 [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-11-30 16:34:48.959 - INFO 9200 [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-11-30 16:34:48.984 - INFO 9200 [           main] .m.m.a.ExceptionHandlerExceptionResolver : Detected @ExceptionHandler methods in globalExceptionHandler
+2018-11-30 16:34:49.024 - INFO 9200 [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2018-11-30 16:34:49.536 - INFO 9200 [           main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-11-30 16:34:49.538 - INFO 9200 [           main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-11-30 16:34:49.545 - INFO 9200 [           main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-11-30 16:34:49.550 - INFO 9200 [           main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 2147483647
+2018-11-30 16:34:49.551 - INFO 9200 [           main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2018-11-30 16:34:49.568 - INFO 9200 [           main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2018-11-30 16:34:49.568 - INFO 9200 [           main] d.s.w.p.DocumentationPluginsBootstrapper : Skipping initializing disabled plugin bean swagger v2.0
+2018-11-30 16:34:49.568 - INFO 9200 [           main] o.s.s.quartz.SchedulerFactoryBean        : Will start Quartz Scheduler [schedulerFactoryBean] in 20 seconds
+2018-11-30 16:34:49.589 - INFO 9200 [           main] o.a.coyote.http11.Http11NioProtocol      : Starting ProtocolHandler ["http-nio-9095"]
+2018-11-30 16:34:49.597 - INFO 9200 [           main] o.a.tomcat.util.net.NioSelectorPool      : Using a shared selector for servlet write/read
+2018-11-30 16:34:49.614 - INFO 9200 [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9095 (http) with context path ''
+2018-11-30 16:34:49.618 - INFO 9200 [           main] com.luwei.WebApplication                 : Started WebApplication in 15.357 seconds (JVM running for 16.808)
+2018-11-30 16:35:09.569 - INFO 9200 [lerFactoryBean]] o.s.s.quartz.SchedulerFactoryBean        : Starting Quartz Scheduler now, after delay of 20 seconds
+2018-11-30 16:35:09.570 - INFO 9200 [lerFactoryBean]] org.quartz.core.QuartzScheduler          : Scheduler schedulerFactoryBean_$_NON_CLUSTERED started.
+2018-11-30 17:00:05.056 - WARN 9200 [ryBean_Worker-1] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@7695075a (No operations allowed after connection closed.)
+2018-11-30 17:00:10.061 - WARN 9200 [ryBean_Worker-1] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@31af904a (No operations allowed after connection closed.)
+2018-11-30 17:00:15.062 - WARN 9200 [ryBean_Worker-1] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@6fdeeef2 (No operations allowed after connection closed.)
+2018-11-30 17:00:20.065 - WARN 9200 [ryBean_Worker-1] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@41131bfa (No operations allowed after connection closed.)
+2018-11-30 17:00:25.067 - WARN 9200 [ryBean_Worker-1] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@4723438a (No operations allowed after connection closed.)
+2018-11-30 17:00:30.072 - WARN 9200 [ryBean_Worker-1] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@6079021 (No operations allowed after connection closed.)
+2018-11-30 17:00:30.074 - WARN 9200 [ryBean_Worker-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 0, SQLState: 08003
+2018-11-30 17:00:30.074 -ERROR 9200 [ryBean_Worker-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : HikariPool-1 - Connection is not available, request timed out after 30030ms.
+2018-11-30 17:00:30.074 - WARN 9200 [ryBean_Worker-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 0, SQLState: 08003
+2018-11-30 17:00:30.075 -ERROR 9200 [ryBean_Worker-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : No operations allowed after connection closed.
+2018-11-30 17:00:30.086 -ERROR 9200 [ryBean_Worker-1] org.quartz.core.JobRunShell              : Job group1.job3 threw an unhandled Exception: 
+org.springframework.transaction.CannotCreateTransactionException: Could not open JPA EntityManager for transaction; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to acquire JDBC Connection
+	at org.springframework.orm.jpa.JpaTransactionManager.doBegin(JpaTransactionManager.java:450)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.getTransaction(AbstractPlatformTransactionManager.java:378)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.createTransactionIfNecessary(TransactionAspectSupport.java:474)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:289)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:98)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:185)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688)
+	at com.luwei.services.activity.ActivityService$$EnhancerBySpringCGLIB$$65a41d76.updateOverActivityStatus(<generated>)
+	at com.luwei.task.ActivityJob.execute(ActivityJob.java:22)
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:202)
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:573)
+Caused by: org.hibernate.exception.JDBCConnectionException: Unable to acquire JDBC Connection
+	at org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:48)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:42)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:111)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:97)
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.acquireConnectionIfNeeded(LogicalConnectionManagedImpl.java:109)
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.getPhysicalConnection(LogicalConnectionManagedImpl.java:136)
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.getConnectionForTransactionManagement(LogicalConnectionManagedImpl.java:254)
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.begin(LogicalConnectionManagedImpl.java:262)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.begin(JdbcResourceLocalTransactionCoordinatorImpl.java:214)
+	at org.hibernate.engine.transaction.internal.TransactionImpl.begin(TransactionImpl.java:56)
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.beginTransaction(HibernateJpaDialect.java:162)
+	at org.springframework.orm.jpa.JpaTransactionManager.doBegin(JpaTransactionManager.java:400)
+	... 10 common frames omitted
+Caused by: java.sql.SQLTransientConnectionException: HikariPool-1 - Connection is not available, request timed out after 30030ms.
+	at com.zaxxer.hikari.pool.HikariPool.createTimeoutException(HikariPool.java:669)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:183)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:148)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:128)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122)
+	at org.hibernate.internal.NonContextualJdbcConnectionAccess.obtainConnection(NonContextualJdbcConnectionAccess.java:35)
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.acquireConnectionIfNeeded(LogicalConnectionManagedImpl.java:106)
+	... 17 common frames omitted
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: No operations allowed after connection closed.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.Util.getInstance(Util.java:408)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:919)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:898)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:887)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:861)
+	at com.mysql.jdbc.ConnectionImpl.throwConnectionClosedException(ConnectionImpl.java:1192)
+	at com.mysql.jdbc.ConnectionImpl.checkClosed(ConnectionImpl.java:1187)
+	at com.mysql.jdbc.ConnectionImpl.setNetworkTimeout(ConnectionImpl.java:5494)
+	at com.zaxxer.hikari.pool.PoolBase.setNetworkTimeout(PoolBase.java:541)
+	at com.zaxxer.hikari.pool.PoolBase.isConnectionAlive(PoolBase.java:162)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:172)
+	... 22 common frames omitted
+2018-11-30 17:00:30.091 -ERROR 9200 [ryBean_Worker-1] org.quartz.core.ErrorLogger              : Job (group1.job3 threw an exception.
+org.quartz.SchedulerException: Job threw an unhandled exception.
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:213)
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:573)
+Caused by: org.springframework.transaction.CannotCreateTransactionException: Could not open JPA EntityManager for transaction; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to acquire JDBC Connection
+	at org.springframework.orm.jpa.JpaTransactionManager.doBegin(JpaTransactionManager.java:450)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.getTransaction(AbstractPlatformTransactionManager.java:378)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.createTransactionIfNecessary(TransactionAspectSupport.java:474)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:289)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:98)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:185)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688)
+	at com.luwei.services.activity.ActivityService$$EnhancerBySpringCGLIB$$65a41d76.updateOverActivityStatus(<generated>)
+	at com.luwei.task.ActivityJob.execute(ActivityJob.java:22)
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:202)
+	... 1 common frames omitted
+Caused by: org.hibernate.exception.JDBCConnectionException: Unable to acquire JDBC Connection
+	at org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:48)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:42)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:111)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:97)
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.acquireConnectionIfNeeded(LogicalConnectionManagedImpl.java:109)
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.getPhysicalConnection(LogicalConnectionManagedImpl.java:136)
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.getConnectionForTransactionManagement(LogicalConnectionManagedImpl.java:254)
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.begin(LogicalConnectionManagedImpl.java:262)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.begin(JdbcResourceLocalTransactionCoordinatorImpl.java:214)
+	at org.hibernate.engine.transaction.internal.TransactionImpl.begin(TransactionImpl.java:56)
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.beginTransaction(HibernateJpaDialect.java:162)
+	at org.springframework.orm.jpa.JpaTransactionManager.doBegin(JpaTransactionManager.java:400)
+	... 10 common frames omitted
+Caused by: java.sql.SQLTransientConnectionException: HikariPool-1 - Connection is not available, request timed out after 30030ms.
+	at com.zaxxer.hikari.pool.HikariPool.createTimeoutException(HikariPool.java:669)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:183)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:148)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:128)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122)
+	at org.hibernate.internal.NonContextualJdbcConnectionAccess.obtainConnection(NonContextualJdbcConnectionAccess.java:35)
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.acquireConnectionIfNeeded(LogicalConnectionManagedImpl.java:106)
+	... 17 common frames omitted
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: No operations allowed after connection closed.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.Util.getInstance(Util.java:408)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:919)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:898)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:887)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:861)
+	at com.mysql.jdbc.ConnectionImpl.throwConnectionClosedException(ConnectionImpl.java:1192)
+	at com.mysql.jdbc.ConnectionImpl.checkClosed(ConnectionImpl.java:1187)
+	at com.mysql.jdbc.ConnectionImpl.setNetworkTimeout(ConnectionImpl.java:5494)
+	at com.zaxxer.hikari.pool.PoolBase.setNetworkTimeout(PoolBase.java:541)
+	at com.zaxxer.hikari.pool.PoolBase.isConnectionAlive(PoolBase.java:162)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:172)
+	... 22 common frames omitted

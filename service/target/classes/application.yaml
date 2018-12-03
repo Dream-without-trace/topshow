@@ -1,0 +1,55 @@
+spring:
+  profiles:
+    active: pro
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      naming:
+        implicit-strategy: com.luwei.common.config.JpaNamingStrategy
+  jackson:
+    default-property-inclusion: always
+    serialization:
+      write-dates-as-timestamps: true
+
+  http:
+    encoding:
+      charset: UTF-8
+
+  servlet:
+    multipart:
+      max-file-size: 8MB
+      max-request-size: 8MB
+
+topshow:
+  wx:
+    mch-id: 1514227751
+    app-id: wxab48bb705b1cf067
+    app-secret: 5a71ef0dc8c2192cbebf6acaab180ee8
+    trade-type: JSAPI
+    api-key: a7973590bdb44b2e81edbc442c9d6b75
+    notify-url: https://xcxtop.91topshow.com/api/pay/notify
+    create-order: https://api.mch.weixin.qq.com/pay/unifiedorder
+    auth-url: https://mp.weixin.qq.com/cgi-bin/componentloginpage?component_appid=%s&pre_auth_code=%s&redirect_uri=%s&auth_type=%s
+    token-url: https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=%s&secret=%s
+    openid-url: https://api.weixin.qq.com/sns/oauth2/access_token?appid=%s&secret=%s&code=%s&grant_type=authorization_code
+    session-key-url: https://api.weixin.qq.com/sns/jscode2session?appid=%s&secret=%s&js_code=%s&grant_type=authorization_code
+
+luwei:
+  module:
+    sms:
+      redus-prefix: phone.captcha
+      access-key-id: LTAIOv8oCvtkhFU5
+      access-key-secret: dXnguhrl95iw1jH4yzdedskyhJpQs4
+      sign-name: topshow
+      template-code: SMS_142755004
+      template-code-name: code
+    qiniu:
+      bucket: image-topshow
+      access-key: aPUcZJe4DJdQuAX-v-6bVhEPZCF3dRKijKKGc2EO
+      secret-key: dJemdS4mgb0qjCsptE6HUcDmzkrNdFZ32WoVQ-u9
+      link-address: http://phjqtr7aj.bkt.clouddn.com/
+app:
+  constant:
+    topshow:
+      first-integral: 20
