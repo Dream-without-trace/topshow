@@ -7,7 +7,8 @@ package com.luwei.common.enums.type;
 public enum EvaluateType {
 
     GOODS("商品", 0),
-    ACTIVITY("活动", 1);
+    ACTIVITY("活动", 1),
+    SHOP("门店", 2);
 
     private Integer code;
 

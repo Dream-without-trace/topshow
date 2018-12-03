@@ -26,7 +26,7 @@ public class Evaluate extends IdEntity {
     @Column(columnDefinition = "int(11) not null default 0 comment '用户id'")
     private Integer userId;
 
-    @Column(columnDefinition = "int(11) not null default 0 comment '商品id或活动id'")
+    @Column(columnDefinition = "int(11) not null default 0 comment '商品id或活动id或门店id'")
     private Integer tripartiteId;
 
     @Enumerated
@@ -34,7 +34,7 @@ public class Evaluate extends IdEntity {
     private EvaluateLevel level;
 
     @Enumerated
-    @Column(columnDefinition = "tinyint(1) not null default 0 comment '评论类型(活动、商品)'")
+    @Column(columnDefinition = "tinyint(1) not null default 0 comment '评论类型(活动、商品、门店)'")
     private EvaluateType type;
 
     @Column(columnDefinition = "varchar(255) not null default '' comment '评论内容'")

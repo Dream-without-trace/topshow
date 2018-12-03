@@ -1,7 +1,7 @@
 spring:
   profiles: pro
   datasource:
-    url: jdbc:mysql://47.96.125.85:3306/topshow?useSSL=false
+    url: jdbc:mysql://47.96.125.85:3306/topshow?useSSL=false&characterEncoding=UTF-8
     username: topshow
     password: M81oPdMtc
     driver-class-name: com.mysql.jdbc.Driver
@@ -18,4 +18,4 @@ spring:
     timeout: 5000ms
 
 swagger:
-  show: false
+  show: true

@@ -77,7 +77,7 @@ public class EvaluateService {
     private ActivityOrderService activityOrderService;
 
     /**
-     * 获取活动或商品的评价
+     * 获取活动或商品或门店的评价
      *
      * @param tripartiteId
      * @param type
@@ -87,7 +87,7 @@ public class EvaluateService {
     }
 
     /**
-     * 获取活动或商品的评价cmsVO
+     * 获取活动或商品或门店的评价cmsVO
      *
      * @param tripartiteId
      * @param type
@@ -136,6 +136,17 @@ public class EvaluateService {
                 evaluate.setTripartiteId(dto.getTripartiteId());
             }
         } else if (EvaluateType.ACTIVITY.equals(dto.getEvaluateType())) {
+            ActivityOrder activityOrder = activityOrderService.findOne(dto.getId());
+            if (!ActivityOrderStatus.JOIN.equals(activityOrder.getStatus())) {
+                throw new ValidateException(ExceptionMessage.ACTIVITY_ORDER_STATUS_FAIL);
+            } else {
+                evaluate.setTripartiteId(dto.getTripartiteId());
+                activityOrder.setStatus(ActivityOrderStatus.COMPLETE);
+                activityOrderService.save(activityOrder);
+            }
+        } else if (EvaluateType.SHOP.equals(dto.getEvaluateType())) {
+
+
             ActivityOrder activityOrder = activityOrderService.findOne(dto.getId());
             if (!ActivityOrderStatus.JOIN.equals(activityOrder.getStatus())) {
                 throw new ValidateException(ExceptionMessage.ACTIVITY_ORDER_STATUS_FAIL);

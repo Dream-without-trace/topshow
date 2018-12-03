@@ -8,7 +8,8 @@ public enum TransactionType {
 
     ACTIVITY("活动交易", 0),
 
-    GOODS("商品交易", 1);
+    GOODS("商品交易", 1),
+    CARD("办理会员交易", 2);
 
     private Integer code;
 

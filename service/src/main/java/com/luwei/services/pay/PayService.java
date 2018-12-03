@@ -2,6 +2,7 @@ package com.luwei.services.pay;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.luwei.common.enums.status.ActivityOrderStatus;
+import com.luwei.common.enums.status.MembershipCardOrderStatus;
 import com.luwei.common.enums.status.OrderStatus;
 import com.luwei.common.enums.type.BillType;
 import com.luwei.common.enums.type.TransactionType;
@@ -13,12 +14,14 @@ import com.luwei.common.utils.HttpUtil;
 import com.luwei.common.utils.RandomUtil;
 import com.luwei.models.activity.order.ActivityOrder;
 import com.luwei.models.bill.Bill;
+import com.luwei.models.membershipcard.order.MembershipCardOrder;
 import com.luwei.models.order.Order;
 import com.luwei.models.user.User;
 import com.luwei.services.activity.order.ActivityOrderService;
 import com.luwei.services.bill.BillService;
 import com.luwei.services.integral.bill.IntegralBillService;
 import com.luwei.services.integral.bill.web.IntegralBillDTO;
+import com.luwei.services.membershipCard.order.MembershipCardOrderService;
 import com.luwei.services.order.OrderService;
 import com.luwei.services.pay.pojos.NotifyDTO;
 import com.luwei.services.user.UserService;
@@ -62,6 +65,9 @@ public class PayService {
 
     @Resource
     private ActivityOrderService activityOrderService;
+
+    @Resource
+    private MembershipCardOrderService membershipCardOrderService;
 
     @Resource
     private IntegralBillService integralBillService;
@@ -188,9 +194,24 @@ public class PayService {
             userService.addIntegral(user.getUserId(), 20);
             // 保存积分流水
             integralBillService.save(new IntegralBillDTO(user.getUserId(), user.getNickname(), user.getPhone(), 20, user.getIntegral() + 20, BillType.INCOME, "用户购买商品"));
+        } else if (outTradeNo.startsWith("C")) {
+            List<MembershipCardOrder> membershipCardOrderList = membershipCardOrderService.findMembershipCardOrdersByOutTradeNo(outTradeNo);
+            updateMembershipCardOrderStatus(membershipCardOrderList);
+            bill.setRemark("购买会员卡订单");
+            bill.setTransactionType(TransactionType.CARD);
+            bill.setStoreId(0);
+            if (!ObjectUtils.isEmpty(membershipCardOrderList)) {
+                bill.setStoreId(membershipCardOrderList.get(0).getShopId());
+            }
+            // 给用户添加积分
+            userService.addIntegral(user.getUserId(), 20);
+            // 保存积分流水
+            integralBillService.save(new IntegralBillDTO(user.getUserId(), user.getNickname(), user.getPhone(), 20, user.getIntegral() + 20, BillType.INCOME, "用户购买商品"));
         }
         billService.save(bill);
     }
+
+
 
     /**
      * 修改订单支付时间
@@ -215,6 +236,15 @@ public class PayService {
         activityOrder.setStatus(ActivityOrderStatus.PAY);
         activityOrder.setPayTime(new Date());
         activityOrderService.save(activityOrder);
+    }
+
+    private void updateMembershipCardOrderStatus(List<MembershipCardOrder> membershipCardOrderList) {
+        Date date = new Date();
+        membershipCardOrderList.forEach(e -> {
+            e.setPayTime(date);
+            e.setStatus(MembershipCardOrderStatus.PAY);
+        });
+        membershipCardOrderService.saveAll(membershipCardOrderList);
     }
 
 }
