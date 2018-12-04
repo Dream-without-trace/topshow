@@ -53,7 +53,7 @@ public class MembershipCardOrder extends IdEntity {
     @Column(columnDefinition = "timestamp null comment '支付时间'")
     private Date payTime;
 
-    @Column(columnDefinition = "tinyint(2) not null default 0 comment '门店订单状态'")
+    @Column(columnDefinition = "tinyint(2) not null default 0 comment '会员卡订单状态'")
     private MembershipCardOrderStatus status;
 
     public MembershipCardOrder() {

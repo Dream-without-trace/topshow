@@ -4,6 +4,7 @@ import com.google.common.base.Joiner;
 import com.google.common.collect.Lists;
 import com.luwei.common.enums.level.EvaluateLevel;
 import com.luwei.common.enums.status.ActivityOrderStatus;
+import com.luwei.common.enums.status.MembershipCardOrderStatus;
 import com.luwei.common.enums.status.OrderStatus;
 import com.luwei.common.enums.type.EvaluateType;
 import com.luwei.common.enums.type.FlagType;
@@ -12,6 +13,7 @@ import com.luwei.common.exception.ValidateException;
 import com.luwei.models.activity.order.ActivityOrder;
 import com.luwei.models.evaluate.Evaluate;
 import com.luwei.models.evaluate.EvaluateDao;
+import com.luwei.models.membershipcard.order.MembershipCardOrder;
 import com.luwei.models.order.Order;
 import com.luwei.models.order.detail.OrderDetail;
 import com.luwei.models.user.User;
@@ -22,6 +24,7 @@ import com.luwei.services.evaluate.web.EvaluateDTO;
 import com.luwei.services.evaluate.web.EvaluateWebListVO;
 import com.luwei.services.evaluate.web.EvaluateWebVO;
 import com.luwei.services.goods.GoodsService;
+import com.luwei.services.membershipCard.order.MembershipCardOrderService;
 import com.luwei.services.order.OrderService;
 import com.luwei.services.order.detail.OrderDetailService;
 import com.luwei.services.user.UserService;
@@ -40,10 +43,7 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -75,6 +75,8 @@ public class EvaluateService {
 
     @Resource
     private ActivityOrderService activityOrderService;
+    @Resource
+    private MembershipCardOrderService membershipCardOrderService;
 
     /**
      * 获取活动或商品或门店的评价
@@ -145,15 +147,21 @@ public class EvaluateService {
                 activityOrderService.save(activityOrder);
             }
         } else if (EvaluateType.SHOP.equals(dto.getEvaluateType())) {
-
-
-            ActivityOrder activityOrder = activityOrderService.findOne(dto.getId());
-            if (!ActivityOrderStatus.JOIN.equals(activityOrder.getStatus())) {
-                throw new ValidateException(ExceptionMessage.ACTIVITY_ORDER_STATUS_FAIL);
-            } else {
-                evaluate.setTripartiteId(dto.getTripartiteId());
-                activityOrder.setStatus(ActivityOrderStatus.COMPLETE);
-                activityOrderService.save(activityOrder);
+            MembershipCardOrder membershipCardOrder = membershipCardOrderService.findAllById(dto.getId());
+            if (membershipCardOrder == null) {
+                throw new ValidateException(ExceptionMessage.ORDER_NOT_EXIST);
+            }
+            MembershipCardOrderStatus status = membershipCardOrder.getStatus();
+            if (status == null || !status.equals(MembershipCardOrderStatus.PAY)) {
+                throw new ValidateException(ExceptionMessage.ORDER_STATUS_FAIL);
+            }
+            Integer effective = membershipCardOrder.getEffective();
+            effective = effective == null?0:effective;
+            Date payTime = membershipCardOrder.getPayTime();
+            long time = payTime.getTime()+(effective*3600*1000);
+            long currentTime = System.currentTimeMillis();
+            if (currentTime > time) {
+                throw new ValidateException(ExceptionMessage.MEMBERSHIP_STATUS_EXPIRED);
             }
         }
         BeanUtils.copyProperties(dto, evaluate);

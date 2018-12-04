@@ -32,4 +32,15 @@ public class CourseDetailVo {
     @ApiModelProperty("是否可报名：1：可以报名，2：不可报名")
     private Integer isSignUp;
 
+    public CourseDetailVo() {
+    }
+
+    public CourseDetailVo(Integer courseId, String title, String startTime, String endTime, String startDate, Integer isSignUp) {
+        this.courseId = courseId;
+        this.title = title;
+        this.startTime = startTime;
+        this.endTime = endTime;
+        this.startDate = startDate;
+        this.isSignUp = isSignUp;
+    }
 }

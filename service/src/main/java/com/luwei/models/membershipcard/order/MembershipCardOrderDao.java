@@ -17,4 +17,6 @@ public interface MembershipCardOrderDao extends JpaRepository<MembershipCardOrde
     List<MembershipCardOrder> findMembershipCardOrdersByUserId(Integer userId);
 
     List<MembershipCardOrder> findMembershipCardOrdersByOutTradeNo(String outTradeNo);
+
+    MembershipCardOrder findMembershipCardOrdersByMembershipCardOrderId(Integer id);
 }

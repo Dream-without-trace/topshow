@@ -73,4 +73,8 @@ public class MembershipCardOrderService {
     public void saveAll(List<MembershipCardOrder> membershipCardOrderList) {
         membershipCardOrderDao.saveAll(membershipCardOrderList);
     }
+
+    public MembershipCardOrder findAllById(Integer id) {
+        return membershipCardOrderDao.findMembershipCardOrdersByMembershipCardOrderId(id);
+    }
 }

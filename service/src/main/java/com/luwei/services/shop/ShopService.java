@@ -3,10 +3,14 @@ package com.luwei.services.shop;
 import com.google.common.base.Joiner;
 import com.luwei.models.course.Course;
 import com.luwei.models.course.CourseDao;
+import com.luwei.models.courseEnrolment.CourseEnrolment;
+import com.luwei.models.courseEnrolment.CourseEnrolmentDao;
 import com.luwei.models.membershipcard.MembershipCard;
 import com.luwei.models.membershipcard.MembershipCardDao;
 import com.luwei.models.shop.Shop;
 import com.luwei.models.shop.ShopDao;
+import com.luwei.models.user.User;
+import com.luwei.models.user.UserDao;
 import com.luwei.services.course.web.CourseDetailVo;
 import com.luwei.services.membershipCard.web.MembershipCardDetailVo;
 import com.luwei.services.shop.cms.ShopAddDTO;
@@ -42,6 +46,10 @@ public class ShopService {
     private MembershipCardDao membershipCardDao;
     @Resource
     private CourseDao courseDao;
+    @Resource
+    private CourseEnrolmentDao courseEnrolmentDao;
+    @Resource
+    private UserDao userDao;
 
     public void save(@Valid ShopAddDTO dto) {
         Shop shop = new Shop();
@@ -55,6 +63,8 @@ public class ShopService {
 
 
     public ShopDetailVO shopWebDetail(Integer shopId, Integer userId) {
+        User user = userDao.findById(userId).orElse(null);
+        Assert.notNull(user, "用户不存在");
         Shop shop = this.findOne(shopId);
         ShopDetailVO shopDetailVO = new ShopDetailVO();
         shopDetailVO.setTitle(shop.getTitle());
@@ -67,19 +77,21 @@ public class ShopService {
         if (courses != null && courses.size() > 0) {
             for (Course course:courses) {
                 if (course != null) {
-                    CourseDetailVo courseDetailVo = new CourseDetailVo();
-                    courseDetailVo.setCourseId(course.getCourseId());
-                    courseDetailVo.setTitle(course.getTitle());
+                    Integer courseId = course.getCourseId();
                     Date startTime = course.getStartTime();
                     SimpleDateFormat formatter1 = new SimpleDateFormat("MM-dd");
                     String dateString = formatter1.format(startTime);
-                    courseDetailVo.setStartDate(dateString);
                     SimpleDateFormat formatter2 = new SimpleDateFormat("HH:mm");
                     String startTimeStr = formatter2.format(startTime);
-                    courseDetailVo.setStartTime(startTimeStr);
                     Date endTime = course.getEndTime();
                     String endTimeStr = formatter2.format(endTime);
-                    courseDetailVo.setEndTime(endTimeStr);
+                    Integer isSignUp = 1;//是否可报名：1：可以报名，2：不可报名
+                    List<CourseEnrolment> list = courseEnrolmentDao.findAllByCourseIdAndUserIdAndShopId(courseId,userId,shopId);
+                    if (list != null && list.size() > 0) {
+                        isSignUp = 2;
+                    }
+                    CourseDetailVo courseDetailVo = new CourseDetailVo(courseId,course.getTitle(),startTimeStr,
+                            endTimeStr,dateString,isSignUp);
                     CourseDetailVos.add(courseDetailVo);
                 }
             }

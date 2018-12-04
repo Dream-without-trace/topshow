@@ -30,7 +30,7 @@ public class EvaluateController {
     private EvaluateService evaluateService;
 
     @PostMapping
-    @ApiOperation("添加评价(商品或活动)")
+    @ApiOperation("添加评价(商品或活动或门店)")
     public Response save(@RequestBody @Valid EvaluateDTO dto) {
         try {
             evaluateService.save(dto);
@@ -41,7 +41,7 @@ public class EvaluateController {
     }
 
     @GetMapping
-    @ApiOperation("获取评价(商品或活动)")
+    @ApiOperation("获取评价(商品或活动或门店)")
     public Page<EvaluateWebListVO> findEvaluate(@PageableDefault Pageable pageable,
                                                 @RequestParam Integer id,
                                                 @RequestParam EvaluateType type) {

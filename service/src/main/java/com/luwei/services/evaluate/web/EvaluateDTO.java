@@ -15,7 +15,7 @@ import java.util.List;
 @ApiModel
 public class EvaluateDTO {
 
-    @ApiModelProperty("活动或商品的订单id")
+    @ApiModelProperty("活动或商品或会员卡的订单id")
     private Integer id;
 
     @ApiModelProperty("用户id")
@@ -27,7 +27,7 @@ public class EvaluateDTO {
     @ApiModelProperty("图片数组")
     private List<String> picture;
 
-    @ApiModelProperty("活动或商品id")
+    @ApiModelProperty("活动或商品或门店id")
     private Integer tripartiteId;
 
     @ApiModelProperty("评价类型")
