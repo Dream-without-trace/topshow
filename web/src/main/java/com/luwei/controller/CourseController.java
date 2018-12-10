@@ -2,11 +2,16 @@ package com.luwei.controller;
 
 import com.aliyuncs.exceptions.ClientException;
 import com.luwei.common.Response;
+import com.luwei.services.activity.web.ActivityWebListVO;
 import com.luwei.services.activity.web.HandpickVO;
 import com.luwei.services.course.CourseService;
+import com.luwei.services.course.web.CourseEnrolmentWebListVO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -34,6 +39,12 @@ public class CourseController {
        return Response.success("报名成功！");
     }
 
+    @GetMapping("/enrolmentCourse")
+    @ApiOperation("报名课程列表")
+    public Page<CourseEnrolmentWebListVO> enrolmentCourseList(@RequestParam Integer userId,@RequestParam Integer isInspectTicket,
+                                                    @PageableDefault Pageable pageable) {
+        return courseService.enrolmentCourseList(userId, isInspectTicket,pageable);
+    }
 
 
 }

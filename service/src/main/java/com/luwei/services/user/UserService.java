@@ -308,6 +308,8 @@ public class UserService {
         user.setPhone(dto.getPhone());
         user.setAge(dto.getAge());
         user.setSex(dto.getSex());
+        user.setBabySex(dto.getBabySex());
+        user.setBabyName(dto.getBabyName());
         user.setMicroBlog(dto.getMicroBlog());
         userDao.save(user);
     }

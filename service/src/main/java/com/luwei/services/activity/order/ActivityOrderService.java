@@ -321,4 +321,8 @@ public class ActivityOrderService {
         }
         return countNum;
     }
+
+    public List<ActivityOrder> findAllByActivityIdAndUserIdAndStatus(Integer activityId, Integer userId, ActivityOrderStatus activityOrderStatus) {
+        return activityOrderDao.findAllByActivityIdAndUserIdAndStatusAndDeletedIsFalse(activityId,userId,activityOrderStatus);
+    }
 }

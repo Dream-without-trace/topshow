@@ -2,128 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="46f142e8-20e1-4d21-85f6-34abcd5fba64" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_fastjson_1_2_54.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cms/src/main/java/com/luwei/controllers/CheckInController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/common/utils/DateTimeUtis.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/common/utils/ImageUtisl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/common/utils/OperateDemo.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/models/activity/order/subcard/ActivitySubCardOrder.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/models/activity/order/subcard/ActivitySubCardOrderDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/models/activity/subcard/ActivitySubCard.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/models/activity/subcard/ActivitySubCardDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/models/integralset/IntegralSet.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/models/integralset/IntegralSetDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/activity/order/web/ActivitySubCardAddDTO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/area/cms/AreaDTO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/area/cms/AreaPageVo.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/course/cms/CourseDTO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/course/cms/CoursePageVo.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/shop/cms/ShopPageVo.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/shop/web/ShopListVo.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/user/cms/UserInfoVo.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/java/com/luwei/controller/CourseController.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/web.log-2018-11-29-0.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/course/cms/CourseAddDTO.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/target/classes/com/luwei/controllers/AreaController.class" afterPath="$PROJECT_DIR$/cms/target/classes/com/luwei/controllers/AreaController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/target/cms-1.0.jar.original" afterPath="$PROJECT_DIR$/cms/target/cms-1.0.jar.original" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/target/classes/com/luwei/common/enums/type/EvaluateType.class" afterPath="$PROJECT_DIR$/service/target/classes/com/luwei/common/enums/type/EvaluateType.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/target/classes/com/luwei/common/enums/type/TransactionType.class" afterPath="$PROJECT_DIR$/service/target/classes/com/luwei/common/enums/type/TransactionType.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/target/classes/com/luwei/common/exception/ExceptionMessage.class" afterPath="$PROJECT_DIR$/service/target/classes/com/luwei/common/exception/ExceptionMessage.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/target/classes/com/luwei/models/activity/Activity.class" afterPath="$PROJECT_DIR$/service/target/classes/com/luwei/models/activity/Activity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/target/classes/com/luwei/models/activity/order/ActivityOrder.class" afterPath="$PROJECT_DIR$/service/target/classes/com/luwei/models/activity/order/ActivityOrder.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/target/classes/com/luwei/models/activity/order/ActivityOrderDao.class" afterPath="$PROJECT_DIR$/service/target/classes/com/luwei/models/activity/order/ActivityOrderDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/target/classes/com/luwei/models/area/Area.class" afterPath="$PROJECT_DIR$/service/target/classes/com/luwei/models/area/Area.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/target/classes/com/luwei/models/area/AreaDao.class" afterPath="$PROJECT_DIR$/service/target/classes/com/luwei/models/area/AreaDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/target/classes/com/luwei/models/evaluate/Evaluate.class" afterPath="$PROJECT_DIR$/service/target/classes/com/luwei/models/evaluate/Evaluate.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/target/classes/com/luwei/models/user/User.class" afterPath="$PROJECT_DIR$/service/target/classes/com/luwei/models/user/User.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/target/classes/com/luwei/models/user/UserDao.class" afterPath="$PROJECT_DIR$/service/target/classes/com/luwei/models/user/UserDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/target/classes/com/luwei/module/alisms/AliSmsService.class" afterPath="$PROJECT_DIR$/service/target/classes/com/luwei/module/alisms/AliSmsService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/target/classes/com/luwei/module/qiniu/QiNiuService.class" afterPath="$PROJECT_DIR$/service/target/classes/com/luwei/module/qiniu/QiNiuService.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/course/web/CourseEnrolmentWebListVO.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cms/target/cms-1.0.jar" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/target/classes/com/luwei/controllers/EvaluateController.class" afterPath="$PROJECT_DIR$/cms/target/classes/com/luwei/controllers/EvaluateController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/target/classes/com/luwei/models/evaluate/EvaluateDao.class" afterPath="$PROJECT_DIR$/service/target/classes/com/luwei/models/evaluate/EvaluateDao.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/target/classes/com/luwei/services/activity/ActivityService.class" afterPath="$PROJECT_DIR$/service/target/classes/com/luwei/services/activity/ActivityService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/target/classes/com/luwei/services/activity/order/ActivityOrderService.class" afterPath="$PROJECT_DIR$/service/target/classes/com/luwei/services/activity/order/ActivityOrderService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/target/classes/com/luwei/services/activity/web/ActivityDetailVO.class" afterPath="$PROJECT_DIR$/service/target/classes/com/luwei/services/activity/web/ActivityDetailVO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/target/classes/com/luwei/services/activity/web/HandpickVO.class" afterPath="$PROJECT_DIR$/service/target/classes/com/luwei/services/activity/web/HandpickVO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/target/classes/com/luwei/services/area/AreaService.class" afterPath="$PROJECT_DIR$/service/target/classes/com/luwei/services/area/AreaService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/target/classes/com/luwei/services/evaluate/EvaluateService.class" afterPath="$PROJECT_DIR$/service/target/classes/com/luwei/services/evaluate/EvaluateService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/target/classes/com/luwei/services/evaluate/web/EvaluateDTO.class" afterPath="$PROJECT_DIR$/service/target/classes/com/luwei/services/evaluate/web/EvaluateDTO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/target/classes/com/luwei/services/pay/PayService.class" afterPath="$PROJECT_DIR$/service/target/classes/com/luwei/services/pay/PayService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/target/classes/com/luwei/services/user/UserService.class" afterPath="$PROJECT_DIR$/service/target/classes/com/luwei/services/user/UserService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/target/classes/com/luwei/services/weixin/WxService.class" afterPath="$PROJECT_DIR$/service/target/classes/com/luwei/services/weixin/WxService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/target/classes/com/luwei/services/weixin/pojos/PhoneNumDTO.class" afterPath="$PROJECT_DIR$/service/target/classes/com/luwei/services/weixin/pojos/PhoneNumDTO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/target/service-1.0.jar" afterPath="$PROJECT_DIR$/service/target/service-1.0.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/target/classes/com/luwei/controller/ActivityController.class" afterPath="$PROJECT_DIR$/web/target/classes/com/luwei/controller/ActivityController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/target/classes/com/luwei/controller/EvaluateController.class" afterPath="$PROJECT_DIR$/web/target/classes/com/luwei/controller/EvaluateController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/target/classes/com/luwei/controller/UserController.class" afterPath="$PROJECT_DIR$/web/target/classes/com/luwei/controller/UserController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/target/web-1.0.jar.original" afterPath="$PROJECT_DIR$/web/target/web-1.0.jar.original" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/cms.iml" afterPath="$PROJECT_DIR$/cms/cms.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/logs/cms.log" afterPath="$PROJECT_DIR$/cms/logs/cms.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/src/main/java/com/luwei/controllers/AreaController.java" afterPath="$PROJECT_DIR$/cms/src/main/java/com/luwei/controllers/AreaController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/src/main/java/com/luwei/controllers/CourseController.java" afterPath="$PROJECT_DIR$/cms/src/main/java/com/luwei/controllers/CourseController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/src/main/java/com/luwei/controllers/EvaluateController.java" afterPath="$PROJECT_DIR$/cms/src/main/java/com/luwei/controllers/EvaluateController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/src/main/java/com/luwei/controllers/ShopController.java" afterPath="$PROJECT_DIR$/cms/src/main/java/com/luwei/controllers/ShopController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/cms/src/main/resources/application.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/target/classes/application.properties" afterPath="$PROJECT_DIR$/cms/target/classes/application.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/cms/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterPath="$PROJECT_DIR$/cms/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/target/surefire-reports/TEST-com.luwei.test.AllTest.xml" afterPath="$PROJECT_DIR$/cms/target/surefire-reports/TEST-com.luwei.test.AllTest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/target/surefire-reports/com.luwei.test.AllTest.txt" afterPath="$PROJECT_DIR$/cms/target/surefire-reports/com.luwei.test.AllTest.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logs/cms.log" afterPath="$PROJECT_DIR$/logs/cms.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logs/web.log" afterPath="$PROJECT_DIR$/logs/web.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/pom.xml" afterPath="$PROJECT_DIR$/service/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/service.iml" afterPath="$PROJECT_DIR$/service/service.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/main/java/com/luwei/common/enums/status/MembershipCardOrderStatus.java" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/common/enums/status/MembershipCardOrderStatus.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/main/java/com/luwei/common/enums/type/EvaluateType.java" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/common/enums/type/EvaluateType.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/main/java/com/luwei/models/activity/Activity.java" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/models/activity/Activity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/main/java/com/luwei/models/activity/order/ActivityOrder.java" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/models/activity/order/ActivityOrder.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/main/java/com/luwei/models/activity/order/ActivityOrderDao.java" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/models/activity/order/ActivityOrderDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/main/java/com/luwei/models/area/Area.java" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/models/area/Area.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/main/java/com/luwei/models/area/AreaDao.java" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/models/area/AreaDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/main/java/com/luwei/models/checkIn/CheckIn.java" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/models/checkIn/CheckIn.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/main/java/com/luwei/models/checkIn/CheckInDao.java" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/models/checkIn/CheckInDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/main/java/com/luwei/models/course/Course.java" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/models/course/Course.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/main/java/com/luwei/models/course/CourseDao.java" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/models/course/CourseDao.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/main/java/com/luwei/models/courseEnrolment/CourseEnrolment.java" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/models/courseEnrolment/CourseEnrolment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/main/java/com/luwei/models/courseEnrolment/CourseEnrolmentDao.java" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/models/courseEnrolment/CourseEnrolmentDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/main/java/com/luwei/models/evaluate/EvaluateDao.java" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/models/evaluate/EvaluateDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/main/java/com/luwei/models/membershipcard/MembershipCard.java" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/models/membershipcard/MembershipCard.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/main/java/com/luwei/models/membershipcard/order/MembershipCardOrder.java" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/models/membershipcard/order/MembershipCardOrder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/main/java/com/luwei/models/membershipcard/order/MembershipCardOrderDao.java" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/models/membershipcard/order/MembershipCardOrderDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/main/java/com/luwei/models/shop/ShopDao.java" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/models/shop/ShopDao.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/main/java/com/luwei/models/user/User.java" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/models/user/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/main/java/com/luwei/models/user/UserDao.java" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/models/user/UserDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/main/java/com/luwei/module/alisms/AliSmsService.java" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/module/alisms/AliSmsService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/main/java/com/luwei/module/qiniu/QiNiuService.java" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/module/qiniu/QiNiuService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/activity/ActivityService.java" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/activity/ActivityService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/activity/order/ActivityOrderService.java" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/activity/order/ActivityOrderService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/activity/web/ActivityDetailVO.java" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/activity/web/ActivityDetailVO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/activity/web/HandpickVO.java" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/activity/web/HandpickVO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/area/AreaService.java" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/area/AreaService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/checkIn/CheckInService.java" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/checkIn/CheckInService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/checkIn/web/CheckInVo.java" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/checkIn/web/CheckInVo.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/course/CourseService.java" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/course/CourseService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/evaluate/EvaluateService.java" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/evaluate/EvaluateService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/evaluate/web/EvaluateDTO.java" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/evaluate/web/EvaluateDTO.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/membershipCard/order/MembershipCardOrderService.java" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/membershipCard/order/MembershipCardOrderService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/pay/PayService.java" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/pay/PayService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/shop/ShopService.java" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/shop/ShopService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/shop/web/ShopDetailVO.java" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/shop/web/ShopDetailVO.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/user/UserService.java" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/user/UserService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/weixin/WxService.java" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/weixin/WxService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/weixin/pojos/PhoneNumDTO.java" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/weixin/pojos/PhoneNumDTO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/main/resources/application.yaml" afterPath="$PROJECT_DIR$/service/src/main/resources/application.yaml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/target/classes/application.yaml" afterPath="$PROJECT_DIR$/service/target/classes/application.yaml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/user/web/UserInfoAddDTO.java" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/user/web/UserInfoAddDTO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/user/web/UserInfoVO.java" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/user/web/UserInfoVO.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/logs/web.log" afterPath="$PROJECT_DIR$/web/logs/web.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/java/com/luwei/controller/ActivityController.java" afterPath="$PROJECT_DIR$/web/src/main/java/com/luwei/controller/ActivityController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/java/com/luwei/controller/CheckInController.java" afterPath="$PROJECT_DIR$/web/src/main/java/com/luwei/controller/CheckInController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/java/com/luwei/controller/UserController.java" afterPath="$PROJECT_DIR$/web/src/main/java/com/luwei/controller/UserController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/web/src/main/resources/application.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/target/classes/application.properties" afterPath="$PROJECT_DIR$/web/target/classes/application.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/web/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterPath="$PROJECT_DIR$/web/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/target/surefire-reports/AllTest.txt" afterPath="$PROJECT_DIR$/web/target/surefire-reports/AllTest.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/target/surefire-reports/TEST-AllTest.xml" afterPath="$PROJECT_DIR$/web/target/surefire-reports/TEST-AllTest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/web.iml" afterPath="$PROJECT_DIR$/web/web.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/java/com/luwei/controller/CourseController.java" afterPath="$PROJECT_DIR$/web/src/main/java/com/luwei/controller/CourseController.java" />
     </list>
     <ignored path="$PROJECT_DIR$/web/target/" />
     <ignored path="$PROJECT_DIR$/cms/target/" />
@@ -256,18 +156,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/common/utils/OperateDemo.java" />
-        <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/common/utils/ImageUtisl.java" />
-        <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/module/qiniu/QiNiuService.java" />
-        <option value="$PROJECT_DIR$/web/src/main/java/com/luwei/controller/UserController.java" />
-        <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/models/user/User.java" />
-        <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/models/integralset/IntegralSet.java" />
         <option value="$PROJECT_DIR$/service/src/main/resources/application.yaml" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/services/weixin/WxService.java" />
         <option value="$PROJECT_DIR$/cms/src/main/java/com/luwei/controllers/CheckInController.java" />
         <option value="$PROJECT_DIR$/web/src/main/java/com/luwei/controller/CheckInController.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/services/checkIn/CheckInService.java" />
-        <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/services/user/UserService.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/models/membershipcard/MembershipCard.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/models/activity/series/ActivitySeries.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/models/activity/subcard/ActivitySubCard.java" />
@@ -276,15 +169,11 @@
         <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/models/activity/order/subcard/ActivitySubCardOrder.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/models/activity/order/subcard/ActivitySubCardOrderDao.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/models/membershipcard/order/MembershipCardOrderDao.java" />
-        <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/services/activity/order/ActivityOrderService.java" />
         <option value="$PROJECT_DIR$/web/src/main/java/com/luwei/controller/ActivityController.java" />
         <option value="$PROJECT_DIR$/web/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/models/membershipcard/order/MembershipCardOrder.java" />
-        <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/models/activity/order/ActivityOrderDao.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/models/activity/order/ActivityOrder.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/services/pay/PayService.java" />
-        <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/services/activity/ActivityService.java" />
-        <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/services/membershipCard/order/MembershipCardOrderService.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/services/area/cms/AreaEditDTO.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/services/area/cms/AreaAddDTO.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/models/area/Area.java" />
@@ -293,7 +182,6 @@
         <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/services/course/cms/CourseAddDTO.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/services/course/cms/CourseDTO.java" />
         <option value="$PROJECT_DIR$/cms/src/main/java/com/luwei/controllers/CourseController.java" />
-        <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/services/course/CourseService.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/models/course/CourseDao.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/services/area/cms/AreaDTO.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/services/area/cms/AreaPageVo.java" />
@@ -302,11 +190,23 @@
         <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/services/shop/cms/ShopPageVO.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/services/shop/cms/ShopPageVo.java" />
         <option value="$PROJECT_DIR$/cms/src/main/java/com/luwei/controllers/ShopController.java" />
-        <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/services/shop/ShopService.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/models/shop/ShopDao.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/models/evaluate/EvaluateDao.java" />
         <option value="$PROJECT_DIR$/cms/src/main/java/com/luwei/controllers/EvaluateController.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/services/evaluate/EvaluateService.java" />
+        <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/services/membershipCard/order/MembershipCardOrderService.java" />
+        <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/models/courseEnrolment/CourseEnrolment.java" />
+        <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/services/course/web/CourseEnrolmentWebListVO.java" />
+        <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/services/shop/ShopService.java" />
+        <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/services/course/CourseService.java" />
+        <option value="$PROJECT_DIR$/web/src/main/java/com/luwei/controller/CourseController.java" />
+        <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/services/user/web/UserInfoVO.java" />
+        <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/models/user/User.java" />
+        <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/services/user/web/UserInfoAddDTO.java" />
+        <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/services/user/UserService.java" />
+        <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/services/activity/order/ActivityOrderService.java" />
+        <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/models/activity/order/ActivityOrderDao.java" />
+        <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/services/activity/ActivityService.java" />
       </list>
     </option>
   </component>
@@ -466,9 +366,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -481,594 +379,10 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="topshow" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="topshow" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="topshow" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="topshow" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="topshow" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="topshow" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="topshow" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="topshow" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="luwei" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="topshow" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="topshow" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="luwei" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controller" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="topshow" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="topshow" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="service" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="topshow" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="topshow" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="service" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="topshow" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="topshow" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="service" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="topshow" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="topshow" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="service" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="luwei" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="topshow" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="topshow" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="service" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="luwei" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="services" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="topshow" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="topshow" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="service" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="luwei" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="services" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="shop" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="topshow" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="topshow" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="service" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="luwei" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="services" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="shop" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="topshow" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="topshow" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="service" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="luwei" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="services" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="area" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="topshow" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="topshow" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="service" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="luwei" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="services" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="area" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="topshow" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="topshow" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="service" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="luwei" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="topshow" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="topshow" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="service" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="luwei" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="course" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="topshow" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="topshow" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="topshow" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="topshow" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="topshow" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="topshow" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="topshow" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="topshow" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="luwei" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="topshow" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="topshow" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="luwei" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1109,7 +423,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.CmsApplication">
+  <component name="RunManager" selected="Spring Boot.WebApplication">
     <configuration default="false" name="DateTimeUtis" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -1616,7 +930,10 @@
       <workItem from="1544080134231" duration="604000" />
       <workItem from="1544081587119" duration="1412000" />
       <workItem from="1544084704864" duration="22252000" />
-      <workItem from="1544159975342" duration="142093000" />
+      <workItem from="1544159975342" duration="142728000" />
+      <workItem from="1544408158200" duration="627000" />
+      <workItem from="1544420137234" duration="628000" />
+      <workItem from="1544449951741" duration="8823000" />
     </task>
     <task id="LOCAL-00001" summary="swagger">
       <created>1533051902954</created>
@@ -1688,11 +1005,18 @@
       <option name="project" value="LOCAL" />
       <updated>1543939579316</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="大调改">
+      <created>1544406645438</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1544406645439</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="266356000" />
+    <option name="totallyTimeSpent" value="277069000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1727,8 +1051,8 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289183" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21192053" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289183" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.406181" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2196162" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.406181" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2238806" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1768,7 +1092,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21192053" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289183" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.406181" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2196162" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2238806" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1811,7 +1135,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="swagger" />
     <MESSAGE value="课程预约" />
-    <option name="LAST_COMMIT_MESSAGE" value="课程预约" />
+    <MESSAGE value="大调改" />
+    <option name="LAST_COMMIT_MESSAGE" value="大调改" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1841,15 +1166,9 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/service/src/main/java/com/luwei/services/user/UserService.java</url>
-          <line>325</line>
+          <line>327</line>
           <properties />
           <option name="timeStamp" value="39" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/service/src/main/java/com/luwei/services/activity/ActivityService.java</url>
-          <line>811</line>
-          <properties />
-          <option name="timeStamp" value="47" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/service/src/main/java/com/luwei/services/activity/ActivityService.java</url>
@@ -1879,221 +1198,10 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/luwei/controller/CourseController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
-          <caret line="32" column="27" lean-forward="false" selection-start-line="32" selection-start-column="27" selection-end-line="32" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/luwei/controller/MembershipCardOrderController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="38" column="76" lean-forward="true" selection-start-line="38" selection-start-column="76" selection-end-line="38" selection-end-column="76" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/services/membershipCard/order/MembershipCardOrderService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="44" column="50" lean-forward="true" selection-start-line="44" selection-start-column="50" selection-end-line="44" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/luwei/controller/ActivityController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="143" column="40" lean-forward="true" selection-start-line="143" selection-start-column="40" selection-end-line="143" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/services/area/cms/CityVO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/services/area/cms/AreaEditDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/services/activity/cms/ActivityAddDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="41" column="5" lean-forward="true" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/models/activity/Activity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="18" column="35" lean-forward="false" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/common/utils/IdEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="381">
-          <caret line="22" column="38" lean-forward="true" selection-start-line="21" selection-start-column="4" selection-end-line="22" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/models/activity/ActivityDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="24" column="40" lean-forward="true" selection-start-line="24" selection-start-column="40" selection-end-line="24" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/models/course/Course.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="19" column="3" lean-forward="true" selection-start-line="19" selection-start-column="3" selection-end-line="44" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/services/course/cms/CoursePageVo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/services/course/cms/CourseDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="618">
-          <caret line="30" column="28" lean-forward="true" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/models/course/CourseDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="21" column="40" lean-forward="true" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/services/course/CourseService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="53" column="18" lean-forward="false" selection-start-line="53" selection-start-column="18" selection-end-line="53" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cms/src/main/java/com/luwei/controllers/CourseController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="32" column="40" lean-forward="true" selection-start-line="32" selection-start-column="40" selection-end-line="32" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/models/shop/Shop.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="17" column="4" lean-forward="true" selection-start-line="17" selection-start-column="4" selection-end-line="34" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/services/area/cms/ProvinceVO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/luwei/controller/AreaController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="34" column="30" lean-forward="true" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/models/area/Area.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/services/area/cms/AreaDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="40" column="34" lean-forward="true" selection-start-line="40" selection-start-column="34" selection-end-line="40" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/services/shop/cms/ShopAddDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="439">
-          <caret line="26" column="27" lean-forward="true" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/services/area/cms/AreaPageVo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="15" column="4" lean-forward="true" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/services/shop/cms/ShopPageVo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cms/src/main/java/com/luwei/controllers/AreaController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="607">
           <caret line="72" column="22" lean-forward="true" selection-start-line="72" selection-start-column="22" selection-end-line="72" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2101,7 +1209,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="528">
           <caret line="27" column="40" lean-forward="true" selection-start-line="25" selection-start-column="4" selection-end-line="27" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2109,32 +1216,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="456">
           <caret line="24" column="1" lean-forward="true" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/services/shop/ShopService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="58" column="48" lean-forward="true" selection-start-line="58" selection-start-column="48" selection-end-line="58" selection-end-column="48" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cms/src/main/java/com/luwei/controllers/ShopController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="463">
-          <caret line="49" column="15" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
-          <folding>
-            <element signature="e#1048#1049#0" expanded="false" />
-            <element signature="e#1085#1086#0" expanded="false" />
-            <element signature="e#1436#1437#0" expanded="false" />
-            <element signature="e#1473#1474#0" expanded="false" />
-            <element signature="e#1592#1593#0" expanded="false" />
-            <element signature="e#1631#1632#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2142,15 +1223,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="10" column="4" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cms/src/main/java/com/luwei/controllers/ActivityController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="26" column="29" lean-forward="false" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2162,21 +1234,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/services/activity/ActivityService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="149" column="0" lean-forward="false" selection-start-line="149" selection-start-column="0" selection-end-line="149" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/services/evaluate/cms/EvaluateCmsVO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="416">
           <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2184,7 +1245,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="282">
           <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2192,7 +1252,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="17" column="70" lean-forward="false" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="70" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2200,7 +1259,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="751">
           <caret line="47" column="33" lean-forward="true" selection-start-line="47" selection-start-column="33" selection-end-line="47" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2208,7 +1266,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="12" column="17" lean-forward="false" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2216,7 +1273,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="799">
           <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2224,7 +1280,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
           <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2232,7 +1287,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2240,15 +1294,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="24">
           <caret line="33" column="16" lean-forward="true" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cms/src/main/java/com/luwei/controllers/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="55">
-          <caret line="16" column="3" lean-forward="true" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2256,7 +1301,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="389">
           <caret line="58" column="24" lean-forward="false" selection-start-line="58" selection-start-column="19" selection-end-line="58" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2264,10 +1308,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="415">
           <caret line="62" column="20" lean-forward="true" selection-start-line="62" selection-start-column="20" selection-end-line="62" selection-end-column="20" />
-          <folding>
-            <element signature="e#3187#3188#0" expanded="false" />
-            <element signature="e#3246#3247#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2275,7 +1315,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
           <caret line="27" column="30" lean-forward="true" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2283,7 +1322,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="624">
           <caret line="48" column="26" lean-forward="false" selection-start-line="48" selection-start-column="26" selection-end-line="48" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2291,7 +1329,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="6" column="12" lean-forward="false" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2299,7 +1336,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="487">
           <caret line="32" column="5" lean-forward="true" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2307,7 +1343,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
           <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2315,6 +1350,244 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="56" column="0" lean-forward="true" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/services/shop/cms/ShopPageVo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cms/src/main/java/com/luwei/controllers/ShopController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="38" column="46" lean-forward="false" selection-start-line="38" selection-start-column="46" selection-end-line="38" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/services/shop/cms/ShopAddDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="30" column="27" lean-forward="false" selection-start-line="30" selection-start-column="27" selection-end-line="30" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/luwei/controller/MembershipCardOrderController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="38" column="77" lean-forward="true" selection-start-line="38" selection-start-column="77" selection-end-line="38" selection-end-column="77" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/services/membershipCard/order/MembershipCardOrderService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="78" column="50" lean-forward="true" selection-start-line="78" selection-start-column="50" selection-end-line="78" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/models/membershipcard/order/MembershipCardOrder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/models/activity/Activity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="439">
+          <caret line="57" column="40" lean-forward="false" selection-start-line="57" selection-start-column="32" selection-end-line="57" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/services/activity/web/ActivityWebListVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="344">
+          <caret line="23" column="27" lean-forward="true" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/models/course/Course.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="41" column="4" lean-forward="false" selection-start-line="41" selection-start-column="4" selection-end-line="41" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/models/activity/ActivityDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="39" column="19" lean-forward="false" selection-start-line="39" selection-start-column="19" selection-end-line="39" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cms/src/main/java/com/luwei/controllers/ActivityController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="727">
+          <caret line="61" column="33" lean-forward="true" selection-start-line="61" selection-start-column="33" selection-end-line="61" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/5.0.10.RELEASE/spring-core-5.0.10.RELEASE.jar!/org/springframework/util/StringUtils.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="35" column="26" lean-forward="false" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="26" />
+          <folding>
+            <element signature="e#1051#1052#0" expanded="true" />
+            <element signature="e#1103#1104#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/models/courseEnrolment/CourseEnrolment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/services/shop/ShopService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="200" column="22" lean-forward="false" selection-start-line="200" selection-start-column="22" selection-end-line="200" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/services/course/web/CourseEnrolmentWebListVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/services/course/CourseService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="511">
+          <caret line="208" column="66" lean-forward="true" selection-start-line="208" selection-start-column="66" selection-end-line="208" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cms/src/main/java/com/luwei/controllers/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="727">
+          <caret line="56" column="5" lean-forward="true" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/models/user/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="655">
+          <caret line="69" column="28" lean-forward="true" selection-start-line="69" selection-start-column="28" selection-end-line="69" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/services/user/web/UserInfoAddDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="751">
+          <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/services/user/web/UserInfoVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="474">
+          <caret line="24" column="27" lean-forward="true" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/services/user/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="294" column="17" lean-forward="true" selection-start-line="294" selection-start-column="17" selection-end-line="294" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/luwei/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="511">
+          <caret line="86" column="32" lean-forward="false" selection-start-line="86" selection-start-column="32" selection-end-line="86" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/luwei/controller/ActivityController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="679">
+          <caret line="143" column="41" lean-forward="false" selection-start-line="143" selection-start-column="41" selection-end-line="143" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/models/activity/order/ActivityOrder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="679">
+          <caret line="59" column="31" lean-forward="false" selection-start-line="59" selection-start-column="12" selection-end-line="59" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/models/activity/order/ActivityOrderDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="30" column="74" lean-forward="false" selection-start-line="30" selection-start-column="74" selection-end-line="30" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/services/activity/order/ActivityOrderService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="727">
+          <caret line="325" column="15" lean-forward="false" selection-start-line="325" selection-start-column="15" selection-end-line="325" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/common/utils/DateTimeUtis.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="78" column="22" lean-forward="false" selection-start-line="78" selection-start-column="22" selection-end-line="78" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/services/activity/ActivityService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="771" column="44" lean-forward="false" selection-start-line="771" selection-start-column="44" selection-end-line="771" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/luwei/controller/CourseController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="35" column="25" lean-forward="true" selection-start-line="35" selection-start-column="25" selection-end-line="35" selection-end-column="25" />
           <folding />
         </state>
       </provider>

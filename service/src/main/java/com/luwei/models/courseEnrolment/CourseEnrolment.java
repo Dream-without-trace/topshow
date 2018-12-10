@@ -32,14 +32,18 @@ public class CourseEnrolment {
     @Column(columnDefinition = "timestamp not null default current_timestamp comment '报名时间'")
     private Date createTime;
 
+    @Column(columnDefinition = "smallint(1) not null default 1 comment '是否已验票 ：1，未验票，2，已验票'")
+    private Integer isInspectTicket;
+
 
     public CourseEnrolment() {
     }
 
-    public CourseEnrolment(Integer shopId, Integer courseId, Integer userId, Date createTime) {
+    public CourseEnrolment(Integer shopId, Integer courseId, Integer userId, Date createTime, Integer isInspectTicket) {
         this.shopId = shopId;
         this.courseId = courseId;
         this.userId = userId;
         this.createTime = createTime;
+        this.isInspectTicket = isInspectTicket;
     }
 }

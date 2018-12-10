@@ -37,4 +37,10 @@ public class UserInfoAddDTO {
     @ApiModelProperty("年龄段")
     private AgeType age;
 
+    @ApiModelProperty("宝宝小名")
+    private String babyName;
+
+    @ApiModelProperty("性别")
+    private SexType babySex;
+
 }

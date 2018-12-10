@@ -27,7 +27,8 @@ public interface ActivityOrderDao extends JpaRepository<ActivityOrder, Integer>,
 
     List<ActivityOrder> findAllByActivityIdAndDeletedIsFalse(Integer activityId);
 
-    List<ActivityOrder> findAllByActivityIdAndUserIdAndDeletedIsFalse(Integer activityId, Integer userId);
+    List<ActivityOrder> findAllByActivityIdAndUserIdAndStatusAndDeletedIsFalse
+            (Integer activityId, Integer userId,ActivityOrderStatus status);
 
     List<ActivityOrder> findAllByUserIdAndAreaIdAndDeletedIsFalse(Integer userId,Integer areaId);
 }

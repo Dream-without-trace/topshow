@@ -74,8 +74,9 @@ public class MembershipCardOrderService {
                     continue;
                 }
                 if (title.equals("体验会员")) {
-                    List<CourseEnrolment> courseEnrolments = courseEnrolmentDao.findAllByUserId(userId);
-                        Assert.isTrue((courseEnrolments != null && courseEnrolments.size() > 0), "您办理的会员卡还未过期！");
+                    /*List<CourseEnrolment> courseEnrolments = courseEnrolmentDao.findAllByUserId(userId);
+                        Assert.isTrue((courseEnrolments != null && courseEnrolments.size() > 0),
+                                "您办理的会员卡还未过期！");*/
                 }else{
                     Integer effective = membershipCardOrder.getEffective();
                     long time = membershipCardOrder.getPayTime().getTime()+effective*24*3600*1000;
@@ -85,8 +86,8 @@ public class MembershipCardOrderService {
             }
         }
         int price = membershipCard.getPrice() == null?0:membershipCard.getPrice();
-        MembershipCardOrder membershipCardOrder = new MembershipCardOrder(dto.getShopId(),membershipCard.getAreaId(),dto.getUserId(),
-                membershipCardId,price,outTradeNo,membershipCard.getEffective(),membershipCard.getTitle(),
+        MembershipCardOrder membershipCardOrder = new MembershipCardOrder(dto.getShopId(),membershipCard.getAreaId(),
+                dto.getUserId(),membershipCardId,price,outTradeNo,membershipCard.getEffective(),membershipCard.getTitle(),
                 membershipCard.getPicture(),membershipCard.getDetail(),membershipCard.getMemberBenefits(),
                 null,MembershipCardOrderStatus.CREATE);
         membershipCardOrderDao.save(membershipCardOrder);

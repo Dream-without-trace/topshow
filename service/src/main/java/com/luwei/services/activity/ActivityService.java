@@ -716,7 +716,7 @@ public class ActivityService {
         Integer frequency = activitySubCard.getFrequency();
         Assert.isTrue((frequency != null && frequency >0 ), "活动次卡不存在！");
         activitySubCardOrderDao.deleteAllByUserIdAndActivityIdAndStatus(userId,activityId,1);
-        List<ActivitySubCardOrder> activitySubCardOrders = activitySubCardOrderDao.
+        /*List<ActivitySubCardOrder> activitySubCardOrders = activitySubCardOrderDao.
                 findAllByUserIdAndActivityIdAndStatusOrderByPayTimeDesc(userId,activityId,2);
         if (activitySubCardOrders != null && activitySubCardOrders.size()>0) {
             for (ActivitySubCardOrder activitySubCardOrder:activitySubCardOrders) {
@@ -729,7 +729,7 @@ public class ActivityService {
                     }
                 }
             }
-        }
+        }*/
         int createTime = (int) (System.currentTimeMillis()/1000);
         ActivitySubCardOrder activitySubCardOrder = new ActivitySubCardOrder(couponId, userId, activityId,
                 activitySubCard.getPrice(),outTradeNo,activitySubCard.getTitle(), activitySubCard.getPicture(),
@@ -764,6 +764,22 @@ public class ActivityService {
         Integer areaId = activity.getAreaId();
         Assert.isTrue((areaId != null && areaId != 0), "活动Id不可用！");
         List<Shop> shops = shopService.findAllByAreaId(areaId);
+        List<ActivityOrder> activityOrderList1 = activityOrderService.findAllByActivityIdAndUserIdAndStatus(activityId,
+                userId,ActivityOrderStatus.PAY);
+        int zeroTimestamp = DateTimeUtis.getZeroTimestamp();
+        if (activityOrderList1 != null && activityOrderList1.size()>0) {
+            for (ActivityOrder activityOrder:activityOrderList1) {
+                if (activityOrder != null) {
+                    Date payTime = activityOrder.getPayTime();
+                    if (payTime != null) {
+                        int paytime = (int)(payTime.getTime()/1000);
+                        Assert.isTrue(paytime < zeroTimestamp,"您今天已报名了该活动！");
+                    }
+                }
+            }
+        }
+
+
         if (shops != null && shops.size() > 0) {//有门店
             List<MembershipCardOrder> membershipCardOrderList = membershipCardOrderService.findAllByUserIdAndStatusAndAreaId(userId, MembershipCardOrderStatus.PAY, areaId);
             Assert.isTrue((membershipCardOrderList != null && membershipCardOrderList.size() > 0), "请先办理会员卡！");
@@ -776,9 +792,9 @@ public class ActivityService {
                     String title = membershipCardOrder.getTitle();
                     if (!StringUtils.isEmpty(title)) {
                         if (title.equals("体验会员")) {
-                            List<CourseEnrolment> courseEnrolments = courseEnrolmentDao.findAllByUserId(userId);
+                            //List<CourseEnrolment> courseEnrolments = courseEnrolmentDao.findAllByUserId(userId);
                             List<ActivityOrder> activityOrderList = activityOrderDao.findAllByUserIdAndAreaIdAndDeletedIsFalse(userId,activity.getAreaId());
-                            if ((courseEnrolments == null || courseEnrolments.size()<1)&&(activityOrderList == null || activityOrderList.size() < 1)) {
+                            if (activityOrderList == null || activityOrderList.size() < 1) {
                                 state = 2;
                             }
                         } else {

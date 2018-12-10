@@ -2,6 +2,7 @@ package com.luwei.services.course;
 
 import com.aliyuncs.exceptions.ClientException;
 import com.luwei.common.enums.status.MembershipCardOrderStatus;
+import com.luwei.models.activity.Activity;
 import com.luwei.models.activity.order.ActivityOrder;
 import com.luwei.models.activity.order.ActivityOrderDao;
 import com.luwei.models.course.Course;
@@ -12,8 +13,10 @@ import com.luwei.models.membershipcard.order.MembershipCardOrder;
 import com.luwei.models.shop.Shop;
 import com.luwei.models.user.User;
 import com.luwei.module.alisms.AliSmsService;
+import com.luwei.services.activity.web.ActivityWebListVO;
 import com.luwei.services.course.cms.CourseDTO;
 import com.luwei.services.course.cms.CoursePageVo;
+import com.luwei.services.course.web.CourseEnrolmentWebListVO;
 import com.luwei.services.membershipCard.order.MembershipCardOrderService;
 import com.luwei.services.shop.ShopService;
 import com.luwei.services.user.UserService;
@@ -110,8 +113,8 @@ public class CourseService {
                 if (!StringUtils.isEmpty(title)) {
                     if (title.equals("体验会员")){
                         List<CourseEnrolment> courseEnrolments2 = courseEnrolmentDao.findAllByUserId(userId);
-                        List<ActivityOrder> activityOrderList = activityOrderDao.findAllByUserIdAndAreaIdAndDeletedIsFalse(userId,shop.getAreaId());
-                        if ((courseEnrolments2 == null || courseEnrolments2.size()<1)&&(activityOrderList == null || activityOrderList.size() < 1)) {
+                        //List<ActivityOrder> activityOrderList = activityOrderDao.findAllByUserIdAndAreaIdAndDeletedIsFalse(userId,shop.getAreaId());
+                        if (courseEnrolments2 == null || courseEnrolments2.size()<1) {
                             state = 2;
                         }
                     }else{
@@ -123,7 +126,7 @@ public class CourseService {
             }
         }
         Assert.isTrue((state == 2), "您办理的会员卡已过期！");
-        CourseEnrolment courseEnrolment = new CourseEnrolment(shopId,courseId,userId,null);
+        CourseEnrolment courseEnrolment = new CourseEnrolment(shopId,courseId,userId,null,1);
         courseEnrolmentDao.save(courseEnrolment);
         String text = "恭喜您报名成功参加课程“"+course.getTitle()+"”，开课时间为："+course.getStartTime()+"-"+course.getEndTime()+"，请您合理安排上课时间，以免迟到。";
         System.out.println("1");
@@ -138,6 +141,7 @@ public class CourseService {
      * @return
      */
     public Course findOne(Integer courseId) {
+        Assert.isTrue(courseId != null && courseId != 0,"课程Id参数不能为空！");
         Course course = courseDao.findById(courseId).orElse(null);
         Assert.notNull(course, "课程不存在");
         return course;
@@ -177,4 +181,44 @@ public class CourseService {
 
     public void delete(Set<Integer> ids) {courseDao.delByIds(new ArrayList<>(ids));
     }
+
+    public Page<CourseEnrolmentWebListVO> enrolmentCourseList(Integer userId, Integer isInspectTicket, Pageable pageable) {
+        Assert.isTrue(userId != null && userId != 0,"参数用户ID为空！");
+        User user = userService.findOne(userId);
+        Specification<CourseEnrolment> specification = (Root<CourseEnrolment> root, CriteriaQuery<?> criteriaQuery, CriteriaBuilder criteriaBuilder) -> {
+            List<Predicate> list = new ArrayList<>();
+            list.add(criteriaBuilder.equal(root.get("userId"), userId));
+            if (isInspectTicket != null && (isInspectTicket == 1 || isInspectTicket == 2)) {
+                list.add(criteriaBuilder.equal(root.get("isInspectTicket"), isInspectTicket));
+            }
+            Predicate[] predicates = new Predicate[list.size()];
+            criteriaQuery.where(list.toArray(predicates));
+            criteriaQuery.orderBy(criteriaBuilder.desc(root.get("courseEnrolmentId")));
+            return criteriaQuery.getRestriction();
+        };
+        return courseEnrolmentDao.findAll(specification, pageable).map(this::toCourseEnrolmentWebListVO);
+    }
+
+    private CourseEnrolmentWebListVO toCourseEnrolmentWebListVO(CourseEnrolment courseEnrolment) {
+        Assert.notNull(courseEnrolment,"参数不能为空！");
+        Integer shopId = courseEnrolment.getShopId();
+        Shop shop = shopService.findOne(shopId);
+        Integer courseId = courseEnrolment.getCourseId();
+        Course course = this.findOne(courseId);
+        Long startDate = course.getStartDate();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        String format = sdf.format(new Date(startDate * 1000));
+        Date createTime = courseEnrolment.getCreateTime();
+        String createTimeStr = "";
+        if (createTime == null) {
+            createTimeStr = sdf.format(createTime);
+        }
+        CourseEnrolmentWebListVO vo = new CourseEnrolmentWebListVO(courseEnrolment.getCourseEnrolmentId(),
+                shop.getTitle(),course.getTitle(),
+                format,course.getStartTime(),course.getEndTime(),createTimeStr,null,courseEnrolment.getIsInspectTicket());
+        return vo;
+    }
+
+
+
 }

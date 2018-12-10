@@ -4,6 +4,7 @@ import com.luwei.common.enums.type.AgeType;
 import com.luwei.common.enums.type.FlagType;
 import com.luwei.common.enums.type.SexType;
 import com.luwei.common.utils.IdEntity;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -64,5 +65,11 @@ public class User extends IdEntity {
 
     @Column(columnDefinition = "bit not null default 1 comment 'true完善过个人信息false未完善过个人信息'")
     private Boolean first;
+
+    @Column(columnDefinition = "varchar(48) default '' comment '宝宝小名'")
+    private String babyName;
+
+    @Column(columnDefinition = "tinyint(1) default 0 comment '宝宝性别'")
+    private SexType babySex;
 
 }

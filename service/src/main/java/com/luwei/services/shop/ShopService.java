@@ -198,6 +198,7 @@ public class ShopService {
      * @return
      */
     public Shop findOne(Integer shopId) {
+        Assert.isTrue(shopId != null && shopId != 0,"门店ID参数为空！");
         Shop shop = shopDao.findById(shopId).orElse(null);
         Assert.notNull(shop, "门店不存在");
         return shop;
