@@ -23,6 +23,9 @@ public class ActivityOrder extends IdEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer activityOrderId;
 
+    @Column(columnDefinition = "int(11) not null default 0 comment '地区id'")
+    private Integer areaId;
+
     @Column(columnDefinition = "int(11) not null default 0 comment '用户id'")
     private Integer userId;
 
@@ -60,4 +63,24 @@ public class ActivityOrder extends IdEntity {
     private FlagType flagType;
 
 
+    public ActivityOrder() {
+    }
+
+    public ActivityOrder(Integer areaId, Integer userId, Integer activityId, Integer count, Integer total,
+                         String outTradeNo, String activityTitle, String address, Date startTime, Date endTime, Date payTime,
+                         ActivityOrderStatus status, FlagType flagType) {
+        this.areaId = areaId;
+        this.userId = userId;
+        this.activityId = activityId;
+        this.count = count;
+        this.total = total;
+        this.outTradeNo = outTradeNo;
+        this.activityTitle = activityTitle;
+        this.address = address;
+        this.startTime = startTime;
+        this.endTime = endTime;
+        this.payTime = payTime;
+        this.status = status;
+        this.flagType = flagType;
+    }
 }

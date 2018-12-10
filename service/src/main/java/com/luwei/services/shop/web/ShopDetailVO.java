@@ -1,7 +1,7 @@
 package com.luwei.services.shop.web;
 
-import com.luwei.models.membershipcard.MembershipCard;
-import com.luwei.services.course.web.CourseDetailVo;
+import com.alibaba.fastjson.JSONObject;
+import com.google.gson.JsonObject;
 import com.luwei.services.membershipCard.web.MembershipCardDetailVo;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -22,6 +22,9 @@ public class ShopDetailVO {
     @ApiModelProperty("门店Id")
     private Integer shopId;
 
+    @ApiModelProperty("会员卡订单Id")
+    private Integer membershipOrderCardId;
+
     @ApiModelProperty("门店名称")
     private String title;
 
@@ -38,7 +41,7 @@ public class ShopDetailVO {
     private List<MembershipCardDetailVo> membershipCards;
 
     @ApiModelProperty("课程列表")
-    private List<CourseDetailVo> courses;
+    private List<JSONObject> courses;
 
 
 

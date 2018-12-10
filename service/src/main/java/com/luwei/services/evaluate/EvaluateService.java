@@ -85,7 +85,7 @@ public class EvaluateService {
      * @param type
      */
     public List<Evaluate> list(Integer tripartiteId, EvaluateType type) {
-        return evaluateDao.findEvaluatesByTypeAndTripartiteId(type, tripartiteId);
+        return evaluateDao.findEvaluatesByTypeAndTripartiteIdAndDeletedIsFalse(type, tripartiteId);
     }
 
     /**
@@ -95,7 +95,7 @@ public class EvaluateService {
      * @param type
      */
     public List<EvaluateCmsVO> cmsVOList(Integer tripartiteId, EvaluateType type) {
-        List<Evaluate> list = this.list(tripartiteId, type);
+        List<Evaluate> list = this.findByActivityIdAndType(tripartiteId, type);
         return list.stream().map(e -> {
             EvaluateCmsVO vo = new EvaluateCmsVO();
             User user = userService.findOne(e.getUserId());
@@ -158,7 +158,7 @@ public class EvaluateService {
             Integer effective = membershipCardOrder.getEffective();
             effective = effective == null?0:effective;
             Date payTime = membershipCardOrder.getPayTime();
-            long time = payTime.getTime()+(effective*3600*1000);
+            long time = payTime.getTime()+(effective*24*3600*1000);
             long currentTime = System.currentTimeMillis();
             if (currentTime > time) {
                 throw new ValidateException(ExceptionMessage.MEMBERSHIP_STATUS_EXPIRED);
@@ -198,7 +198,7 @@ public class EvaluateService {
      * @return
      */
     public List<Evaluate> findByActivityIdAndType(Integer id, EvaluateType evaluateType) {
-        return evaluateDao.findEvaluatesByTypeAndTripartiteId(evaluateType, id);
+        return evaluateDao.findEvaluatesByTypeAndTripartiteIdAndDeletedIsFalse(evaluateType, id);
     }
 
     /**
@@ -207,7 +207,7 @@ public class EvaluateService {
      * @param evaluateId
      * @return
      */
-    public List<EvaluateCmsVO> display(Integer evaluateId, Integer activityId) {
+    public List<EvaluateCmsVO> display(Integer evaluateId,EvaluateType evaluateType, Integer tripartiteId) {
         Evaluate evaluate = this.findOne(evaluateId);
         if (FlagType.RIGHT.equals(evaluate.getFlagType())) {
             evaluate.setFlagType(FlagType.DENY);
@@ -215,7 +215,8 @@ public class EvaluateService {
             evaluate.setFlagType(FlagType.RIGHT);
         }
         Evaluate entity = evaluateDao.save(evaluate);
-        List<Evaluate> evaluateList = evaluateDao.findEvaluatesByTypeAndTripartiteId(EvaluateType.ACTIVITY, activityId);
+        List<Evaluate> evaluateList = evaluateDao.findEvaluatesByTypeAndTripartiteIdAndDeletedIsFalse(evaluateType,
+                tripartiteId);
         return evaluateList.stream().map(this::toEvaluateCmsVO).collect(Collectors.toList());
     }
 
@@ -230,7 +231,11 @@ public class EvaluateService {
         User user = userService.findOne(evaluate.getUserId());
         EvaluateCmsVO vo = new EvaluateCmsVO();
         BeanUtils.copyProperties(evaluate, vo);
-        vo.setPicture(Arrays.asList(evaluate.getPicture().split(",")));
+        String picture = evaluate.getPicture();
+        if (picture != null && !picture.equals("")) {
+            List<String> strings = Arrays.asList();
+            vo.setPicture(Arrays.asList(picture.split(",")));
+        }
         vo.setFlagType(evaluate.getFlagType());
         vo.setNickname(user.getNickname());
         vo.setUserId(user.getUserId());
@@ -246,7 +251,7 @@ public class EvaluateService {
      * @return
      */
     public List<EvaluateCmsVO> list(Integer activityId) {
-        List<Evaluate> evaluateList = evaluateDao.findEvaluatesByTypeAndTripartiteId(EvaluateType.ACTIVITY, activityId);
+        List<Evaluate> evaluateList = evaluateDao.findEvaluatesByTypeAndTripartiteIdAndDeletedIsFalse(EvaluateType.ACTIVITY, activityId);
         return evaluateList.stream().map(this::toEvaluateCmsVO).collect(Collectors.toList());
     }
 

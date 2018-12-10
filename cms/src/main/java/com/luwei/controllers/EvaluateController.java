@@ -1,5 +1,7 @@
 package com.luwei.controllers;
 
+import com.luwei.common.Response;
+import com.luwei.common.enums.type.EvaluateType;
 import com.luwei.services.evaluate.EvaluateService;
 import com.luwei.services.evaluate.cms.EvaluateCmsVO;
 import io.swagger.annotations.Api;
@@ -25,15 +27,17 @@ public class EvaluateController {
 
     @PutMapping("/display")
     @ApiOperation("显示|隐藏")
-    public List<EvaluateCmsVO> display(@RequestParam Integer evaluateId, @RequestParam Integer activityId) {
-        return evaluateService.display(evaluateId, activityId);
+    public List<EvaluateCmsVO> display(@RequestParam Integer evaluateId,@RequestParam EvaluateType evaluateType,
+                                       @RequestParam Integer tripartiteId) {
+        return evaluateService.display(evaluateId,evaluateType, tripartiteId);
     }
 
     @GetMapping
-    @ApiOperation("根据活动id获取评论列表")
-    public List<EvaluateCmsVO> list(@RequestParam Integer activityId) {
-        return evaluateService.list(activityId);
+    @ApiOperation("根据关联id和类型获取评论列表")
+    public List<EvaluateCmsVO> list(@RequestParam Integer tripartiteId,@RequestParam EvaluateType evaluateType) {
+        return evaluateService.cmsVOList(tripartiteId, evaluateType);
     }
+
 
 
 }

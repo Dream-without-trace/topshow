@@ -30,12 +30,16 @@ public class CourseEnrolment {
     private Integer userId;
 
     @Column(columnDefinition = "timestamp not null default current_timestamp comment '报名时间'")
-    protected Date createTime;
+    private Date createTime;
 
 
+    public CourseEnrolment() {
+    }
 
-
-
-
-
+    public CourseEnrolment(Integer shopId, Integer courseId, Integer userId, Date createTime) {
+        this.shopId = shopId;
+        this.courseId = courseId;
+        this.userId = userId;
+        this.createTime = createTime;
+    }
 }

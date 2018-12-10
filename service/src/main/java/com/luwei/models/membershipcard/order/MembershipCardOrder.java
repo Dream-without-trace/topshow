@@ -26,6 +26,9 @@ public class MembershipCardOrder extends IdEntity {
     @Column(columnDefinition = "int(11) not null default 0 comment '门店id'")
     private Integer shopId;
 
+    @Column(columnDefinition = "int(11) not null default 0 comment '地区ID'")
+    private Integer areaId;
+
     @Column(columnDefinition = "int(11) not null default 0 comment '用户id'")
     private Integer userId;
 
@@ -50,6 +53,9 @@ public class MembershipCardOrder extends IdEntity {
     @Column(columnDefinition = "text comment '会员卡等级描述'")
     private String detail;
 
+    @Column(columnDefinition = "text comment '会员权益'")
+    private String memberBenefits;
+
     @Column(columnDefinition = "timestamp null comment '支付时间'")
     private Date payTime;
 
@@ -59,10 +65,10 @@ public class MembershipCardOrder extends IdEntity {
     public MembershipCardOrder() {
     }
 
-    public MembershipCardOrder(Integer shopId, Integer userId, Integer membershipCardId, Integer total, String outTradeNo,
-                               Integer effective, String title, String picture, String detail, Date payTime,
-                               MembershipCardOrderStatus status) {
+    public MembershipCardOrder(Integer shopId, Integer areaId, Integer userId,
+                               Integer membershipCardId, Integer total, String outTradeNo, Integer effective, String title, String picture, String detail, String memberBenefits, Date payTime, MembershipCardOrderStatus status) {
         this.shopId = shopId;
+        this.areaId = areaId;
         this.userId = userId;
         this.membershipCardId = membershipCardId;
         this.total = total;
@@ -71,6 +77,7 @@ public class MembershipCardOrder extends IdEntity {
         this.title = title;
         this.picture = picture;
         this.detail = detail;
+        this.memberBenefits = memberBenefits;
         this.payTime = payTime;
         this.status = status;
     }

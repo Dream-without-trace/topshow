@@ -303,4 +303,22 @@ public class ActivityOrderService {
         vo.setActivityOrderId(activityOrder.getActivityOrderId());
         return vo;
     }
+
+    public Integer findRegisteredNumByActivityId(Integer activityId) {
+        Integer countNum = 0;
+        List<ActivityOrder> list =  activityOrderDao.findAllByActivityIdAndDeletedIsFalse(activityId);
+        if (list != null && list.size()>0) {
+            for (ActivityOrder activityOrder:list) {
+                if (activityOrder != null) {
+                    ActivityOrderStatus status = activityOrder.getStatus();
+                    if (status != null && (status.equals(ActivityOrderStatus.PAY)||status.equals(ActivityOrderStatus.JOIN)
+                            ||status.equals(ActivityOrderStatus.COMPLETE))) {
+                        countNum+=activityOrder.getCount();
+                    }
+                }
+            }
+
+        }
+        return countNum;
+    }
 }

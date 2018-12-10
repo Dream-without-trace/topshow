@@ -15,7 +15,7 @@ import java.util.List;
  **/
 public interface EvaluateDao extends JpaRepository<Evaluate, Integer>, JpaSpecificationExecutor<Evaluate> {
 
-    List<Evaluate> findEvaluatesByTypeAndTripartiteId(EvaluateType evaluateType, Integer tripartiteId);
+    List<Evaluate> findEvaluatesByTypeAndTripartiteIdAndDeletedIsFalse(EvaluateType evaluateType, Integer tripartiteId);
 
 
     @Query("select new com.luwei.services.evaluate.web.EvaluateWebVO(e.evaluateId,e.createTime,e.picture,u.avatarUrl,u.nickname,e.content) from Evaluate e, User u where e.userId = u.userId and e.tripartiteId = ?1 and e.type = ?2 and e.flagType = ?3")

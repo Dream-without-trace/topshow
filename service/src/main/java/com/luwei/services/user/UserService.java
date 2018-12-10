@@ -1,17 +1,28 @@
 package com.luwei.services.user;
 
+import com.alibaba.fastjson.JSONObject;
+import com.luwei.common.Response;
+import com.luwei.common.enums.status.MembershipCardOrderStatus;
 import com.luwei.common.enums.type.BillType;
 import com.luwei.common.enums.type.FlagType;
 import com.luwei.common.exception.ExceptionMessage;
 import com.luwei.common.exception.ValidateException;
+import com.luwei.models.courseEnrolment.CourseEnrolment;
+import com.luwei.models.courseEnrolment.CourseEnrolmentDao;
+import com.luwei.models.integralset.IntegralSet;
+import com.luwei.models.integralset.IntegralSetDao;
+import com.luwei.models.membershipcard.order.MembershipCardOrder;
 import com.luwei.models.user.User;
 import com.luwei.models.user.UserDao;
 import com.luwei.models.user.receiving.ReceivingAddress;
 import com.luwei.module.alisms.AliSmsService;
+import com.luwei.module.qiniu.FileVO;
+import com.luwei.module.qiniu.QiNiuService;
 import com.luwei.services.activity.order.ActivityOrderService;
 import com.luwei.services.area.AreaService;
 import com.luwei.services.integral.bill.IntegralBillService;
 import com.luwei.services.integral.bill.web.IntegralBillDTO;
+import com.luwei.services.membershipCard.order.MembershipCardOrderService;
 import com.luwei.services.order.OrderService;
 import com.luwei.services.user.address.UserReceivingAddressService;
 import com.luwei.services.user.address.web.UserAddressVO;
@@ -37,10 +48,8 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Set;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 /**
  * @author Leone
@@ -74,6 +83,14 @@ public class UserService {
 
     @Resource
     private UserReceivingAddressService userReceivingAddressService;
+    @Resource
+    private MembershipCardOrderService membershipCardOrderService;
+    @Resource
+    private CourseEnrolmentDao courseEnrolmentDao;
+    @Resource
+    private IntegralSetDao integralSetDao;
+    @Resource
+    private QiNiuService qiNiuService;
 
 
     @Value("${app.constant.topshow.first-integral}")
@@ -302,9 +319,37 @@ public class UserService {
      * @param userId
      * @return
      */
-    public Integer findIntegralTotal(Integer userId) {
+    public JSONObject findIntegralTotal(Integer userId) {
         User user = this.findOne(userId);
-        return user.getIntegral();
+        List<MembershipCardOrder> membershipCardOrderList = membershipCardOrderService.findAllByUserIdAndStatus(userId, MembershipCardOrderStatus.PAY);
+        Integer isMember = 2;
+        if (membershipCardOrderList != null && membershipCardOrderList.size()>0) {
+            for (MembershipCardOrder membershipCardOrder:membershipCardOrderList) {
+                if (membershipCardOrder != null) {
+                    String title = membershipCardOrder.getTitle();
+                    if (title == null || title.equals("")) {
+                        continue;
+                    }
+                    if (title.equals("体验会员")) {
+                        List<CourseEnrolment> courseEnrolments = courseEnrolmentDao.findAllByUserId(userId);
+                        if (courseEnrolments == null || courseEnrolments.size()<1) {
+                            isMember = 1;
+                        }
+                    }else{
+                        Integer effective = membershipCardOrder.getEffective();
+                        long time = membershipCardOrder.getPayTime().getTime()+effective*24*3600*1000;
+                        long l = System.currentTimeMillis();
+                        if (time>l) {
+                            isMember = 1;
+                        }
+                    }
+                }
+            }
+        }
+        JSONObject jsonObject =  new JSONObject();
+        jsonObject.put("integral",user.getIntegral());
+        jsonObject.put("isMember",isMember);
+        return jsonObject;
     }
 
     /**
@@ -367,4 +412,64 @@ public class UserService {
     }
 
 
+    public Response memberCentre(Integer userId) {
+        User user = this.findOne(userId);
+        List<MembershipCardOrder> membershipCardOrderList = membershipCardOrderService.findAllByUserIdAndStatus(userId,MembershipCardOrderStatus.PAY);
+        Assert.isTrue((membershipCardOrderList != null && membershipCardOrderList.size()>0),"您未办理会员卡！");
+        MembershipCardOrder membershipCardOrder = membershipCardOrderList.get(0);
+        Assert.notNull(membershipCardOrder,"您未办理会员卡！");
+        String title = membershipCardOrder.getTitle();
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("title",title);
+        jsonObject.put("picture",membershipCardOrder.getPicture());
+        jsonObject.put("detail",membershipCardOrder.getDetail());
+        jsonObject.put("memberBenefits",membershipCardOrder.getMemberBenefits());
+        jsonObject.put("username",user.getUsername());
+        String dateExpire = "使用一次后到期";
+        if (title.equals("体验会员")) {
+            List<CourseEnrolment> courseEnrolments = courseEnrolmentDao.findAllByUserId(userId);
+            Assert.isTrue((courseEnrolments == null || courseEnrolments.size()<1),"您未办理会员卡！");
+        }else{
+            Integer effective = membershipCardOrder.getEffective();
+            long time = membershipCardOrder.getPayTime().getTime()+effective*24*3600*1000;
+            long l = System.currentTimeMillis();
+            Assert.isTrue((l<time),"您未办理会员卡！");
+            Date ta = new Date(time);
+            SimpleDateFormat format = new SimpleDateFormat("yyyy年MM月dd日");
+            dateExpire = format.format(ta);
+        }
+        jsonObject.put("dateExpire",dateExpire);
+     return Response.build(20000, "success", jsonObject);
+    }
+
+
+
+    public List<User> findAllByPhone(String referrerPhone) {
+        return userDao.findAllByPhoneAndDisable(referrerPhone,FlagType.DENY);
+    }
+
+    public JSONObject shareUserDetails(Integer userId) {
+        User user = this.findOne(userId);
+        JSONObject jsonObject =  new JSONObject();
+        jsonObject.put("nickname",user.getNickname());
+        String picture = "";
+        FileVO fileVO = qiNiuService.uploadStreamByUrl(user.getAvatarUrl());
+        if (fileVO != null) {
+            List<String> urls = fileVO.getUrls();
+            if (urls != null && urls.size()>0) {
+                picture = urls.get(0);
+            }
+        }
+        jsonObject.put("avatarUrl",picture);
+        String shareDescription = "";
+        List<IntegralSet> integralSets = integralSetDao.findAll();
+        if (integralSets != null && integralSets.size()>0) {
+            IntegralSet integralSet = integralSets.get(0);
+            if (integralSet != null) {
+                shareDescription = integralSet.getShareDescription();
+            }
+        }
+        jsonObject.put("shareDescription",shareDescription);
+        return jsonObject;
+    }
 }

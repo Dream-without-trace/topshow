@@ -60,5 +60,15 @@ public class ActivityDetailVO {
     @ApiModelProperty("活动")
     private String hello;
 
+    @ApiModelProperty("最大报名人数")
+    private Integer maxNum;
 
+    @ApiModelProperty("已报名人数")
+    private Integer registeredNum;
+
+    @ApiModelProperty("是否有门店 ：1有 2没有")
+    private Integer isHaveShop;
+
+    @ApiModelProperty("距离开始时间")
+    private String distanceTime;
 }

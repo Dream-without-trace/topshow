@@ -5,10 +5,12 @@ import com.luwei.module.shiro.service.UserHelper;
 import com.luwei.services.activity.ActivityService;
 import com.luwei.services.activity.order.ActivityOrderService;
 import com.luwei.services.activity.order.web.ActivityAddDTO;
+import com.luwei.services.activity.order.web.ActivitySubCardAddDTO;
 import com.luwei.services.activity.series.web.ActivitySeriesListVO;
 import com.luwei.services.activity.series.web.SeriesListVO;
 import com.luwei.services.activity.web.*;
 import com.luwei.services.area.web.CityListVO;
+import com.luwei.services.membershipCard.order.web.MembershipCardAddOrder;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
@@ -19,6 +21,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 import java.util.List;
 
 /**
@@ -118,5 +121,28 @@ public class ActivityController {
     public Page<ActivityWebListVO> activityCategoryPage(@RequestParam Integer areaId, @RequestParam Integer categoryId, @PageableDefault Pageable pageable) {
         return activityService.activityCategoryPage(areaId, categoryId, pageable);
     }
+
+    @PostMapping("/purchase")
+    @ApiOperation("购买活动次卡")
+    public Response purchaseActivitySubCard(@RequestBody @Valid ActivitySubCardAddDTO dto, HttpServletRequest request) {
+        Integer userId = UserHelper.getId();
+        return Response.build(20000, "success", activityService.purchaseActivitySubCard(dto,request));
+    }
+
+
+    @GetMapping("/subCard")
+    @ApiOperation("活动次卡列表")
+    public Response activitySubCard(@RequestParam Integer activityId){
+        return Response.build(20000, "success", activityService.activitySubCard(activityId));
+    }
+
+
+
+    @PostMapping("/enrolment")
+    @ApiOperation("报名活动")
+    public Response enrolmentActivities(@RequestParam Integer activityId,@RequestParam Integer userId) {
+        return activityService.enrolmentActivities(activityId,userId);
+    }
+
 
 }

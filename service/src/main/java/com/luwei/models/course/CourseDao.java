@@ -1,8 +1,8 @@
 package com.luwei.models.course;
 
-import com.luwei.services.course.web.CourseDetailVo;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
@@ -15,5 +15,9 @@ import java.util.List;
  **/
 public interface CourseDao extends JpaRepository<Course, Integer>, JpaSpecificationExecutor<Course> {
 
-    List<Course> findCoursesByShopId(Integer shopId);
+
+    List<Course> findAllByStartDateAndShopIdAndDeletedFalse(Long startDate, Integer shopId);
+    @Modifying
+    @Query("update Course set deleted = 1 where courseId in ?1 and deleted <> 1")
+    Integer delByIds(List<Integer> ids);
 }

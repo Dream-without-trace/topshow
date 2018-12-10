@@ -28,14 +28,14 @@ public class CheckIn{
     @Column(columnDefinition = "int(11) not null default 0 comment '连续签到天数'")
     private Integer checkInDate;
 
-    @Column(columnDefinition = "timestamp not null default current_timestamp comment '签到时间'")
-    private Date checkInTime;
+    @Column(columnDefinition = "int(11) not null default 0 comment '签到时间'")
+    private Integer checkInTime;
 
 
     public CheckIn() {
     }
 
-    public CheckIn(Integer userId, Integer giveIntegral, Integer checkInDate, Date checkInTime) {
+    public CheckIn(Integer userId, Integer giveIntegral, Integer checkInDate, Integer checkInTime) {
         this.userId = userId;
         this.giveIntegral = giveIntegral;
         this.checkInDate = checkInDate;

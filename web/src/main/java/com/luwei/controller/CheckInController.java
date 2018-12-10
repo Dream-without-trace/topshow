@@ -1,5 +1,6 @@
 package com.luwei.controller;
 
+import com.luwei.common.Response;
 import com.luwei.services.checkIn.CheckInService;
 import com.luwei.services.checkIn.web.CheckInVo;
 import io.swagger.annotations.Api;
@@ -27,8 +28,8 @@ public class CheckInController {
 
     @PostMapping
     @ApiOperation("签到")
-    public CheckInVo saveCheckIn(@RequestParam Integer userId){
-        return checkInService.saveCheckIn(userId);
+    public Response saveCheckIn(@RequestParam Integer userId){
+        return Response.build(2000,"签到成功！",checkInService.saveCheckIn(userId,1));
     }
 
 

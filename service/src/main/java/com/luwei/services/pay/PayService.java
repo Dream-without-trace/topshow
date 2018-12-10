@@ -13,7 +13,11 @@ import com.luwei.common.utils.AppUtils;
 import com.luwei.common.utils.HttpUtil;
 import com.luwei.common.utils.RandomUtil;
 import com.luwei.models.activity.order.ActivityOrder;
+import com.luwei.models.activity.order.subcard.ActivitySubCardOrder;
+import com.luwei.models.activity.order.subcard.ActivitySubCardOrderDao;
 import com.luwei.models.bill.Bill;
+import com.luwei.models.integralset.IntegralSet;
+import com.luwei.models.integralset.IntegralSetDao;
 import com.luwei.models.membershipcard.order.MembershipCardOrder;
 import com.luwei.models.order.Order;
 import com.luwei.models.user.User;
@@ -71,6 +75,12 @@ public class PayService {
 
     @Resource
     private IntegralBillService integralBillService;
+
+    @Resource
+    private ActivitySubCardOrderDao activitySubCardOrderDao;
+
+    @Resource
+    private IntegralSetDao integralSetDao;
 
     /**
      * 小程序支付
@@ -180,7 +190,8 @@ public class PayService {
             // 给用户添加积分
             userService.addIntegral(user.getUserId(), 20);
             // 保存积分流水
-            integralBillService.save(new IntegralBillDTO(user.getUserId(), user.getNickname(), user.getPhone(), 20, user.getIntegral() + 20, BillType.INCOME, "用户购买活动"));
+            integralBillService.save(new IntegralBillDTO(user.getUserId(), user.getNickname(), user.getPhone(),
+                    20, user.getIntegral() + 20, BillType.INCOME, "用户购买活动"));
         } else if (outTradeNo.startsWith("G")) {
             List<Order> orderList = orderService.findByOutTradeNo(outTradeNo);
             updateOrderStatus(orderList);
@@ -203,13 +214,47 @@ public class PayService {
             if (!ObjectUtils.isEmpty(membershipCardOrderList)) {
                 bill.setStoreId(membershipCardOrderList.get(0).getShopId());
             }
+            int purchaseMembershipCardIntegral =0;
+            List<IntegralSet> integralSets = integralSetDao.findAll();
+            if (integralSets != null && integralSets.size()>0) {
+                IntegralSet integralSet = integralSets.get(0);
+                if (integralSet != null) {
+                    purchaseMembershipCardIntegral = integralSet.getPurchaseMembershipCardIntegral();
+                }
+            }
             // 给用户添加积分
-            userService.addIntegral(user.getUserId(), 20);
+            userService.addIntegral(user.getUserId(), purchaseMembershipCardIntegral);
             // 保存积分流水
-            integralBillService.save(new IntegralBillDTO(user.getUserId(), user.getNickname(), user.getPhone(), 20, user.getIntegral() + 20, BillType.INCOME, "用户购买商品"));
+            integralBillService.save(new IntegralBillDTO(user.getUserId(), user.getNickname(), user.getPhone(),
+                    purchaseMembershipCardIntegral, user.getIntegral() + purchaseMembershipCardIntegral,
+                    BillType.INCOME, "用户购买会员"));
+        } else if (outTradeNo.startsWith("S")) {
+            List<ActivitySubCardOrder> activitySubCardOrders = activitySubCardOrderDao.findAllByOutTradeNoOrderByPayTimeDesc(outTradeNo);
+            updateActivitySubCardOrderStatus(activitySubCardOrders);
+            bill.setRemark("购买活动次卡订单");
+            bill.setTransactionType(TransactionType.CARD);
+            bill.setStoreId(0);
+            if (!ObjectUtils.isEmpty(activitySubCardOrders)) {
+                bill.setStoreId(0);
+            }
+            /*int purchaseMembershipCardIntegral =0;
+            List<IntegralSet> integralSets = integralSetDao.findAll();
+            if (integralSets != null && integralSets.size()>0) {
+                IntegralSet integralSet = integralSets.get(0);
+                if (integralSet != null) {
+                    purchaseMembershipCardIntegral = integralSet.getPurchaseMembershipCardIntegral();
+                }
+            }
+            // 给用户添加积分
+            userService.addIntegral(user.getUserId(), purchaseMembershipCardIntegral);
+            // 保存积分流水
+            integralBillService.save(new IntegralBillDTO(user.getUserId(), user.getNickname(), user.getPhone(),
+                    purchaseMembershipCardIntegral, user.getIntegral() + purchaseMembershipCardIntegral,
+                    BillType.INCOME, "用户购买会员"));*/
         }
         billService.save(bill);
     }
+
 
 
 
@@ -245,6 +290,16 @@ public class PayService {
             e.setStatus(MembershipCardOrderStatus.PAY);
         });
         membershipCardOrderService.saveAll(membershipCardOrderList);
+    }
+
+    private void updateActivitySubCardOrderStatus(List<ActivitySubCardOrder> activitySubCardOrders) {
+        Date date = new Date();
+        int daTeTime = (int)(System.currentTimeMillis()/1000);
+        activitySubCardOrders.forEach(e -> {
+            e.setPayTime(daTeTime);
+            e.setStatus(2);
+        });
+        activitySubCardOrderDao.saveAll(activitySubCardOrders);
     }
 
 }

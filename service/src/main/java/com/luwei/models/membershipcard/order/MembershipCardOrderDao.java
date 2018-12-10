@@ -1,8 +1,11 @@
 package com.luwei.models.membershipcard.order;
 
+import com.luwei.common.enums.status.MembershipCardOrderStatus;
 import com.luwei.models.activity.order.ActivityOrder;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 
@@ -14,9 +17,21 @@ import java.util.List;
  **/
 public interface MembershipCardOrderDao extends JpaRepository<MembershipCardOrder, Integer>, JpaSpecificationExecutor<MembershipCardOrder> {
 
-    List<MembershipCardOrder> findMembershipCardOrdersByUserId(Integer userId);
+    List<MembershipCardOrder> findMembershipCardOrdersByUserIdAndDeletedFalse(Integer userId);
 
-    List<MembershipCardOrder> findMembershipCardOrdersByOutTradeNo(String outTradeNo);
+    List<MembershipCardOrder> findMembershipCardOrdersByOutTradeNoAndDeletedFalse(String outTradeNo);
 
-    MembershipCardOrder findMembershipCardOrdersByMembershipCardOrderId(Integer id);
+    MembershipCardOrder findMembershipCardOrdersByMembershipCardOrderIdAndDeletedFalse(Integer id);
+
+    List<MembershipCardOrder> findAllByUserIdAndDeletedIsFalse(Integer userId);
+
+    List<MembershipCardOrder> findAllByUserIdAndStatusAndDeletedFalseOrderByPayTimeDesc(Integer userId, MembershipCardOrderStatus status);
+
+    //@Modifying
+    //@Query("update MembershipCardOrder set deleted = 1 where userId = ?1 and status = 0")
+    void deleteAllByUserIdAndStatus(Integer userId, MembershipCardOrderStatus create);
+
+    List<MembershipCardOrder> findAllByUserIdAndTitleAndDeletedFalse(Integer userId, String title1);
+
+    List<MembershipCardOrder> findAllByUserIdAndStatusAndAreaIdAndDeletedIsFalseOrderByPayTimeDesc(Integer userId, MembershipCardOrderStatus status, Integer areaId);
 }

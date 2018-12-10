@@ -11,9 +11,7 @@ public enum MembershipCardOrderStatus {
 
 
     CREATE("创建", 0),
-    CLOSE("关闭", 1),
-    PAY("支付", 2),
-    REFUND("退款",3);
+    PAY("支付", 1);
 
     private Integer code;
 

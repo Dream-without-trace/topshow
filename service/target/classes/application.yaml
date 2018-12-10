@@ -48,7 +48,7 @@ luwei:
       bucket: image-topshow
       access-key: aPUcZJe4DJdQuAX-v-6bVhEPZCF3dRKijKKGc2EO
       secret-key: dJemdS4mgb0qjCsptE6HUcDmzkrNdFZ32WoVQ-u9
-      link-address: http://phjqtr7aj.bkt.clouddn.com/
+      link-address:  http://qiniu-image-topshow.91topshow.com/
 app:
   constant:
     topshow:

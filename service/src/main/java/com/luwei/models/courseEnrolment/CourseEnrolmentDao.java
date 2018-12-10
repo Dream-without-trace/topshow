@@ -13,4 +13,9 @@ import java.util.List;
  **/
 public interface CourseEnrolmentDao extends JpaRepository<CourseEnrolment, Integer>, JpaSpecificationExecutor<CourseEnrolment> {
     List<CourseEnrolment> findAllByCourseIdAndUserIdAndShopId(Integer courseId, Integer userId, Integer shopId);
+    List<CourseEnrolment> findAllByCourseIdAndShopId(Integer courseId, Integer shopId);
+
+    List<CourseEnrolment> findAllByUserId(Integer userId);
+
+    List<CourseEnrolment> findAllByCourseId(Integer courseId);
 }

@@ -15,11 +15,11 @@ import java.util.List;
 @ApiModel
 public class EvaluateDTO {
 
-    @ApiModelProperty("活动或商品或会员卡的订单id")
-    private Integer id;
-
     @ApiModelProperty("用户id")
     private Integer userId;
+
+    @ApiModelProperty("活动或商品或会员卡的订单id")
+    private Integer id;
 
     @ApiModelProperty("评价内容")
     private String content;

@@ -2,23 +2,39 @@ package com.luwei.services.activity;
 
 import com.google.common.base.Joiner;
 import com.google.common.collect.Lists;
+import com.luwei.common.Response;
+import com.luwei.common.enums.status.ActivityOrderStatus;
 import com.luwei.common.enums.status.ActivityStatus;
+import com.luwei.common.enums.status.MembershipCardOrderStatus;
 import com.luwei.common.enums.type.*;
 import com.luwei.common.exception.ExceptionMessage;
 import com.luwei.common.exception.ValidateException;
+import com.luwei.common.utils.DateTimeUtis;
+import com.luwei.common.utils.RandomUtil;
 import com.luwei.models.activity.Activity;
 import com.luwei.models.activity.ActivityDao;
 import com.luwei.models.activity.category.ActivityCategory;
 import com.luwei.models.activity.order.ActivityOrder;
+import com.luwei.models.activity.order.ActivityOrderDao;
+import com.luwei.models.activity.order.subcard.ActivitySubCardOrder;
+import com.luwei.models.activity.order.subcard.ActivitySubCardOrderDao;
 import com.luwei.models.activity.series.ActivitySeries;
+import com.luwei.models.activity.subcard.ActivitySubCard;
+import com.luwei.models.activity.subcard.ActivitySubCardDao;
 import com.luwei.models.area.Area;
+import com.luwei.models.bill.Bill;
+import com.luwei.models.courseEnrolment.CourseEnrolment;
+import com.luwei.models.courseEnrolment.CourseEnrolmentDao;
 import com.luwei.models.evaluate.Evaluate;
+import com.luwei.models.membershipcard.order.MembershipCardOrder;
+import com.luwei.models.shop.Shop;
 import com.luwei.models.user.User;
 import com.luwei.services.activity.category.ActivityCategoryService;
 import com.luwei.services.activity.cms.ActivityAddDTO;
 import com.luwei.services.activity.cms.ActivityEditDTO;
 import com.luwei.services.activity.cms.ActivityPageVO;
 import com.luwei.services.activity.order.ActivityOrderService;
+import com.luwei.services.activity.order.web.ActivitySubCardAddDTO;
 import com.luwei.services.activity.series.ActivitySeriesService;
 import com.luwei.services.activity.series.web.ActivitySeriesListVO;
 import com.luwei.services.activity.series.web.SeriesListVO;
@@ -26,11 +42,18 @@ import com.luwei.services.activity.web.*;
 import com.luwei.services.area.AreaService;
 import com.luwei.services.area.web.CityListVO;
 import com.luwei.services.banner.cms.GoodsActivityVO;
+import com.luwei.services.bill.BillService;
 import com.luwei.services.collect.CollectService;
 import com.luwei.services.coupon.web.CouponOrderListVO;
 import com.luwei.services.evaluate.EvaluateService;
 import com.luwei.services.evaluate.cms.EvaluateCmsVO;
 import com.luwei.services.evaluate.web.EvaluateWebListVO;
+import com.luwei.services.integral.bill.IntegralBillService;
+import com.luwei.services.integral.bill.web.IntegralBillDTO;
+import com.luwei.services.membershipCard.order.MembershipCardOrderService;
+import com.luwei.services.pay.PayService;
+import com.luwei.services.shop.ShopService;
+import com.luwei.services.shop.web.ShopListVo;
 import com.luwei.services.user.UserService;
 import com.luwei.services.user.coupon.UserCouponService;
 import lombok.extern.slf4j.Slf4j;
@@ -49,6 +72,9 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
+import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -64,6 +90,9 @@ public class ActivityService {
 
     @Resource
     private ActivityDao activityDao;
+
+    @Resource
+    private ActivityOrderDao activityOrderDao;
 
     @Resource
     private AreaService areaService;
@@ -88,6 +117,27 @@ public class ActivityService {
 
     @Resource
     private ActivitySeriesService activitySeriesService;
+
+    @Resource
+    private ShopService shopService;
+
+    @Resource
+    private ActivitySubCardDao activitySubCardDao;
+
+    @Resource
+    private ActivitySubCardOrderDao activitySubCardOrderDao;
+
+    @Resource
+    private PayService payService;
+
+    @Resource
+    private MembershipCardOrderService membershipCardOrderService;
+    @Resource
+    private CourseEnrolmentDao courseEnrolmentDao;
+    @Resource
+    private IntegralBillService integralBillService;
+    @Resource
+    private BillService billService;
 
     /**
      * cms分页
@@ -282,6 +332,17 @@ public class ActivityService {
         // 本周推送
         vo.setPushList(this.pushList(city.getAreaId(), activityCategoryId));
 
+        List<Shop> shopList = shopService.findAllByAreaId(areaId);
+        List<ShopListVo> shopListVos = new ArrayList<>();
+        if (shopList != null && shopList.size()>0) {
+            for (Shop shop:shopList) {
+                if (shop != null) {
+                    ShopListVo shopListVo = new ShopListVo(shop.getShopId(),shop.getTitle(),shop.getPicture());
+                    shopListVos.add(shopListVo);
+                }
+            }
+        }
+        vo.setShopList(shopListVos);
         return vo;
     }
 
@@ -299,6 +360,8 @@ public class ActivityService {
         }
         return result;
     }
+
+
 
     /**
      * 城中热事
@@ -406,6 +469,20 @@ public class ActivityService {
         } else {
             vo.setCollect(FlagType.DENY);
         }
+        Integer areaId = activity.getAreaId();
+        List<Shop> shopList = shopService.findAllByAreaId(areaId);
+        if (shopList != null && shopList.size() > 0) {
+            vo.setIsHaveShop(1);
+        }else{
+            vo.setIsHaveShop(2);
+        }
+        Date startTime = activity.getStartTime();
+        org.apache.shiro.util.Assert.notNull(startTime, "活动订单不存在");
+        int days = (int) ((new Date().getTime() - startTime.getTime()) / (1000*3600*24));
+        vo.setDistanceTime( Math.abs(days)+"天");
+        vo.setMaxNum(activity.getMaxNum());
+        Integer registeredNum = activityOrderService.findRegisteredNumByActivityId(activityId);
+        vo.setRegisteredNum(registeredNum);
         return vo;
     }
 
@@ -465,6 +542,7 @@ public class ActivityService {
         BeanUtils.copyProperties(activity, activityApply);
         return activityApply;
     }
+    
 
     /**
      * 根据活动获取城市列表
@@ -625,5 +703,137 @@ public class ActivityService {
     }
 
 
+
+    public Response purchaseActivitySubCard(@Valid ActivitySubCardAddDTO dto, HttpServletRequest request) {
+        String outTradeNo = "S" + RandomUtil.getNum(15);
+        Integer activityId = dto.getActivityId();
+        Activity activity = this.findOne(activityId);
+        Integer userId = dto.getUserId();
+        User user = userService.findOne(userId);
+        Integer couponId = dto.getCouponId();
+        ActivitySubCard activitySubCard = activitySubCardDao.findById(couponId).orElse(null);
+        Assert.notNull(activitySubCard, "活动次卡不存在！");
+        Integer frequency = activitySubCard.getFrequency();
+        Assert.isTrue((frequency != null && frequency >0 ), "活动次卡不存在！");
+        activitySubCardOrderDao.deleteAllByUserIdAndActivityIdAndStatus(userId,activityId,1);
+        List<ActivitySubCardOrder> activitySubCardOrders = activitySubCardOrderDao.
+                findAllByUserIdAndActivityIdAndStatusOrderByPayTimeDesc(userId,activityId,2);
+        if (activitySubCardOrders != null && activitySubCardOrders.size()>0) {
+            for (ActivitySubCardOrder activitySubCardOrder:activitySubCardOrders) {
+                if (activitySubCardOrder != null) {
+                    Integer totolFrequency = activitySubCardOrder.getTotolFrequency();
+                    if (totolFrequency != null && totolFrequency != 0) {
+                        Integer usefrequency = activitySubCardOrder.getUsefrequency();
+                        usefrequency = usefrequency == null?0:usefrequency;
+                        Assert.isTrue((usefrequency >= totolFrequency ), "您办理的活动次卡次数未用尽！！");
+                    }
+                }
+            }
+        }
+        int createTime = (int) (System.currentTimeMillis()/1000);
+        ActivitySubCardOrder activitySubCardOrder = new ActivitySubCardOrder(couponId, userId, activityId,
+                activitySubCard.getPrice(),outTradeNo,activitySubCard.getTitle(), activitySubCard.getPicture(),
+                activitySubCard.getDetail(),frequency,0,
+                createTime, null, 1);
+        activitySubCardOrderDao.save(activitySubCardOrder);
+        return Response.build(20000, "success", payService.xcxPay(activitySubCard.getPrice(), dto.getOpenid(),
+                outTradeNo, request));
+
+
+    }
+
+
+    public List<ActivitySubCard> activitySubCard(Integer activityId) {
+        return activitySubCardDao.findAllByActivityId(activityId);
+    }
+
+    public Response enrolmentActivities(Integer activityId, Integer userId) {
+        User user = userService.findOne(userId);
+        Activity activity = findOne(activityId);
+        if (activity.getStatus().equals(ActivityStatus.OVER)) {
+            throw new ValidateException(ExceptionMessage.ACTIVITY_CLOSED);
+        } else if (activity.getStatus().equals(ActivityStatus.UNDERWAY)) {
+            throw new ValidateException(ExceptionMessage.THE_CAMPAIGN_HAS_ALREADY_STARTED);
+        }
+        Integer maxNum = activity.getMaxNum();
+        Assert.isTrue((maxNum != null && maxNum > 0), "活动Id不可用！");
+        List<ActivityOrder> activityOrders = activityOrderDao.findAllByActivityIdAndDeletedIsFalse(activityId);
+        if (activityOrders != null && activityOrders.size() > 0) {
+            Assert.isTrue((activityOrders.size() < maxNum), "活动已报满！");
+        }
+        Integer areaId = activity.getAreaId();
+        Assert.isTrue((areaId != null && areaId != 0), "活动Id不可用！");
+        List<Shop> shops = shopService.findAllByAreaId(areaId);
+        if (shops != null && shops.size() > 0) {//有门店
+            List<MembershipCardOrder> membershipCardOrderList = membershipCardOrderService.findAllByUserIdAndStatusAndAreaId(userId, MembershipCardOrderStatus.PAY, areaId);
+            Assert.isTrue((membershipCardOrderList != null && membershipCardOrderList.size() > 0), "请先办理会员卡！");
+            int state = 1;
+            for (MembershipCardOrder membershipCardOrder : membershipCardOrderList) {
+                if (membershipCardOrder != null) {
+                    Integer effective = membershipCardOrder.getEffective();
+                    long time = membershipCardOrder.getPayTime().getTime() + effective * 24 * 3600 * 1000;
+                    long l = System.currentTimeMillis();
+                    String title = membershipCardOrder.getTitle();
+                    if (!StringUtils.isEmpty(title)) {
+                        if (title.equals("体验会员")) {
+                            List<CourseEnrolment> courseEnrolments = courseEnrolmentDao.findAllByUserId(userId);
+                            List<ActivityOrder> activityOrderList = activityOrderDao.findAllByUserIdAndAreaIdAndDeletedIsFalse(userId,activity.getAreaId());
+                            if ((courseEnrolments == null || courseEnrolments.size()<1)&&(activityOrderList == null || activityOrderList.size() < 1)) {
+                                state = 2;
+                            }
+                        } else {
+                            if (time > l) {
+                                state = 2;
+                            }
+                        }
+                    }
+                }
+            }
+            Assert.isTrue((state == 2), "您办理的会员卡已过期！");
+        } else {//无门店
+            List<ActivitySubCardOrder> activitySubCardOrders = activitySubCardOrderDao.
+                   findAllByUserIdAndActivityIdAndStatusOrderByPayTimeDesc(userId, activityId, 2);
+            Assert.isTrue((activitySubCardOrders != null && activitySubCardOrders.size() > 0), "请先购买的次卡！");
+            Integer da = 0;
+            for (ActivitySubCardOrder activitySubCardOrder : activitySubCardOrders) {
+                if (activitySubCardOrder != null) {
+                    Integer totolFrequency = activitySubCardOrder.getTotolFrequency();
+                    if (totolFrequency == null || totolFrequency == 0) {
+                        continue;
+                    }
+                    Integer usefrequency = activitySubCardOrder.getUsefrequency();
+                    usefrequency = usefrequency == null ? 0 : usefrequency;
+                    if (usefrequency < totolFrequency) {
+                        da = activitySubCardOrder.getActivitySubCardOrderId();
+                    }
+                }
+            }
+            Assert.isTrue(da != 0, "您购买的次卡已用尽！");
+            ActivitySubCardOrder activitySubCardOrderEd = activitySubCardOrderDao.findById(da).orElse(null);
+            Assert.notNull(activitySubCardOrderEd, "参数错误");
+            Integer usefrequency = activitySubCardOrderEd.getUsefrequency();
+            usefrequency = usefrequency == null ?0:usefrequency;
+            activitySubCardOrderEd.setUsefrequency(usefrequency+1);
+            activitySubCardOrderDao.save(activitySubCardOrderEd);
+        }
+
+        String outTradeNo = "A" + RandomUtil.getNum(15);
+        ActivityOrder activityOrder = new ActivityOrder(activity.getAreaId(),userId, activityId, 1, 0,
+                outTradeNo, activity.getTitle(), activity.getProvince() + " " + activity.getCity() + " " + activity.getAddress(),
+                activity.getStartTime(), activity.getEndTime(), new Date(),
+                ActivityOrderStatus.PAY, FlagType.DENY);
+        activityOrderService.save(activityOrder);
+
+        Bill bill = new Bill();
+        bill.setAmount(1);
+        bill.setOutTradeNo(outTradeNo);
+        bill.setUserId(userId);
+        bill.setTransactionId(RandomUtil.getNum(15));
+        bill.setRemark("购买活动订单");
+        bill.setStoreId(0);
+        bill.setTransactionType(TransactionType.ACTIVITY);
+        billService.save(bill);
+        return Response.success("success");
+    }
 }
 

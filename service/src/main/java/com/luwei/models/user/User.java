@@ -23,6 +23,9 @@ public class User extends IdEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer userId;
 
+    @Column(columnDefinition = "int(11) default 0 comment '推荐用户Id'")
+    private Integer recommenderUserId;
+
     @Column(columnDefinition = "varchar(48) not null default '' comment '姓名'")
     private String username;
 

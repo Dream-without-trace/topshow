@@ -23,16 +23,25 @@ public class Course extends IdEntity {
     @Column(columnDefinition = "int(11) not null default -1 comment '门店id'")
     private Integer shopId;
 
-    @Column(columnDefinition = "varchar(64) not null default '' comment '名称'")
+    @Column(columnDefinition = "varchar(64) not null default '' comment '标题'")
     private String title;
 
-    @Column(columnDefinition = "timestamp not null default current_timestamp comment '开始时间'")
-    private Date startTime;
+    @Column(columnDefinition = "int(11) not null default 0 comment '课程日期（时间戳）'")
+    private Long startDate;
 
-    @Column(columnDefinition = "timestamp not null default current_timestamp comment '结束时间'")
-    private Date endTime;
+    @Column(columnDefinition = "varchar(64) not null default '' comment '开始时间'")
+    private String startTime;
+
+    @Column(columnDefinition = "varchar(64) not null default '' comment '结束时间'")
+    private String endTime;
 
     @Column(columnDefinition = "int(11) not null default -1 comment '最大报名人数'")
     private Integer maxNum;
+
+    @Column(columnDefinition = "text comment '封面'")
+    private String picture;
+
+    @Column(columnDefinition = "text comment '描述'")
+    private String description;
 
 }

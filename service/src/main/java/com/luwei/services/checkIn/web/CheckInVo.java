@@ -24,7 +24,7 @@ public class CheckInVo {
     private Integer checkInTotalIntegral;
 
     @ApiModelProperty("签到日期")
-    private List<Date> checkInTimes;
+    private List<String> checkInTimes;
 
     @ApiModelProperty("是否签到 ：1：已签到，2：未签到")
     private Integer isCheckIn;
@@ -33,7 +33,7 @@ public class CheckInVo {
     public CheckInVo() {
     }
 
-    public CheckInVo(Integer checkInDate, Integer checkInTotalIntegral, List<Date> checkInTimes, Integer isCheckIn) {
+    public CheckInVo(Integer checkInDate, Integer checkInTotalIntegral, List<String> checkInTimes, Integer isCheckIn) {
         this.checkInDate = checkInDate;
         this.checkInTotalIntegral = checkInTotalIntegral;
         this.checkInTimes = checkInTimes;

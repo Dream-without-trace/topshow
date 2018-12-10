@@ -1,8 +1,11 @@
 package com.luwei.controller;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.luwei.common.Response;
 import com.luwei.common.enums.type.RoleType;
 import com.luwei.common.utils.RandomUtil;
+import com.luwei.module.qiniu.QiNiuService;
 import com.luwei.module.shiro.service.ShiroTokenService;
 import com.luwei.services.manager.cms.LoginSuccessVO;
 import com.luwei.services.user.UserService;
@@ -13,10 +16,22 @@ import com.luwei.services.user.web.UserInfoVO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpStatus;
+import org.apache.http.client.config.RequestConfig;
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.protocol.BasicHttpContext;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.validation.Valid;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
 
 /**
  * @author Leone
@@ -33,6 +48,8 @@ public class UserController {
 
     @Resource
     private UserService userService;
+    @Resource
+    private QiNiuService qiNiuService;
 
 
     @ApiOperation("绑定手机号")
@@ -59,8 +76,8 @@ public class UserController {
 
     @GetMapping("/integral/total")
     @ApiOperation("获取某个用户积分总和")
-    public Response<Integer> findOne(@RequestParam Integer userId) {
-        Integer result = userService.findIntegralTotal(userId);
+    public Response findOne(@RequestParam Integer userId) {
+        JSONObject result = userService.findIntegralTotal(userId);
         return Response.build(20000, "success", result);
     }
 
@@ -75,5 +92,27 @@ public class UserController {
     public UserAddressVO userAddress(@RequestParam Integer userId) {
         return userService.userAddress(userId);
     }
+
+    @GetMapping("/memberCentre")
+    @ApiOperation("会员中心")
+    public Response memberCentre(@RequestParam Integer userId) {
+        return userService.memberCentre(userId);
+    }
+
+    @GetMapping("/downloadPicture")
+    public Response downloadPicture(@RequestParam String purl){
+       return Response.success(qiNiuService.uploadStreamByUrl(purl));
+    }
+
+
+    @GetMapping("/shareUserDetails")
+    @ApiOperation("分享用户详情")
+    public Response shareUserDetails(@RequestParam Integer userId){
+        JSONObject jsonObject = userService.shareUserDetails(userId);
+        return Response.build(2000,"查询成功！",jsonObject);
+    }
+
+
+
 
 }

@@ -22,6 +22,9 @@ public class MembershipCard extends IdEntity {
     @Column(columnDefinition = "int(11) not null default 0 comment '有效时间单位是天'")
     private Integer effective;
 
+    @Column(columnDefinition = "int(11) not null default 0 comment '地区ID'")
+    private Integer areaId;
+
     @Column(columnDefinition = "varchar(64) not null default '' comment '会员卡等级标题'")
     private String title;
 
@@ -30,6 +33,9 @@ public class MembershipCard extends IdEntity {
 
     @Column(columnDefinition = "text comment '会员卡等级描述'")
     private String detail;
+
+    @Column(columnDefinition = "text comment '会员权益'")
+    private String memberBenefits;
 
     @Column(columnDefinition = "int(11) not null default 0 comment '价格'")
     private Integer price;

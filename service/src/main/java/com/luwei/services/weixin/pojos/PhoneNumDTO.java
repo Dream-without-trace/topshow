@@ -23,6 +23,7 @@ public class PhoneNumDTO {
 
     private String sessionKey;
 
+    private String referrerPhone;
 
     public String getSessionKey() {
         return sessionKey;
@@ -62,5 +63,13 @@ public class PhoneNumDTO {
 
     public void setEncryptedData(String encryptedData) {
         this.encryptedData = encryptedData;
+    }
+
+    public String getReferrerPhone() {
+        return referrerPhone;
+    }
+
+    public void setReferrerPhone(String referrerPhone) {
+        this.referrerPhone = referrerPhone;
     }
 }

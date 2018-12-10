@@ -9,6 +9,8 @@ import com.luwei.common.enums.type.SexType;
 import com.luwei.common.property.AppProperties;
 import com.luwei.common.utils.RandomUtil;
 import com.luwei.models.area.Area;
+import com.luwei.models.integralset.IntegralSet;
+import com.luwei.models.integralset.IntegralSetDao;
 import com.luwei.models.user.User;
 import com.luwei.models.user.receiving.ReceivingAddress;
 import com.luwei.module.shiro.service.ShiroTokenService;
@@ -33,6 +35,7 @@ import javax.crypto.spec.SecretKeySpec;
 import java.nio.charset.StandardCharsets;
 import java.security.spec.AlgorithmParameterSpec;
 import java.util.Base64;
+import java.util.List;
 
 /**
  * @author Leone
@@ -69,7 +72,8 @@ public class WxService {
 
     @Resource
     private UserReceivingAddressService userReceivingAddressService;
-
+    @Resource
+    private IntegralSetDao integralSetDao;
 
     /**
      * 获取access_token
@@ -149,7 +153,22 @@ public class WxService {
             user.setPhone("");
             user.setDisable(FlagType.DENY);
             user.setAge(AgeType.UNKNOWN);
+            List<IntegralSet> integralSets = integralSetDao.findAll();
+            if (integralSets != null && integralSets.size() > 0){
+                IntegralSet integralSet = integralSets.get(0);
+                if (integralSet != null) {
+                    Integer firstLoginIntegral = integralSet.getFirstLoginIntegral();
+                    if (firstLoginIntegral != null) {
+                        user.setIntegral(firstLoginIntegral);
+                    }
+                }
+            }
             userService.saveUser(user);
+            if (user.getIntegral() != null && user.getIntegral() != 0) {
+                // 保存用户积分流水
+                integralBillService.save(new IntegralBillDTO(user.getUserId(), user.getNickname(), user.getPhone(),
+                        user.getIntegral(),user.getIntegral(), BillType.INCOME, "首次登陆赠送积分"));
+            }
         }
         ReceivingAddress receivingAddress = userReceivingAddressService.findByUserIdNew(user.getUserId());
         UserWebVO userWebVO = new UserWebVO();
@@ -189,13 +208,41 @@ public class WxService {
         String result = decrypt(keyByte, ivByte, dataByte);
         PhoneEncrypted phoneInfo = objectMapper.readValue(result, PhoneEncrypted.class);
         User user = userService.findOne(dto.getUserId());
+        int inviteGiftIntegral = 0 ;
+        int bindPhoneIntegral = 0 ;
+        List<IntegralSet> integralSets = integralSetDao.findAll();
+        if (integralSets != null && integralSets.size()>0) {
+            IntegralSet integralSet = integralSets.get(0);
+            if (integralSet != null) {
+                inviteGiftIntegral = integralSet.getInviteGiftIntegral();
+                bindPhoneIntegral = integralSet.getBindPhoneIntegral();
+            }
+        }
         if (!user.getFirst()) {
-            user.setIntegral(user.getIntegral() + 10);
+            user.setIntegral(user.getIntegral() + bindPhoneIntegral);
             user.setFirst(false);
             // 保存用户积分流水
-            integralBillService.save(new IntegralBillDTO(user.getUserId(), user.getNickname(), user.getPhone(), 10, user.getIntegral(), BillType.INCOME, "用户绑定手机号"));
+            integralBillService.save(new IntegralBillDTO(user.getUserId(), user.getNickname(), user.getPhone(), bindPhoneIntegral,
+                    user.getIntegral(), BillType.INCOME, "用户绑定手机号"));
         }
         user.setPhone(phoneInfo.getPhoneNumber());
+        String referrerPhone = dto.getReferrerPhone();
+        if (referrerPhone != null && !"".equals(referrerPhone)) {
+            List<User> userList = userService.findAllByPhone(referrerPhone);
+            if (userList != null && userList.size()>0) {
+                for (User user1:userList) {
+                    if (user1 != null) {
+                        user1.setIntegral(user1.getIntegral() + inviteGiftIntegral);
+                        // 保存用户积分流水
+                        integralBillService.save(new IntegralBillDTO(user1.getUserId(), user1.getNickname(),
+                                user1.getPhone(), inviteGiftIntegral,
+                                user1.getIntegral(), BillType.INCOME, "邀请用户"));
+                        userService.save(user1);
+                        user.setRecommenderUserId(user1.getUserId());
+                    }
+                }
+            }
+        }
         userService.save(user);
     }
 

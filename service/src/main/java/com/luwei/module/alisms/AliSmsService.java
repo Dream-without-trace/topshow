@@ -8,6 +8,9 @@ import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.profile.DefaultProfile;
 import com.aliyuncs.profile.IClientProfile;
+import com.luwei.common.exception.ExceptionMessage;
+import com.luwei.common.exception.ValidateException;
+import com.luwei.common.utils.AppUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.redis.core.StringRedisTemplate;
@@ -113,4 +116,30 @@ public class AliSmsService {
         return result.toString();
     }
 
+    public boolean sendMessage(String phone, String text) throws ClientException {
+        if (!AppUtils.isMobile(phone))
+            throw new ValidateException(ExceptionMessage.PHONE_LAYOUT_FAIL);
+        deleteCaptcha(phone);
+        IClientProfile profile = DefaultProfile.getProfile("cn-hangzhou", aliSmsProperties.getAccessKeyId(),
+                aliSmsProperties.getAccessKeySecret());
+        DefaultProfile.addEndpoint("cn-hangzhou", "cn-hangzhou", "Dysmsapi",
+                "dysmsapi.aliyuncs.com");
+        IAcsClient acsClient = new DefaultAcsClient(profile);
+        SendSmsRequest request = new SendSmsRequest();
+        request.setMethod(MethodType.POST);
+        request.setPhoneNumbers(phone);
+        request.setSignName(aliSmsProperties.getSignName());
+        request.setTemplateCode(aliSmsProperties.getTemplateCode());
+        request.setTemplateParam("{'" + aliSmsProperties.getTemplateCodeName() + "':'" + text + "'}");
+        SendSmsResponse sendSmsResponse = acsClient.getAcsResponse(request);
+        if (!"OK".equals(sendSmsResponse.getMessage()) && !"OK".equals(sendSmsResponse.getCode())) {
+            logger.error("Ali sms send error phone:{}-----code:{}", phone, text);
+            return false;
+        } else {
+            this.stringRedisTemplate.opsForValue().set(aliSmsProperties.getRedisPrefix() + ":" + phone, text,
+                    aliSmsProperties.getExpireTime(), TimeUnit.MINUTES);
+            logger.info("Ali sms send successful phone:{}-----code:{}", phone, text);
+            return true;
+        }
+    }
 }

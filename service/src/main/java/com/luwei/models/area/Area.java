@@ -43,5 +43,7 @@ public class Area implements Serializable {
     @Column(columnDefinition = "varchar(128) not null default '' comment '城市图片'")
     private String picture;
 
+    @Column(columnDefinition = "tinyint not null default 0 comment '是否删除'")
+    protected Boolean deleted = false;
 
 }
