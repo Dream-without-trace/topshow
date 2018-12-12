@@ -4,6 +4,7 @@ import com.aliyuncs.exceptions.ClientException;
 import com.luwei.common.exception.ExceptionMessage;
 import com.luwei.common.exception.ValidateException;
 import com.luwei.common.utils.AppUtils;
+import com.luwei.module.alisms.AliSmsProperties;
 import com.luwei.module.alisms.AliSmsService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -28,6 +29,9 @@ public class SmsController {
 
     @Resource
     private AliSmsService aliSmsService;
+
+    @Resource
+    private AliSmsProperties aliSmsProperties;
 
     @ApiOperation("发送验证码")
     @GetMapping("/send")

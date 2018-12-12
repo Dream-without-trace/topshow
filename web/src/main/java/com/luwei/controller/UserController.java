@@ -54,8 +54,9 @@ public class UserController {
 
     @ApiOperation("绑定手机号")
     @PutMapping("/binding")
-    public Response<String> binding(@RequestParam String phone, @RequestParam Integer userId, @RequestParam String captcha) {
-        if (userService.binding(phone, userId, captcha)) {
+    public Response<String> binding(@RequestParam String phone, @RequestParam Integer userId,
+                                    @RequestParam String captcha,@RequestParam String referrerPhone) {
+        if (userService.binding(phone, userId, captcha,referrerPhone)) {
             return Response.success("绑定成功");
         } else {
             return Response.error("绑定失败");

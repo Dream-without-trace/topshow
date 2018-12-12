@@ -20,18 +20,21 @@ import com.luwei.models.activity.order.subcard.ActivitySubCardOrder;
 import com.luwei.models.activity.order.subcard.ActivitySubCardOrderDao;
 import com.luwei.models.activity.series.ActivitySeries;
 import com.luwei.models.activity.subcard.ActivitySubCard;
+import com.luwei.models.activity.subcard.ActivitySubCardDTO;
 import com.luwei.models.activity.subcard.ActivitySubCardDao;
 import com.luwei.models.area.Area;
 import com.luwei.models.bill.Bill;
-import com.luwei.models.courseEnrolment.CourseEnrolment;
 import com.luwei.models.courseEnrolment.CourseEnrolmentDao;
 import com.luwei.models.evaluate.Evaluate;
 import com.luwei.models.membershipcard.order.MembershipCardOrder;
 import com.luwei.models.shop.Shop;
 import com.luwei.models.user.User;
+import com.luwei.module.alisms.AliSmsProperties;
+import com.luwei.module.alisms.AliSmsService;
 import com.luwei.services.activity.category.ActivityCategoryService;
 import com.luwei.services.activity.cms.ActivityAddDTO;
 import com.luwei.services.activity.cms.ActivityEditDTO;
+import com.luwei.services.activity.cms.ActivityOrderCMSPageVO;
 import com.luwei.services.activity.cms.ActivityPageVO;
 import com.luwei.services.activity.order.ActivityOrderService;
 import com.luwei.services.activity.order.web.ActivitySubCardAddDTO;
@@ -49,7 +52,6 @@ import com.luwei.services.evaluate.EvaluateService;
 import com.luwei.services.evaluate.cms.EvaluateCmsVO;
 import com.luwei.services.evaluate.web.EvaluateWebListVO;
 import com.luwei.services.integral.bill.IntegralBillService;
-import com.luwei.services.integral.bill.web.IntegralBillDTO;
 import com.luwei.services.membershipCard.order.MembershipCardOrderService;
 import com.luwei.services.pay.PayService;
 import com.luwei.services.shop.ShopService;
@@ -59,6 +61,7 @@ import com.luwei.services.user.coupon.UserCouponService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
@@ -68,16 +71,18 @@ import org.springframework.util.ObjectUtils;
 import org.springframework.util.StringUtils;
 
 import javax.annotation.Resource;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
-import javax.validation.constraints.NotNull;
+import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 /**
  * @author Leone
@@ -90,54 +95,42 @@ public class ActivityService {
 
     @Resource
     private ActivityDao activityDao;
-
     @Resource
     private ActivityOrderDao activityOrderDao;
-
     @Resource
     private AreaService areaService;
-
     @Resource
     private UserService userService;
-
     @Resource
     private CollectService collectService;
-
     @Resource
     private UserCouponService userCouponService;
-
     @Resource
     private ActivityOrderService activityOrderService;
-
     @Resource
     private EvaluateService evaluateService;
-
     @Resource
     private ActivityCategoryService activityCategoryService;
-
     @Resource
     private ActivitySeriesService activitySeriesService;
-
     @Resource
     private ShopService shopService;
-
     @Resource
     private ActivitySubCardDao activitySubCardDao;
-
     @Resource
     private ActivitySubCardOrderDao activitySubCardOrderDao;
-
     @Resource
     private PayService payService;
-
+    @PersistenceContext
+    private EntityManager entityManager;
     @Resource
     private MembershipCardOrderService membershipCardOrderService;
     @Resource
-    private CourseEnrolmentDao courseEnrolmentDao;
-    @Resource
-    private IntegralBillService integralBillService;
-    @Resource
     private BillService billService;
+    @Resource
+    private AliSmsService aliSmsService;
+    @Resource
+    private AliSmsProperties aliSmsProperties;
 
     /**
      * cms分页
@@ -744,7 +737,7 @@ public class ActivityService {
 
 
     public List<ActivitySubCard> activitySubCard(Integer activityId) {
-        return activitySubCardDao.findAllByActivityId(activityId);
+        return activitySubCardDao.findAllByActivityIdAndDeletedIsFalse(activityId);
     }
 
     public Response enrolmentActivities(Integer activityId, Integer userId) {
@@ -849,7 +842,80 @@ public class ActivityService {
         bill.setStoreId(0);
         bill.setTransactionType(TransactionType.ACTIVITY);
         billService.save(bill);
+        Date startTime = activity.getStartTime();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy年MM月dd日HH时mm分");
+        String format = sdf.format(startTime);
+        String text = "{\"date\":\""+format+"\", \"name\":\""+activity.getTitle()+"\"}";
+        aliSmsService.sendMessage(user.getPhone(),aliSmsProperties.getEnrollActivityCode(),text);
         return Response.success("success");
+    }
+
+    public Page<ActivityOrderCMSPageVO> activityOrderPage(Pageable pageable, String phone) {
+        String contentSql = "select new com.luwei.services.activity.cms.ActivityOrderCMSPageVO " +
+                "(ao.activityOrderId,ao.outTradeNo,u.nickname,u.avatarUrl,u.phone,ao.activityTitle,ao.createTime,ao.status)" +
+                " from ActivityOrder ao, User u where ao.userId = u.userId";
+
+        String countSql = "select count(ao.activityOrderId) from ActivityOrder ao, User u where ao.userId = u.userId";
+
+        if (phone != null && !"".equals(phone.trim())) {
+            countSql += " and u.phone like ?0";
+            contentSql += " and u.phone like ?0 order by ao.activityOrderId desc";
+        } else {
+            contentSql += " order by ao.activityOrderId desc";
+        }
+        Query countQuery = entityManager.createQuery(countSql);
+        Query contentQuery = entityManager.createQuery(contentSql);
+        if (phone != null && !"".equals(phone.trim())) {
+            countQuery.setParameter(0, phone.replace(" ",""));
+            contentQuery.setParameter(0, phone.replace(" ",""));
+        }
+        contentQuery.setMaxResults(pageable.getPageSize());
+        contentQuery.setFirstResult(pageable.getPageNumber() * pageable.getPageSize());
+        Long total = (Long) countQuery.getSingleResult();
+        List content = contentQuery.getResultList();
+        return new PageImpl<>(content, pageable, total);
+
+    }
+
+    public Response checkActivityOrder(Integer activityOrderId) {
+        ActivityOrder activityOrder = activityOrderService.findOne(activityOrderId);
+        ActivityOrderStatus status = activityOrder.getStatus();
+        Assert.notNull(status,"订单ID不可用！");
+        Assert.isTrue(status.equals(ActivityOrderStatus.PAY),"订单ID不可用！！");
+        activityOrder.setStatus(ActivityOrderStatus.JOIN);
+        activityOrderService.save(activityOrder);
+        return Response.success("成功");
+    }
+
+    /**
+     * 添加活动次卡
+     * @param dto
+     * @return
+     */
+    public Response saveActivitySubCardDTO(@Valid ActivitySubCardDTO dto) {
+        ActivitySubCard activitySubCard = new ActivitySubCard();
+        BeanUtils.copyProperties(activitySubCard, dto);
+        activitySubCardDao.save(activitySubCard);
+        return Response.build(2000,"成功！",activitySubCard);
+    }
+
+    public ActivitySubCardDTO findActivitySubCardById(Integer activitySubCardId) {
+        ActivitySubCard activitySubCard = activitySubCardDao.findById(activitySubCardId).orElse(null);
+        Assert.notNull(activitySubCard,"活动次卡ID不可用！");
+        ActivitySubCardDTO activitySubCardDTO = new ActivitySubCardDTO();
+        BeanUtils.copyProperties(activitySubCardDTO, activitySubCard);
+        return activitySubCardDTO;
+    }
+
+    public void deleteActivitySubCard(Set<Integer> ids) {activitySubCardDao.delByIds(new ArrayList<>(ids));}
+
+    public List<ActivitySubCardDTO> findActivitySubCardsByActivityId(Integer activityId) {
+        return activitySubCardDao.findAllByActivityIdAndDeletedIsFalse(activityId).stream().map(e -> {
+            ActivitySubCardDTO vo = new ActivitySubCardDTO();
+            BeanUtils.copyProperties(e, vo);
+            return vo;
+        }).collect(Collectors.toList());
+
     }
 }
 

@@ -95,7 +95,15 @@ public class EvaluateService {
      * @param type
      */
     public List<EvaluateCmsVO> cmsVOList(Integer tripartiteId, EvaluateType type) {
-        List<Evaluate> list = this.findByActivityIdAndType(tripartiteId, type);
+        List<Evaluate> list = null;
+        if (tripartiteId != null && tripartiteId != 0){
+            list = this.findByActivityIdAndType(tripartiteId, type);
+        }else{
+            list = evaluateDao.findAllByTypeAndDeletedIsFalse(type);
+        }
+        if (list == null || list.size()<1) {
+            return new ArrayList<>();
+        }
         return list.stream().map(e -> {
             EvaluateCmsVO vo = new EvaluateCmsVO();
             User user = userService.findOne(e.getUserId());

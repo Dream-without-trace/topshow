@@ -96,8 +96,8 @@ public class MembershipCardOrderService {
     }
 
 
-    public List<MembershipCardOrder> findMembershipCardOrdersByOutTradeNo(String outTradeNo) {
-        return membershipCardOrderDao.findMembershipCardOrdersByOutTradeNoAndDeletedFalse(outTradeNo);
+    public List<MembershipCardOrder> findMembershipCardOrdersByOutTradeNo(String outTradeNo,MembershipCardOrderStatus status) {
+        return membershipCardOrderDao.findMembershipCardOrdersByOutTradeNoAndStatusAndDeletedFalse(outTradeNo,status);
     }
 
     public void saveAll(List<MembershipCardOrder> membershipCardOrderList) {

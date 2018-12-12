@@ -1,7 +1,10 @@
 package com.luwei.models.courseEnrolment;
 
+import com.luwei.common.utils.PageQuery;
+import com.luwei.services.course.cms.CourseOrderCMSPageVo;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
+import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 
@@ -18,4 +21,5 @@ public interface CourseEnrolmentDao extends JpaRepository<CourseEnrolment, Integ
     List<CourseEnrolment> findAllByUserId(Integer userId);
 
     List<CourseEnrolment> findAllByCourseId(Integer courseId);
+
 }

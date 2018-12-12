@@ -19,7 +19,7 @@ public interface MembershipCardOrderDao extends JpaRepository<MembershipCardOrde
 
     List<MembershipCardOrder> findMembershipCardOrdersByUserIdAndDeletedFalse(Integer userId);
 
-    List<MembershipCardOrder> findMembershipCardOrdersByOutTradeNoAndDeletedFalse(String outTradeNo);
+    List<MembershipCardOrder> findMembershipCardOrdersByOutTradeNoAndStatusAndDeletedFalse(String outTradeNo,MembershipCardOrderStatus status);
 
     MembershipCardOrder findMembershipCardOrdersByMembershipCardOrderIdAndDeletedFalse(Integer id);
 

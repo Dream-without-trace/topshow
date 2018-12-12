@@ -20,4 +20,6 @@ public interface EvaluateDao extends JpaRepository<Evaluate, Integer>, JpaSpecif
 
     @Query("select new com.luwei.services.evaluate.web.EvaluateWebVO(e.evaluateId,e.createTime,e.picture,u.avatarUrl,u.nickname,e.content) from Evaluate e, User u where e.userId = u.userId and e.tripartiteId = ?1 and e.type = ?2 and e.flagType = ?3")
     List<EvaluateWebVO> findEvaluateByIdAndType(Integer goodsId, EvaluateType type, FlagType flagType);
+
+    List<Evaluate> findAllByTypeAndDeletedIsFalse(EvaluateType evaluateType);
 }

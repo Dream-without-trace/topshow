@@ -12,6 +12,19 @@ public class AliSmsProperties {
 
     private String templateCode;
 
+    /**
+     * 报名课程
+     */
+    private String enrollCoursesCode;
+    /**
+     * 报名活动
+     */
+    private String enrollActivityCode;
+    /**
+     * 注册会员
+     */
+    private String registerMemberCode;
+
     private String templateCodeName = "code";
 
     private Long expireTime = 5L;
@@ -86,5 +99,29 @@ public class AliSmsProperties {
 
     public void setRedisPrefix(String redisPrefix) {
         this.redisPrefix = redisPrefix;
+    }
+
+    public String getEnrollCoursesCode() {
+        return enrollCoursesCode;
+    }
+
+    public void setEnrollCoursesCode(String enrollCoursesCode) {
+        this.enrollCoursesCode = enrollCoursesCode;
+    }
+
+    public String getEnrollActivityCode() {
+        return enrollActivityCode;
+    }
+
+    public void setEnrollActivityCode(String enrollActivityCode) {
+        this.enrollActivityCode = enrollActivityCode;
+    }
+
+    public String getRegisterMemberCode() {
+        return registerMemberCode;
+    }
+
+    public void setRegisterMemberCode(String registerMemberCode) {
+        this.registerMemberCode = registerMemberCode;
     }
 }

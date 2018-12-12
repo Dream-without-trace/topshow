@@ -116,30 +116,44 @@ public class AliSmsService {
         return result.toString();
     }
 
-    public boolean sendMessage(String phone, String text) throws ClientException {
+    public boolean sendMessage(String phone,String templateCode, String text){
         if (!AppUtils.isMobile(phone))
             throw new ValidateException(ExceptionMessage.PHONE_LAYOUT_FAIL);
         deleteCaptcha(phone);
         IClientProfile profile = DefaultProfile.getProfile("cn-hangzhou", aliSmsProperties.getAccessKeyId(),
                 aliSmsProperties.getAccessKeySecret());
-        DefaultProfile.addEndpoint("cn-hangzhou", "cn-hangzhou", "Dysmsapi",
-                "dysmsapi.aliyuncs.com");
-        IAcsClient acsClient = new DefaultAcsClient(profile);
-        SendSmsRequest request = new SendSmsRequest();
-        request.setMethod(MethodType.POST);
-        request.setPhoneNumbers(phone);
-        request.setSignName(aliSmsProperties.getSignName());
-        request.setTemplateCode(aliSmsProperties.getTemplateCode());
-        request.setTemplateParam("{'" + aliSmsProperties.getTemplateCodeName() + "':'" + text + "'}");
-        SendSmsResponse sendSmsResponse = acsClient.getAcsResponse(request);
-        if (!"OK".equals(sendSmsResponse.getMessage()) && !"OK".equals(sendSmsResponse.getCode())) {
-            logger.error("Ali sms send error phone:{}-----code:{}", phone, text);
-            return false;
-        } else {
-            this.stringRedisTemplate.opsForValue().set(aliSmsProperties.getRedisPrefix() + ":" + phone, text,
-                    aliSmsProperties.getExpireTime(), TimeUnit.MINUTES);
-            logger.info("Ali sms send successful phone:{}-----code:{}", phone, text);
-            return true;
+        try {
+            DefaultProfile.addEndpoint("cn-hangzhou", "cn-hangzhou", "Dysmsapi",
+                    "dysmsapi.aliyuncs.com");
+            IAcsClient acsClient = new DefaultAcsClient(profile);
+            SendSmsRequest request = new SendSmsRequest();
+            request.setMethod(MethodType.POST);
+            request.setPhoneNumbers(phone);
+            request.setSignName(aliSmsProperties.getSignName());
+            request.setTemplateCode(templateCode);
+            if (text != null && !"".equals(text)) {
+                request.setTemplateParam(text);
+            }
+            SendSmsResponse sendSmsResponse = acsClient.getAcsResponse(request);
+            if (!"OK".equals(sendSmsResponse.getMessage()) && !"OK".equals(sendSmsResponse.getCode())) {
+                logger.error("Ali sms send error phone:{}-----code:{}", phone, text);
+                return false;
+            } else {
+                if (text == null || !"".equals(text)) {
+                    text="用户购买会员卡！";
+                }
+                System.out.println(text);
+                this.stringRedisTemplate.opsForValue().set(aliSmsProperties.getRedisPrefix() + ":" + phone, text,
+                        aliSmsProperties.getExpireTime(), TimeUnit.MINUTES);
+                logger.info("Ali sms send successful phone:{}-----code:{}", phone, text);
+                return true;
+            }
+        } catch (ClientException e) {
+            e.printStackTrace();
         }
+        return false;
     }
+    
+    
+
 }

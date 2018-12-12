@@ -33,7 +33,7 @@ public class CheckInController {
     }
 
     @PostMapping
-    @ApiOperation("线下签到")
+    @ApiOperation("线下门店签到")
     public Response offlineCheckIn(@RequestParam @ApiParam("用户Id")Integer userId){
         return Response.build(2000,"签到成功！",checkInService.saveCheckIn(userId,2));
     }

@@ -22,6 +22,12 @@ public class CoursePageVo {
     @ApiModelProperty("标题")
     private String title;
 
+    @ApiModelProperty("门店id")
+    private Integer shopId;
+
+    @ApiModelProperty("门店名称")
+    private String shopName;
+
     @ApiModelProperty("课程日期")
     private String startDate;
 

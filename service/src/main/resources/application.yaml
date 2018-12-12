@@ -44,6 +44,9 @@ luwei:
       sign-name: topshow
       template-code: SMS_142755004
       template-code-name: code
+      enroll-courses-code: SMS_152514565
+      enroll-activity-code: SMS_152514570
+      register-member-code: SMS_152514562
     qiniu:
       bucket: image-topshow
       access-key: aPUcZJe4DJdQuAX-v-6bVhEPZCF3dRKijKKGc2EO

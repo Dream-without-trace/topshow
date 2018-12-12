@@ -208,13 +208,11 @@ public class WxService {
         String result = decrypt(keyByte, ivByte, dataByte);
         PhoneEncrypted phoneInfo = objectMapper.readValue(result, PhoneEncrypted.class);
         User user = userService.findOne(dto.getUserId());
-        int inviteGiftIntegral = 0 ;
         int bindPhoneIntegral = 0 ;
         List<IntegralSet> integralSets = integralSetDao.findAll();
         if (integralSets != null && integralSets.size()>0) {
             IntegralSet integralSet = integralSets.get(0);
             if (integralSet != null) {
-                inviteGiftIntegral = integralSet.getInviteGiftIntegral();
                 bindPhoneIntegral = integralSet.getBindPhoneIntegral();
             }
         }
@@ -226,23 +224,6 @@ public class WxService {
                     user.getIntegral(), BillType.INCOME, "用户绑定手机号"));
         }
         user.setPhone(phoneInfo.getPhoneNumber());
-        String referrerPhone = dto.getReferrerPhone();
-        if (referrerPhone != null && !"".equals(referrerPhone)) {
-            List<User> userList = userService.findAllByPhone(referrerPhone);
-            if (userList != null && userList.size()>0) {
-                for (User user1:userList) {
-                    if (user1 != null) {
-                        user1.setIntegral(user1.getIntegral() + inviteGiftIntegral);
-                        // 保存用户积分流水
-                        integralBillService.save(new IntegralBillDTO(user1.getUserId(), user1.getNickname(),
-                                user1.getPhone(), inviteGiftIntegral,
-                                user1.getIntegral(), BillType.INCOME, "邀请用户"));
-                        userService.save(user1);
-                        user.setRecommenderUserId(user1.getUserId());
-                    }
-                }
-            }
-        }
         userService.save(user);
     }
 

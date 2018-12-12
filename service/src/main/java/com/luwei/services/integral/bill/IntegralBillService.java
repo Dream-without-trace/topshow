@@ -124,8 +124,10 @@ public class IntegralBillService {
      * @param dto
      */
     public void save(IntegralBillDTO dto) {
+        System.out.println("================dto"+dto.toString());
         IntegralBill bill = new IntegralBill();
         BeanUtils.copyProperties(dto, bill);
+        System.out.println("=================bill============"+bill.toString());
         integralBillDao.save(bill);
     }
 

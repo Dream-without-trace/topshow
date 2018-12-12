@@ -218,12 +218,13 @@ public class BannerService {
      */
     public Page<BannerWebVO> homePage(BannerType type, Integer areaId, Pageable pageable) {
         final List<Integer> areaIds = new ArrayList<>();
-
-        if (!ObjectUtils.isEmpty(areaId)) {
-            areaIds.addAll(activityService.findByAreaId(areaId));
-            areaIds.add(-1);
+        Assert.notNull(type,"类型为空！");
+        if (!type.equals(BannerType.ACTIVITY)) {
+            if (!ObjectUtils.isEmpty(areaId)) {
+                areaIds.addAll(activityService.findByAreaId(areaId));
+                areaIds.add(-1);
+            }
         }
-
         Specification<Banner> specification = (Root<Banner> root, CriteriaQuery<?> criteriaQuery, CriteriaBuilder criteriaBuilder) -> {
             List<Predicate> list = new ArrayList<>();
             list.add(criteriaBuilder.equal(root.get("deleted").as(Integer.class), 0));

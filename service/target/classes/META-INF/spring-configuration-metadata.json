@@ -105,6 +105,18 @@
     },
     {
       "sourceType": "com.luwei.module.alisms.AliSmsProperties",
+      "name": "luwei.module.sms.enroll-activity-code",
+      "description": "报名活动",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.luwei.module.alisms.AliSmsProperties",
+      "name": "luwei.module.sms.enroll-courses-code",
+      "description": "报名课程",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.luwei.module.alisms.AliSmsProperties",
       "defaultValue": 5,
       "name": "luwei.module.sms.expire-time",
       "type": "java.lang.Long"
@@ -113,6 +125,12 @@
       "sourceType": "com.luwei.module.alisms.AliSmsProperties",
       "defaultValue": "phone.captcha",
       "name": "luwei.module.sms.redis-prefix",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.luwei.module.alisms.AliSmsProperties",
+      "name": "luwei.module.sms.register-member-code",
+      "description": "注册会员",
       "type": "java.lang.String"
     },
     {

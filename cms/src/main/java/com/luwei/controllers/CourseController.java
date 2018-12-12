@@ -1,13 +1,16 @@
 package com.luwei.controllers;
 
+import com.luwei.common.Response;
 import com.luwei.services.area.cms.AreaDTO;
 import com.luwei.services.course.CourseService;
 import com.luwei.services.course.cms.CourseDTO;
+import com.luwei.services.course.cms.CourseOrderCMSPageVo;
 import com.luwei.services.course.cms.CoursePageVo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import lombok.extern.slf4j.Slf4j;
+import org.hibernate.annotations.Check;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
@@ -48,8 +51,8 @@ public class CourseController {
 
     @PutMapping
     @ApiOperation("修改")
-    public void update(@RequestBody CourseDTO dto) {
-        courseService.save(dto);
+    public Response update(@RequestBody CourseDTO dto) {
+        return courseService.update(dto);
     }
 
     @DeleteMapping
@@ -58,5 +61,18 @@ public class CourseController {
         courseService.delete(ids);
     }
 
+
+    @GetMapping("/order/page")
+    @ApiOperation("分页")
+    public Page<CourseOrderCMSPageVo> courseOrderPage(@RequestParam(required = false) String phone,
+                                                      @PageableDefault Pageable pageable) {
+        return courseService.courseOrderPage(pageable, phone);
+    }
+
+    @GetMapping("/order/check")
+    @ApiOperation("验单")
+    public Response checkCourseOrder(@RequestParam Integer courseEnrolmentId){
+        return courseService.checkCourseOrder(courseEnrolmentId);
+    }
 
 }

@@ -1,8 +1,11 @@
 package com.luwei.controllers;
 
+import com.luwei.common.Response;
+import com.luwei.models.activity.subcard.ActivitySubCardDTO;
 import com.luwei.services.activity.ActivityService;
 import com.luwei.services.activity.cms.ActivityAddDTO;
 import com.luwei.services.activity.cms.ActivityEditDTO;
+import com.luwei.services.activity.cms.ActivityOrderCMSPageVO;
 import com.luwei.services.activity.cms.ActivityPageVO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -69,4 +72,47 @@ public class ActivityController {
     }
 
 
+    @GetMapping("/order/page")
+    @ApiOperation("分页")
+    public Page<ActivityOrderCMSPageVO> activityOrderPage(@RequestParam(required = false) String phone,
+                                                          @PageableDefault Pageable pageable) {
+        return activityService.activityOrderPage(pageable, phone);
+    }
+
+    @GetMapping("/order/check")
+    @ApiOperation("验单")
+    public Response checkActivityOrder(@RequestParam Integer activityOrderId){
+        return activityService.checkActivityOrder(activityOrderId);
+    }
+
+    @PostMapping("/subCard")
+    @ApiOperation("添加活动次卡")
+    public Response saveActivitySubCard(@RequestBody @Valid ActivitySubCardDTO dto) {
+        return activityService.saveActivitySubCardDTO(dto);
+    }
+
+    @PutMapping("/subCard")
+    @ApiOperation("修改活动次卡")
+    public Response updateActivitySubCard(@RequestBody ActivitySubCardDTO dto) {
+        return activityService.saveActivitySubCardDTO(dto);
+    }
+
+    @GetMapping("/subCard/one")
+    @ApiOperation("根据id查找")
+    public Response findActivitySubCardById(@RequestParam Integer activitySubCardId) {
+        return Response.build(2000,"成功！",activityService.findActivitySubCardById(activitySubCardId));
+    }
+
+    @DeleteMapping("/subCard")
+    @ApiOperation("删除")
+    public Response deleteActivitySubCard(@RequestParam @ApiParam("id列表") Set<Integer> ids) {
+        activityService.deleteActivitySubCard(ids);
+        return Response.success("成功！");
+    }
+
+    @GetMapping("/subCard")
+    @ApiOperation("根据课程ID查询活动次卡列表")
+    public Response findActivitySubCardsByActivityId(@RequestParam Integer activityId) {
+        return Response.build(2000,"成功！",activityService.findActivitySubCardsByActivityId(activityId));
+    }
 }

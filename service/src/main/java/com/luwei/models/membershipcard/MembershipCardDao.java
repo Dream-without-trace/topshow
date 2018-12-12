@@ -2,6 +2,7 @@ package com.luwei.models.membershipcard;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
@@ -14,4 +15,8 @@ import java.util.List;
  **/
 public interface MembershipCardDao extends JpaRepository<MembershipCard, Integer>, JpaSpecificationExecutor<MembershipCard> {
 
+
+    @Modifying
+    @Query("update MembershipCard set deleted = 1 where membershipCardId in ?1 and deleted <> 1")
+    Integer delByIds(List<Integer> ids);
 }

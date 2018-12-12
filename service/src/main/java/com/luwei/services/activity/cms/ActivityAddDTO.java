@@ -71,4 +71,7 @@ public class ActivityAddDTO {
     @ApiModelProperty("活动类型")
     private ActivityType activityType;
 
+
+
+
 }

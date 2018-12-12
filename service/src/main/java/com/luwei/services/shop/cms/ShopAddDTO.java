@@ -18,6 +18,9 @@ import java.util.List;
 public class ShopAddDTO {
 
 
+    @ApiModelProperty("门店Id")
+    private Integer shopId;
+
     @NotNull(message = "门店名称不能为空")
     @ApiModelProperty("门店名称")
     private String title;

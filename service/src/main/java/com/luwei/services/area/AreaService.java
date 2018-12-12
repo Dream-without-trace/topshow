@@ -1,5 +1,6 @@
 package com.luwei.services.area;
 
+import com.luwei.common.Response;
 import com.luwei.common.enums.type.EvaluateType;
 import com.luwei.models.activity.Activity;
 import com.luwei.models.activity.category.ActivityCategory;
@@ -192,7 +193,7 @@ public class AreaService {
     }
 
 
-    public void save(@Valid AreaDTO dto) {
+    public Response save(@Valid AreaDTO dto) {
         Area area = new Area();
         List<Area> areas = areaDao.findAllByNameAndParentIdAndDeletedIsFalse(dto.getName(),dto.getParentId());
         Assert.isTrue((areas == null || areas.size()< 2), dto.getName()+"该城市已存在！");
@@ -204,6 +205,7 @@ public class AreaService {
             area.setSuffix("市区");
         }
         areaDao.save(area);
+        return Response.build(2000,"成功！",area);
     }
 
 

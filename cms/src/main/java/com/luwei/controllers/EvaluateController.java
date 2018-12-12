@@ -34,7 +34,8 @@ public class EvaluateController {
 
     @GetMapping
     @ApiOperation("根据关联id和类型获取评论列表")
-    public List<EvaluateCmsVO> list(@RequestParam Integer tripartiteId,@RequestParam EvaluateType evaluateType) {
+    public List<EvaluateCmsVO> list(@RequestParam(required = false) Integer tripartiteId,
+                                    @RequestParam(required = false) EvaluateType evaluateType) {
         return evaluateService.cmsVOList(tripartiteId, evaluateType);
     }
 

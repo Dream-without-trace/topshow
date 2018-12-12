@@ -1,5 +1,6 @@
 package com.luwei.controllers;
 
+import com.luwei.common.Response;
 import com.luwei.services.area.AreaService;
 import com.luwei.services.area.cms.AreaDTO;
 import com.luwei.services.area.cms.AreaPageVo;
@@ -56,15 +57,15 @@ public class AreaController {
 
     @PostMapping
     @ApiOperation("添加")
-    public void save(@RequestBody @Valid AreaDTO dto) {
-        areaService.save(dto);
+    public Response save(@RequestBody @Valid AreaDTO dto) {
+        return areaService.save(dto);
     }
 
 
     @PutMapping
     @ApiOperation("修改")
-    public void update(@RequestBody AreaDTO dto) {
-        areaService.save(dto);
+    public Response update(@RequestBody AreaDTO dto) {
+        return areaService.save(dto);
     }
 
     @DeleteMapping

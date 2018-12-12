@@ -28,4 +28,7 @@ public class MembershipCardDetailVo {
     @ApiModelProperty("描述")
     private String detail;
 
+    @ApiModelProperty("会员权益")
+    private String memberBenefits;
+
 }

@@ -3,6 +3,7 @@ package com.luwei.services.shop;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.google.common.base.Joiner;
+import com.luwei.common.Response;
 import com.luwei.common.enums.status.MembershipCardOrderStatus;
 import com.luwei.common.utils.DateTimeUtis;
 import com.luwei.models.area.Area;
@@ -19,6 +20,7 @@ import com.luwei.models.shop.Shop;
 import com.luwei.models.shop.ShopDao;
 import com.luwei.models.user.User;
 import com.luwei.models.user.UserDao;
+import com.luwei.services.course.cms.CourseDTO;
 import com.luwei.services.membershipCard.web.MembershipCardDetailVo;
 import com.luwei.services.shop.cms.ShopAddDTO;
 import com.luwei.services.shop.cms.ShopPageVo;
@@ -149,15 +151,13 @@ public class ShopService {
                         courseJsonObject.put("picture",course.getPicture());
                         courseJsonObject.put("maxNum",course.getMaxNum());
                         int isEnroll = 2;
-                        if (isSignUp == 1) {
-                            List<CourseEnrolment> list = courseEnrolmentDao.findAllByCourseId(courseId);
-                            if (list == null || list.size()<course.getMaxNum()) {
-                                List<CourseEnrolment> list1 = courseEnrolmentDao.findAllByCourseIdAndUserIdAndShopId(courseId,userId,shopId);
-                                if (list1 == null || list1.size() < 1) {
-                                    isSignUp = 1;
-                                }else{
-                                    isEnroll = 1;
-                                }
+                        List<CourseEnrolment> list = courseEnrolmentDao.findAllByCourseId(courseId);
+                        if (list == null || list.size()<course.getMaxNum()) {
+                            List<CourseEnrolment> list1 = courseEnrolmentDao.findAllByCourseIdAndUserIdAndShopId(courseId,userId,shopId);
+                            if (list1 != null && list1.size()>0) {
+                                isEnroll = 1;
+                            }else{
+                                isSignUp = 2;
                             }
                         }
                         courseJsonObject.put("isEnroll",isEnroll);
@@ -180,6 +180,7 @@ public class ShopService {
                     membershipCardDetailVo.setDetail(membershipCard.getDetail());
                     membershipCardDetailVo.setMembershipCardId(membershipCard.getMembershipCardId());
                     membershipCardDetailVo.setPicture(membershipCard.getPicture());
+                    membershipCardDetailVo.setMemberBenefits(membershipCard.getMemberBenefits());
                     MembershipCardDetailVos.add(membershipCardDetailVo);
                 }
             }
@@ -241,10 +242,23 @@ public class ShopService {
                 vo.setAreaName(parea.get().getName());
             }
         }
+        String previous = shop.getPrevious();
+        if (previous != null && previous.length()>0) {
+            String[] split = previous.split(",");
+            vo.setPrevious(Arrays.asList(split));
+        }
         return vo;
     }
 
 
     public void delete(Set<Integer> ids) {shopDao.delByIds(new ArrayList<>(ids));
+    }
+
+
+    public Response update(ShopAddDTO dto) {
+        Shop shop = this.findOne(dto.getShopId());
+        BeanUtils.copyProperties(dto, shop);
+        shopDao.save(shop);
+        return Response.build(2000,"成功！",dto);
     }
 }

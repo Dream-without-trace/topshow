@@ -205,6 +205,7 @@ public class ActivityOrderService {
      * @return
      */
     public ActivityOrder findOne(Integer activityOrderId) {
+        Assert.isTrue(activityOrderId != null && activityOrderId != 0,"活动订单ID为空！");
         ActivityOrder activityOrder = activityOrderDao.findById(activityOrderId).orElse(null);
         Assert.notNull(activityOrder, "活动订单不存在");
         return activityOrder;

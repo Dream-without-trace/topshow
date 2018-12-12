@@ -1,5 +1,6 @@
 package com.luwei.models.activity.subcard;
 
+import com.luwei.common.utils.IdEntity;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -12,7 +13,7 @@ import javax.persistence.*;
  **/
 @Data
 @Entity
-public class ActivitySubCard {
+public class ActivitySubCard extends IdEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

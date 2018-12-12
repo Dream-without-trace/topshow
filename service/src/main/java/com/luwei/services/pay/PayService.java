@@ -16,11 +16,14 @@ import com.luwei.models.activity.order.ActivityOrder;
 import com.luwei.models.activity.order.subcard.ActivitySubCardOrder;
 import com.luwei.models.activity.order.subcard.ActivitySubCardOrderDao;
 import com.luwei.models.bill.Bill;
+import com.luwei.models.integralbill.IntegralBill;
 import com.luwei.models.integralset.IntegralSet;
 import com.luwei.models.integralset.IntegralSetDao;
 import com.luwei.models.membershipcard.order.MembershipCardOrder;
 import com.luwei.models.order.Order;
 import com.luwei.models.user.User;
+import com.luwei.module.alisms.AliSmsProperties;
+import com.luwei.module.alisms.AliSmsService;
 import com.luwei.services.activity.order.ActivityOrderService;
 import com.luwei.services.bill.BillService;
 import com.luwei.services.integral.bill.IntegralBillService;
@@ -31,6 +34,7 @@ import com.luwei.services.pay.pojos.NotifyDTO;
 import com.luwei.services.user.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.util.Assert;
+import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.ObjectUtils;
@@ -81,6 +85,12 @@ public class PayService {
 
     @Resource
     private IntegralSetDao integralSetDao;
+
+    @Resource
+    private AliSmsService aliSmsService;
+
+    @Resource
+    private AliSmsProperties aliSmsProperties;
 
     /**
      * 小程序支付
@@ -206,7 +216,11 @@ public class PayService {
             // 保存积分流水
             integralBillService.save(new IntegralBillDTO(user.getUserId(), user.getNickname(), user.getPhone(), 20, user.getIntegral() + 20, BillType.INCOME, "用户购买商品"));
         } else if (outTradeNo.startsWith("C")) {
-            List<MembershipCardOrder> membershipCardOrderList = membershipCardOrderService.findMembershipCardOrdersByOutTradeNo(outTradeNo);
+            List<MembershipCardOrder> membershipCardOrderList = membershipCardOrderService.
+                    findMembershipCardOrdersByOutTradeNo(outTradeNo,MembershipCardOrderStatus.CREATE);
+            if (membershipCardOrderList == null || membershipCardOrderList.size() < 1) {
+                return;
+            }
             updateMembershipCardOrderStatus(membershipCardOrderList);
             bill.setRemark("购买会员卡订单");
             bill.setTransactionType(TransactionType.CARD);
@@ -225,11 +239,21 @@ public class PayService {
             // 给用户添加积分
             userService.addIntegral(user.getUserId(), purchaseMembershipCardIntegral);
             // 保存积分流水
-            integralBillService.save(new IntegralBillDTO(user.getUserId(), user.getNickname(), user.getPhone(),
+            System.out.println("保存积分流水");
+            IntegralBillDTO integralBillDTO = new IntegralBillDTO(user.getUserId(), user.getNickname(), user.getPhone(),
                     purchaseMembershipCardIntegral, user.getIntegral() + purchaseMembershipCardIntegral,
-                    BillType.INCOME, "用户购买会员"));
+                    BillType.INCOME, "用户购买会员");
+            IntegralBill bill1 = new IntegralBill();
+            BeanUtils.copyProperties(integralBillDTO, bill1);
+            System.out.println("============bill1============"+bill1.toString());
+            integralBillService.save(bill1);
+            log.info("发送短信");
+            aliSmsService.sendMessage(user.getPhone(),aliSmsProperties.getRegisterMemberCode(),null);
         } else if (outTradeNo.startsWith("S")) {
-            List<ActivitySubCardOrder> activitySubCardOrders = activitySubCardOrderDao.findAllByOutTradeNoOrderByPayTimeDesc(outTradeNo);
+            List<ActivitySubCardOrder> activitySubCardOrders = activitySubCardOrderDao.findAllByOutTradeNoAndStatusOrderByPayTimeDesc(outTradeNo,1);
+            if (activitySubCardOrders == null || activitySubCardOrders.size() < 1) {
+                return;
+            }
             updateActivitySubCardOrderStatus(activitySubCardOrders);
             bill.setRemark("购买活动次卡订单");
             bill.setTransactionType(TransactionType.CARD);

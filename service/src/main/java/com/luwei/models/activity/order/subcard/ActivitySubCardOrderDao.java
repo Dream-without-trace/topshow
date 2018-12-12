@@ -18,5 +18,5 @@ public interface ActivitySubCardOrderDao  extends JpaRepository<ActivitySubCardO
 
     List<ActivitySubCardOrder> findAllByUserIdAndActivityIdAndStatusOrderByPayTimeDesc(Integer userId, Integer activityId, Integer status);
 
-    List<ActivitySubCardOrder> findAllByOutTradeNoOrderByPayTimeDesc(String outTradeNo);
+    List<ActivitySubCardOrder> findAllByOutTradeNoAndStatusOrderByPayTimeDesc(String outTradeNo,Integer status);
 }

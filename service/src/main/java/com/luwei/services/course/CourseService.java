@@ -1,7 +1,11 @@
 package com.luwei.services.course;
 
+import com.alibaba.fastjson.JSONObject;
 import com.aliyuncs.exceptions.ClientException;
+import com.luwei.common.Response;
+import com.luwei.common.enums.status.ActivityStatus;
 import com.luwei.common.enums.status.MembershipCardOrderStatus;
+import com.luwei.common.utils.PageQuery;
 import com.luwei.models.activity.Activity;
 import com.luwei.models.activity.order.ActivityOrder;
 import com.luwei.models.activity.order.ActivityOrderDao;
@@ -12,9 +16,11 @@ import com.luwei.models.courseEnrolment.CourseEnrolmentDao;
 import com.luwei.models.membershipcard.order.MembershipCardOrder;
 import com.luwei.models.shop.Shop;
 import com.luwei.models.user.User;
+import com.luwei.module.alisms.AliSmsProperties;
 import com.luwei.module.alisms.AliSmsService;
 import com.luwei.services.activity.web.ActivityWebListVO;
 import com.luwei.services.course.cms.CourseDTO;
+import com.luwei.services.course.cms.CourseOrderCMSPageVo;
 import com.luwei.services.course.cms.CoursePageVo;
 import com.luwei.services.course.web.CourseEnrolmentWebListVO;
 import com.luwei.services.membershipCard.order.MembershipCardOrderService;
@@ -23,24 +29,23 @@ import com.luwei.services.user.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
+import org.springframework.util.ObjectUtils;
 import org.springframework.util.StringUtils;
 
 import javax.annotation.Resource;
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Predicate;
-import javax.persistence.criteria.Root;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+import javax.persistence.criteria.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * @program: topshow
@@ -65,8 +70,13 @@ public class CourseService {
     private MembershipCardOrderService membershipCardOrderService;
     @Resource
     private AliSmsService aliSmsService;
+    @PersistenceContext
+    private EntityManager entityManager;
     @Resource
     private ActivityOrderDao activityOrderDao;
+
+    @Resource
+    private AliSmsProperties aliSmsProperties;
 
     public void save(CourseDTO dto) {
         Course course = new Course();
@@ -128,11 +138,13 @@ public class CourseService {
         Assert.isTrue((state == 2), "您办理的会员卡已过期！");
         CourseEnrolment courseEnrolment = new CourseEnrolment(shopId,courseId,userId,null,1);
         courseEnrolmentDao.save(courseEnrolment);
-        String text = "恭喜您报名成功参加课程“"+course.getTitle()+"”，开课时间为："+course.getStartTime()+"-"+course.getEndTime()+"，请您合理安排上课时间，以免迟到。";
-        System.out.println("1");
-        aliSmsService.sendMessage(user.getPhone(),text);
+        Long startDate = course.getStartDate();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy年MM月dd日");
+        String format = sdf.format(startDate * 1000);
+        String courseTime =format+ course.getStartTime()+"-"+course.getEndTime();
+        String text = "{\"date\":\""+courseTime+"\", \"name\":\""+course.getTitle()+"\"}";
+        aliSmsService.sendMessage(user.getPhone(),aliSmsProperties.getEnrollCoursesCode(),text);
     }
-
 
 
     /**
@@ -171,11 +183,16 @@ public class CourseService {
     private CoursePageVo toCoursePageVo(Course course) {
         CoursePageVo vo = new CoursePageVo();
         BeanUtils.copyProperties(course, vo);
+        Integer shopId = course.getShopId();
+        Assert.isTrue(shopId != null && shopId != 0,"关联的门店ID为空！");
         Long startDate = course.getStartDate();
         if (startDate != null && startDate != 0) {
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
             vo.setStartDate(sdf.format(new Date(startDate*1000)));
         }
+        Shop shop = shopService.findOne(shopId);
+        vo.setShopId(shopId);
+        vo.setShopName(shop.getTitle());
         return vo;
     }
 
@@ -210,15 +227,64 @@ public class CourseService {
         String format = sdf.format(new Date(startDate * 1000));
         Date createTime = courseEnrolment.getCreateTime();
         String createTimeStr = "";
-        if (createTime == null) {
-            createTimeStr = sdf.format(createTime);
+        if (createTime != null) {
+            SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            createTimeStr = sdf1.format(createTime);
         }
         CourseEnrolmentWebListVO vo = new CourseEnrolmentWebListVO(courseEnrolment.getCourseEnrolmentId(),
                 shop.getTitle(),course.getTitle(),
-                format,course.getStartTime(),course.getEndTime(),createTimeStr,null,courseEnrolment.getIsInspectTicket());
+                format,course.getStartTime(),course.getEndTime(),createTimeStr,course.getPicture(),courseEnrolment.getIsInspectTicket());
         return vo;
     }
 
 
+    public PageImpl courseOrderPage(Pageable pageable, String phone) {
+        String contentSql = "select new com.luwei.services.course.cms.CourseOrderCMSPageVo " +
+                "(ce.courseEnrolmentId,u.avatarUrl,u.nickname,u.phone,c.title,c.startDate,c.startTime,c.endTime," +
+                "c.picture,ce.isInspectTicket,ce.createTime)" +
+                " from CourseEnrolment ce, User u,Course c where ce.userId = u.userId and ce.courseId = c.courseId";
 
+        String countSql = "select count(ce.courseEnrolmentId) from CourseEnrolment ce,  User u,Course c where ce.userId = u.userId and ce.courseId = c.courseId";
+
+        if (phone != null && !"".equals(phone.trim())) {
+            countSql += " and u.phone like ?0";
+            contentSql += " and u.phone like ?0 order by ce.courseEnrolmentId desc";
+        } else {
+            contentSql += " order by ce.courseEnrolmentId desc";
+        }
+
+        Query countQuery = entityManager.createQuery(countSql);
+        Query contentQuery = entityManager.createQuery(contentSql);
+
+        if (phone != null && !"".equals(phone.trim())) {
+            countQuery.setParameter(0, phone.replace(" ",""));
+            contentQuery.setParameter(0, phone.replace(" ",""));
+        }
+
+        contentQuery.setMaxResults(pageable.getPageSize());
+        contentQuery.setFirstResult(pageable.getPageNumber() * pageable.getPageSize());
+
+        Long total = (Long) countQuery.getSingleResult();
+        List content = contentQuery.getResultList();
+        return new PageImpl<>(content, pageable, total);
+    }
+
+
+    public Response checkCourseOrder(Integer courseEnrolmentId) {
+        Optional<CourseEnrolment> courseEnrolment = courseEnrolmentDao.findById(courseEnrolmentId);
+        Assert.isTrue(courseEnrolment.isPresent(),"订单ID不可用！");
+        CourseEnrolment courseEnrolment1 = courseEnrolment.get();
+        Assert.notNull(courseEnrolment1,"订单ID不可用！");
+        courseEnrolment1.setIsInspectTicket(2);
+        courseEnrolmentDao.save(courseEnrolment1);
+        return Response.success("成功！");
+    }
+
+    public Response update(CourseDTO dto) {
+        Course course = this.findOne(dto.getCourseId());
+        BeanUtils.copyProperties(dto, course);
+        courseDao.save(course);
+        return Response.build(2000,"成功！",course);
+
+    }
 }

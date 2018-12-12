@@ -21,25 +21,38 @@ public class IntegralBill extends IdEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer integralBillId;
 
-    @Column(columnDefinition = "int(11) not null default 0 comment '用户ID'")
+    @Column(columnDefinition = "int(11) default 0 comment '用户ID'")
     private Integer userId;
 
-    @Column(columnDefinition = "varchar(64) not null default '' comment '用户昵称'")
+    @Column(columnDefinition = "varchar(64) default '' comment '用户昵称'")
     private String nickname;
 
-    @Column(columnDefinition = "varchar(64) not null default '' comment '用户手机'")
+    @Column(columnDefinition = "varchar(64) default '' comment '用户手机'")
     private String phone;
 
-    @Column(columnDefinition = "int(11) not null default 0 comment '积分'")
+    @Column(columnDefinition = "int(11) default 0 comment '积分'")
     private Integer integral;
 
-    @Column(columnDefinition = "int(11) not null default 0 comment '当前积分'")
+    @Column(columnDefinition = "int(11) default 0 comment '当前积分'")
     private Integer nowIntegral;
 
-    @Column(columnDefinition = "int(11) not null default 0 comment '收支类型'")
+    @Column(columnDefinition = "int(11) default 0 comment '收支类型'")
     private BillType billType;
 
-    @Column(columnDefinition = "varchar(64) not null default '' comment '备注'")
+    @Column(columnDefinition = "varchar(64) default '' comment '备注'")
     private String remark;
 
+    @Override
+    public String toString() {
+        return "IntegralBill{" +
+                "integralBillId=" + integralBillId +
+                ", userId=" + userId +
+                ", nickname='" + nickname + '\'' +
+                ", phone='" + phone + '\'' +
+                ", integral=" + integral +
+                ", nowIntegral=" + nowIntegral +
+                ", billType=" + billType +
+                ", remark='" + remark + '\'' +
+                '}';
+    }
 }

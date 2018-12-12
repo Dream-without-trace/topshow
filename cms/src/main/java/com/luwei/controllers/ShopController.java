@@ -1,5 +1,6 @@
 package com.luwei.controllers;
 
+import com.luwei.common.Response;
 import com.luwei.services.area.cms.AreaDTO;
 import com.luwei.services.shop.ShopService;
 import com.luwei.services.shop.cms.ShopAddDTO;
@@ -49,8 +50,8 @@ public class ShopController {
 
     @PutMapping
     @ApiOperation("修改")
-    public void update(@RequestBody ShopAddDTO dto) {
-        shopService.save(dto);
+    public Response update(@RequestBody ShopAddDTO dto) {
+        return shopService.update(dto);
     }
 
     @DeleteMapping

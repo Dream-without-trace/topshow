@@ -7,6 +7,8 @@ import com.luwei.common.enums.type.BillType;
 import com.luwei.common.enums.type.FlagType;
 import com.luwei.common.exception.ExceptionMessage;
 import com.luwei.common.exception.ValidateException;
+import com.luwei.models.activity.order.ActivityOrder;
+import com.luwei.models.activity.order.ActivityOrderDao;
 import com.luwei.models.courseEnrolment.CourseEnrolment;
 import com.luwei.models.courseEnrolment.CourseEnrolmentDao;
 import com.luwei.models.integralset.IntegralSet;
@@ -85,6 +87,8 @@ public class UserService {
     private UserReceivingAddressService userReceivingAddressService;
     @Resource
     private MembershipCardOrderService membershipCardOrderService;
+    @Resource
+    private ActivityOrderDao activityOrderDao;
     @Resource
     private CourseEnrolmentDao courseEnrolmentDao;
     @Resource
@@ -262,12 +266,38 @@ public class UserService {
      * @param captcha
      * @return
      */
-    public Boolean binding(String phone, Integer userId, String captcha) {
+    public Boolean binding(String phone, Integer userId, String captcha,String referrerPhone) {
         User user = this.findOne(userId);
         boolean result = aliSmsService.matchingCaptcha(phone, captcha);
         // 判断用户验证码是否正确
         if (result) {
             user.setPhone(phone);
+            if (referrerPhone != null && !"".equals(referrerPhone)) {
+                List<User> userList = this.findAllByPhone(referrerPhone);
+                if (userList != null && userList.size()>0) {
+                    for (User user1:userList) {
+                        if (user1 != null) {
+                            int inviteGiftIntegral = 0 ;
+                            List<IntegralSet> integralSets = integralSetDao.findAll();
+                            if (integralSets != null && integralSets.size()>0) {
+                                IntegralSet integralSet = integralSets.get(0);
+                                if (integralSet != null) {
+                                    inviteGiftIntegral = integralSet.getInviteGiftIntegral();
+                                }
+                            }
+                            if (inviteGiftIntegral != 0) {
+                                user1.setIntegral(user1.getIntegral() + inviteGiftIntegral);
+                                // 保存用户积分流水
+                                integralBillService.save(new IntegralBillDTO(user1.getUserId(), user1.getNickname(),
+                                        user1.getPhone(), inviteGiftIntegral,
+                                        user1.getIntegral(), BillType.INCOME, "邀请用户"));
+                                this.save(user1);
+                            }
+                            user.setRecommenderUserId(user1.getUserId());
+                        }
+                    }
+                }
+            }
             userDao.save(user);
             return true;
         } else {
@@ -334,7 +364,8 @@ public class UserService {
                     }
                     if (title.equals("体验会员")) {
                         List<CourseEnrolment> courseEnrolments = courseEnrolmentDao.findAllByUserId(userId);
-                        if (courseEnrolments == null || courseEnrolments.size()<1) {
+                        List<ActivityOrder> activityOrderList = activityOrderDao.findAllByUserIdAndAreaIdAndDeletedIsFalse(userId,membershipCardOrder.getAreaId());
+                        if ((courseEnrolments == null || courseEnrolments.size()<1)&&(activityOrderList == null || activityOrderList.size()<1)) {
                             isMember = 1;
                         }
                     }else{
