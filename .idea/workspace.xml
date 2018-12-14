@@ -2,79 +2,41 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="46f142e8-20e1-4d21-85f6-34abcd5fba64" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cms/src/main/java/com/luwei/controllers/MembershipCardController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/common/utils/PageQuery.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/models/activity/subcard/ActivitySubCardDTO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/activity/cms/ActivityOrderCMSPageVO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/course/cms/CourseOrderCMSPageVo.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/membershipCard/cms/MembershipCardDTO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/target/classes/com/luwei/controllers/ActivityController.class" afterPath="$PROJECT_DIR$/cms/target/classes/com/luwei/controllers/ActivityController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/target/classes/com/luwei/controllers/AreaController.class" afterPath="$PROJECT_DIR$/cms/target/classes/com/luwei/controllers/AreaController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/target/classes/com/luwei/controllers/EvaluateController.class" afterPath="$PROJECT_DIR$/cms/target/classes/com/luwei/controllers/EvaluateController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/target/classes/com/luwei/controllers/UserController.class" afterPath="$PROJECT_DIR$/cms/target/classes/com/luwei/controllers/UserController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/target/cms-1.0.jar.original" afterPath="$PROJECT_DIR$/cms/target/cms-1.0.jar.original" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/target/classes/com/luwei/models/activity/order/ActivityOrderDao.class" afterPath="$PROJECT_DIR$/service/target/classes/com/luwei/models/activity/order/ActivityOrderDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/target/classes/com/luwei/models/evaluate/EvaluateDao.class" afterPath="$PROJECT_DIR$/service/target/classes/com/luwei/models/evaluate/EvaluateDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/target/classes/com/luwei/models/user/User.class" afterPath="$PROJECT_DIR$/service/target/classes/com/luwei/models/user/User.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/target/classes/com/luwei/module/alisms/AliSmsProperties.class" afterPath="$PROJECT_DIR$/service/target/classes/com/luwei/module/alisms/AliSmsProperties.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/target/classes/com/luwei/module/alisms/AliSmsService.class" afterPath="$PROJECT_DIR$/service/target/classes/com/luwei/module/alisms/AliSmsService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/target/classes/com/luwei/services/activity/ActivityService.class" afterPath="$PROJECT_DIR$/service/target/classes/com/luwei/services/activity/ActivityService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/target/classes/com/luwei/services/activity/order/ActivityOrderService.class" afterPath="$PROJECT_DIR$/service/target/classes/com/luwei/services/activity/order/ActivityOrderService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/target/classes/com/luwei/services/area/AreaService.class" afterPath="$PROJECT_DIR$/service/target/classes/com/luwei/services/area/AreaService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/target/classes/com/luwei/services/banner/BannerService.class" afterPath="$PROJECT_DIR$/service/target/classes/com/luwei/services/banner/BannerService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/target/classes/com/luwei/services/evaluate/EvaluateService.class" afterPath="$PROJECT_DIR$/service/target/classes/com/luwei/services/evaluate/EvaluateService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/target/classes/com/luwei/models/integralbill/IntegralBill.class" afterPath="$PROJECT_DIR$/service/target/classes/com/luwei/models/integralbill/IntegralBill.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/target/classes/com/luwei/services/integral/bill/IntegralBillService.class" afterPath="$PROJECT_DIR$/service/target/classes/com/luwei/services/integral/bill/IntegralBillService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/target/classes/com/luwei/services/integral/bill/web/IntegralBillWebPageVO.class" afterPath="$PROJECT_DIR$/service/target/classes/com/luwei/services/integral/bill/web/IntegralBillWebPageVO.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/target/classes/com/luwei/services/pay/PayService.class" afterPath="$PROJECT_DIR$/service/target/classes/com/luwei/services/pay/PayService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/target/classes/com/luwei/services/user/UserService.class" afterPath="$PROJECT_DIR$/service/target/classes/com/luwei/services/user/UserService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/target/classes/com/luwei/services/user/web/UserInfoAddDTO.class" afterPath="$PROJECT_DIR$/service/target/classes/com/luwei/services/user/web/UserInfoAddDTO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/target/classes/com/luwei/services/user/web/UserInfoVO.class" afterPath="$PROJECT_DIR$/service/target/classes/com/luwei/services/user/web/UserInfoVO.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/target/classes/com/luwei/services/weixin/WxService.class" afterPath="$PROJECT_DIR$/service/target/classes/com/luwei/services/weixin/WxService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/target/classes/com/luwei/services/weixin/pojos/PhoneNumDTO.class" afterPath="$PROJECT_DIR$/service/target/classes/com/luwei/services/weixin/pojos/PhoneNumDTO.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/target/service-1.0.jar" afterPath="$PROJECT_DIR$/service/target/service-1.0.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/target/classes/com/luwei/controller/SmsController.class" afterPath="$PROJECT_DIR$/web/target/classes/com/luwei/controller/SmsController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/target/classes/com/luwei/controller/UserController.class" afterPath="$PROJECT_DIR$/web/target/classes/com/luwei/controller/UserController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/target/web-1.0.jar.original" afterPath="$PROJECT_DIR$/web/target/web-1.0.jar.original" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/logs/cms.log" afterPath="$PROJECT_DIR$/cms/logs/cms.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/src/main/java/com/luwei/controllers/ActivityController.java" afterPath="$PROJECT_DIR$/cms/src/main/java/com/luwei/controllers/ActivityController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/src/main/java/com/luwei/controllers/AreaController.java" afterPath="$PROJECT_DIR$/cms/src/main/java/com/luwei/controllers/AreaController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/src/main/java/com/luwei/controllers/CheckInController.java" afterPath="$PROJECT_DIR$/cms/src/main/java/com/luwei/controllers/CheckInController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/src/main/java/com/luwei/controllers/CourseController.java" afterPath="$PROJECT_DIR$/cms/src/main/java/com/luwei/controllers/CourseController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/src/main/java/com/luwei/controllers/EvaluateController.java" afterPath="$PROJECT_DIR$/cms/src/main/java/com/luwei/controllers/EvaluateController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/src/main/java/com/luwei/controllers/ShopController.java" afterPath="$PROJECT_DIR$/cms/src/main/java/com/luwei/controllers/ShopController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/cms/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/src/main/java/com/luwei/controllers/UserController.java" afterPath="$PROJECT_DIR$/cms/src/main/java/com/luwei/controllers/UserController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/target/surefire-reports/TEST-com.luwei.test.AllTest.xml" afterPath="$PROJECT_DIR$/cms/target/surefire-reports/TEST-com.luwei.test.AllTest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/target/surefire-reports/com.luwei.test.AllTest.txt" afterPath="$PROJECT_DIR$/cms/target/surefire-reports/com.luwei.test.AllTest.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logs/cms.log" afterPath="$PROJECT_DIR$/logs/cms.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logs/web.log" afterPath="$PROJECT_DIR$/logs/web.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/main/java/com/luwei/models/activity/order/subcard/ActivitySubCardOrderDao.java" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/models/activity/order/subcard/ActivitySubCardOrderDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/main/java/com/luwei/models/activity/subcard/ActivitySubCard.java" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/models/activity/subcard/ActivitySubCard.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/main/java/com/luwei/models/activity/subcard/ActivitySubCardDao.java" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/models/activity/subcard/ActivitySubCardDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/main/java/com/luwei/models/courseEnrolment/CourseEnrolmentDao.java" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/models/courseEnrolment/CourseEnrolmentDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/main/java/com/luwei/models/evaluate/EvaluateDao.java" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/models/evaluate/EvaluateDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/main/java/com/luwei/models/integralbill/IntegralBill.java" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/models/integralbill/IntegralBill.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/main/java/com/luwei/models/membershipcard/MembershipCardDao.java" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/models/membershipcard/MembershipCardDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/main/java/com/luwei/models/membershipcard/order/MembershipCardOrderDao.java" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/models/membershipcard/order/MembershipCardOrderDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/main/java/com/luwei/module/alisms/AliSmsProperties.java" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/module/alisms/AliSmsProperties.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/main/java/com/luwei/module/alisms/AliSmsService.java" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/module/alisms/AliSmsService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/activity/ActivityService.java" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/activity/ActivityService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/activity/cms/ActivityAddDTO.java" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/activity/cms/ActivityAddDTO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/activity/order/ActivityOrderService.java" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/activity/order/ActivityOrderService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/area/AreaService.java" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/area/AreaService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/area/cms/AreaDTO.java" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/area/cms/AreaDTO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/banner/BannerService.java" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/banner/BannerService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/main/java/com/luwei/common/utils/DateTimeUtis.java" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/common/utils/DateTimeUtis.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/main/java/com/luwei/models/activity/subcard/ActivitySubCardDTO.java" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/models/activity/subcard/ActivitySubCardDTO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/main/java/com/luwei/models/course/Course.java" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/models/course/Course.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/main/java/com/luwei/models/course/CourseDao.java" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/models/course/CourseDao.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/course/CourseService.java" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/course/CourseService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/course/cms/CourseDTO.java" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/course/cms/CourseDTO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/course/cms/CourseOrderCMSPageVo.java" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/course/cms/CourseOrderCMSPageVo.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/course/cms/CoursePageVo.java" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/course/cms/CoursePageVo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/evaluate/EvaluateService.java" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/evaluate/EvaluateService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/integral/bill/IntegralBillService.java" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/integral/bill/IntegralBillService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/membershipCard/MembershipCardService.java" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/membershipCard/MembershipCardService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/membershipCard/order/MembershipCardOrderService.java" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/membershipCard/order/MembershipCardOrderService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/membershipCard/web/MembershipCardDetailVo.java" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/membershipCard/web/MembershipCardDetailVo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/pay/PayService.java" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/pay/PayService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/integral/bill/web/IntegralBillWebPageVO.java" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/integral/bill/web/IntegralBillWebPageVO.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/shop/ShopService.java" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/shop/ShopService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/shop/cms/ShopAddDTO.java" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/shop/cms/ShopAddDTO.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/user/UserService.java" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/user/UserService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/weixin/WxService.java" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/weixin/WxService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/weixin/pojos/PhoneNumDTO.java" afterPath="$PROJECT_DIR$/service/src/main/java/com/luwei/services/weixin/pojos/PhoneNumDTO.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/main/resources/application.yaml" afterPath="$PROJECT_DIR$/service/src/main/resources/application.yaml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/target/classes/META-INF/spring-configuration-metadata.json" afterPath="$PROJECT_DIR$/service/target/classes/META-INF/spring-configuration-metadata.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/target/classes/application.yaml" afterPath="$PROJECT_DIR$/service/target/classes/application.yaml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/logs/web.log" afterPath="$PROJECT_DIR$/web/logs/web.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/java/com/luwei/controller/SmsController.java" afterPath="$PROJECT_DIR$/web/src/main/java/com/luwei/controller/SmsController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/java/com/luwei/controller/UserController.java" afterPath="$PROJECT_DIR$/web/src/main/java/com/luwei/controller/UserController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/target/surefire-reports/AllTest.txt" afterPath="$PROJECT_DIR$/web/target/surefire-reports/AllTest.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/target/surefire-reports/TEST-AllTest.xml" afterPath="$PROJECT_DIR$/web/target/surefire-reports/TEST-AllTest.xml" />
     </list>
@@ -152,7 +114,7 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -212,16 +174,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/web/src/main/java/com/luwei/controller/CourseController.java" />
-        <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/services/user/web/UserInfoVO.java" />
-        <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/models/user/User.java" />
-        <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/services/user/web/UserInfoAddDTO.java" />
-        <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/models/activity/order/ActivityOrderDao.java" />
-        <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/services/course/cms/CoursePageVo.java" />
-        <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/common/utils/PageQuery.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/models/courseEnrolment/CourseEnrolmentDao.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/services/activity/order/ActivityOrderService.java" />
-        <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/services/area/AreaService.java" />
         <option value="$PROJECT_DIR$/cms/src/main/java/com/luwei/controllers/AreaController.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/models/evaluate/EvaluateDao.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/services/membershipCard/cms/MembershipCardAddDTO.java" />
@@ -229,11 +183,9 @@
         <option value="$PROJECT_DIR$/cms/src/main/java/com/luwei/controllers/MembershipCardController.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/services/membershipCard/MembershipCardService.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/services/activity/cms/ActivityAddDTO.java" />
-        <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/models/activity/subcard/ActivitySubCardDTO.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/models/activity/subcard/ActivitySubCard.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/models/courseEnrolment/CourseEnrolment.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/services/activity/cms/ActivityOrderCMSPageVO.java" />
-        <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/services/course/cms/CourseOrderCMSPageVo.java" />
         <option value="$PROJECT_DIR$/cms/src/main/java/com/luwei/controllers/ActivityController.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/models/activity/subcard/ActivitySubCardDao.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/services/area/cms/AreaDTO.java" />
@@ -243,7 +195,6 @@
         <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/services/membershipCard/web/MembershipCardDetailVo.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/services/banner/BannerService.java" />
         <option value="$PROJECT_DIR$/cms/src/main/java/com/luwei/controllers/CheckInController.java" />
-        <option value="$PROJECT_DIR$/service/src/main/resources/application.yaml" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/module/alisms/AliSmsProperties.java" />
         <option value="$PROJECT_DIR$/web/src/main/java/com/luwei/controller/SmsController.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/services/activity/ActivityService.java" />
@@ -256,13 +207,24 @@
         <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/services/pay/PayService.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/services/shop/cms/ShopAddDTO.java" />
         <option value="$PROJECT_DIR$/cms/src/main/java/com/luwei/controllers/CourseController.java" />
-        <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/services/shop/ShopService.java" />
         <option value="$PROJECT_DIR$/cms/src/main/java/com/luwei/controllers/ShopController.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/services/weixin/pojos/PhoneNumDTO.java" />
         <option value="$PROJECT_DIR$/web/src/main/java/com/luwei/controller/UserController.java" />
-        <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/services/user/UserService.java" />
-        <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/services/course/CourseService.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/services/weixin/WxService.java" />
+        <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/services/integral/bill/web/IntegralBillWebPageVO.java" />
+        <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/services/course/cms/CoursePageVo.java" />
+        <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/services/area/AreaService.java" />
+        <option value="$PROJECT_DIR$/cms/src/main/java/com/luwei/controllers/UserController.java" />
+        <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/services/user/UserService.java" />
+        <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/services/course/cms/CourseDTO.java" />
+        <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/models/activity/subcard/ActivitySubCardDTO.java" />
+        <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/models/course/Course.java" />
+        <option value="$PROJECT_DIR$/service/src/main/resources/application.yaml" />
+        <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/services/course/cms/CourseOrderCMSPageVo.java" />
+        <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/common/utils/DateTimeUtis.java" />
+        <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/services/course/CourseService.java" />
+        <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/services/shop/ShopService.java" />
+        <option value="$PROJECT_DIR$/service/src/main/java/com/luwei/models/course/CourseDao.java" />
       </list>
     </option>
   </component>
@@ -422,6 +384,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -552,128 +515,9 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="topshow" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="topshow" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="topshow" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="topshow" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="topshow" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="topshow" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="topshow" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="topshow" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="luwei" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="topshow" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="topshow" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="luwei" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -719,7 +563,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.CmsApplication">
+  <component name="RunManager" selected="Spring Boot.WebApplication">
     <configuration default="false" name="DateTimeUtis" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -1160,8 +1004,8 @@
     </list>
     <recent_temporary>
       <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Application.OperateDemo" />
-        <item index="1" class="java.lang.String" itemvalue="Application.DateTimeUtis" />
+        <item index="0" class="java.lang.String" itemvalue="Application.DateTimeUtis" />
+        <item index="1" class="java.lang.String" itemvalue="Application.OperateDemo" />
       </list>
     </recent_temporary>
   </component>
@@ -1233,7 +1077,12 @@
       <workItem from="1544493661510" duration="1206000" />
       <workItem from="1544509723709" duration="18000" />
       <workItem from="1544542523753" duration="2261000" />
-      <workItem from="1544544862224" duration="47234000" />
+      <workItem from="1544544862224" duration="47358000" />
+      <workItem from="1544674125628" duration="3136000" />
+      <workItem from="1544682182982" duration="537000" />
+      <workItem from="1544683686530" duration="4246000" />
+      <workItem from="1544752531798" duration="3060000" />
+      <workItem from="1544763014369" duration="538000" />
     </task>
     <task id="LOCAL-00001" summary="swagger">
       <created>1533051902954</created>
@@ -1319,11 +1168,18 @@
       <option name="project" value="LOCAL" />
       <updated>1544459816523</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="大调改">
+      <created>1544634104219</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1544634104219</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="329847000" />
+    <option name="totallyTimeSpent" value="341488000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1335,7 +1191,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1066" extended-state="0" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1355,11 +1211,11 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289183" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21192053" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289183" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21192053" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289183" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.40507725" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23347548" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.40507725" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23081024" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1395,11 +1251,11 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289183" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21192053" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289183" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21192053" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289183" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.40507725" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23347548" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40507725" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23614073" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1455,12 +1311,6 @@
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/service/src/main/java/com/luwei/services/area/AreaService.java</url>
-          <line>100</line>
-          <properties />
-          <option name="timeStamp" value="56" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/service/src/main/java/com/luwei/services/activity/order/ActivityOrderService.java</url>
           <line>207</line>
           <properties />
@@ -1468,7 +1318,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/service/src/main/java/com/luwei/services/user/UserService.java</url>
-          <line>366</line>
+          <line>377</line>
           <properties />
           <option name="timeStamp" value="74" />
         </line-breakpoint>
@@ -1478,8 +1328,14 @@
           <properties />
           <option name="timeStamp" value="81" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/service/src/main/java/com/luwei/services/evaluate/EvaluateService.java</url>
+          <line>307</line>
+          <properties />
+          <option name="timeStamp" value="90" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="90" />
+      <option name="time" value="94" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1488,210 +1344,10 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/services/manager/cms/ManagerLoginVO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/services/manager/LoginService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="461">
-          <caret line="73" column="39" lean-forward="true" selection-start-line="73" selection-start-column="39" selection-end-line="73" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/services/manager/cms/LoginSuccessVO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="17" column="17" lean-forward="false" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/common/enums/type/RoleType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="13" column="13" lean-forward="true" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cms/src/main/java/com/luwei/controllers/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="27" column="30" lean-forward="true" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
-          <folding>
-            <element signature="e#704#705#0" expanded="false" />
-            <element signature="e#754#755#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cms/src/main/java/com/luwei/controllers/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="23" column="13" lean-forward="false" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cms/src/main/java/com/luwei/controllers/CheckInController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="37" column="61" lean-forward="true" selection-start-line="37" selection-start-column="61" selection-end-line="37" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/module/alisms/AliSmsProperties.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="56" column="31" lean-forward="false" selection-start-line="56" selection-start-column="15" selection-end-line="56" selection-end-column="31" />
-          <folding>
-            <element signature="e#843#844#0" expanded="true" />
-            <element signature="e#874#875#0" expanded="true" />
-            <element signature="e#1183#1184#0" expanded="true" />
-            <element signature="e#1222#1223#0" expanded="true" />
-            <element signature="e#2274#2275#0" expanded="true" />
-            <element signature="e#2314#2315#0" expanded="true" />
-            <element signature="e#2380#2381#0" expanded="true" />
-            <element signature="e#2438#2439#0" expanded="true" />
-            <element signature="e#2483#2484#0" expanded="true" />
-            <element signature="e#2524#2525#0" expanded="true" />
-            <element signature="e#2592#2593#0" expanded="true" />
-            <element signature="e#2652#2653#0" expanded="true" />
-            <element signature="e#2697#2698#0" expanded="true" />
-            <element signature="e#2738#2739#0" expanded="true" />
-            <element signature="e#2806#2807#0" expanded="true" />
-            <element signature="e#2866#2867#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/resources/application.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="583">
-          <caret line="45" column="30" lean-forward="true" selection-start-line="45" selection-start-column="30" selection-end-line="45" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/common/utils/AppUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="44" column="26" lean-forward="false" selection-start-line="44" selection-start-column="26" selection-end-line="44" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/luwei/controller/SmsController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="45" column="0" lean-forward="true" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/luwei/controller/ActivityOrderController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="42" column="0" lean-forward="true" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/models/activity/Activity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="42" column="43" lean-forward="false" selection-start-line="42" selection-start-column="43" selection-end-line="42" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/luwei/controller/WxPayController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="26" column="13" lean-forward="true" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/models/integralbill/IntegralBill.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="21" column="35" lean-forward="false" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/luwei/controller/CheckInController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
-          <caret line="31" column="62" lean-forward="false" selection-start-line="31" selection-start-column="62" selection-end-line="31" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/services/checkIn/CheckInService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="113" column="41" lean-forward="false" selection-start-line="111" selection-start-column="7" selection-end-line="113" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/models/membershipcard/order/MembershipCardOrderDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="21" column="90" lean-forward="false" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="90" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/2.0.11.RELEASE/spring-data-commons-2.0.11.RELEASE.jar!/org/springframework/data/repository/CrudRepository.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="11" column="20" lean-forward="false" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/services/bill/BillService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="26" column="19" lean-forward="false" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
-          <folding>
-            <element signature="e#482#483#0" expanded="true" />
-            <element signature="e#516#517#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/module/alisms/AliSmsService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="751">
-          <caret line="146" column="76" lean-forward="false" selection-start-line="146" selection-start-column="76" selection-end-line="146" selection-end-column="76" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/models/membershipcard/order/MembershipCardOrder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="62" column="30" lean-forward="false" selection-start-line="62" selection-start-column="30" selection-end-line="62" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/common/enums/status/MembershipCardOrderStatus.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
           <caret line="9" column="12" lean-forward="false" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1699,7 +1355,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="48">
           <caret line="71" column="8" lean-forward="true" selection-start-line="71" selection-start-column="8" selection-end-line="71" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1707,7 +1362,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="331">
           <caret line="20" column="77" lean-forward="false" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="77" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1715,7 +1369,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
           <caret line="62" column="0" lean-forward="true" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1723,7 +1376,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="254" column="23" lean-forward="true" selection-start-line="254" selection-start-column="23" selection-end-line="254" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1731,15 +1383,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="46" column="23" lean-forward="true" selection-start-line="46" selection-start-column="23" selection-end-line="46" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cms/src/main/java/com/luwei/controllers/AreaController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="71" column="0" lean-forward="true" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1747,15 +1390,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
           <caret line="20" column="29" lean-forward="true" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/services/course/cms/CourseDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1763,7 +1397,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="446">
           <caret line="48" column="43" lean-forward="false" selection-start-line="48" selection-start-column="43" selection-end-line="48" selection-end-column="43" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1771,15 +1404,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="239">
           <caret line="92" column="54" lean-forward="false" selection-start-line="92" selection-start-column="38" selection-end-line="92" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/services/shop/ShopService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="261" column="46" lean-forward="false" selection-start-line="261" selection-start-column="46" selection-end-line="261" selection-end-column="46" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1787,10 +1411,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="398">
           <caret line="55" column="0" lean-forward="true" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
-          <folding>
-            <element signature="e#1474#1475#0" expanded="true" />
-            <element signature="e#1520#1521#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1798,15 +1418,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
           <caret line="42" column="11" lean-forward="false" selection-start-line="42" selection-start-column="11" selection-end-line="42" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/services/integral/bill/IntegralBillService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="125" column="16" lean-forward="false" selection-start-line="125" selection-start-column="16" selection-end-line="125" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1814,58 +1425,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="398">
           <caret line="66" column="1" lean-forward="true" selection-start-line="66" selection-start-column="1" selection-end-line="66" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/luwei/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="58" column="28" lean-forward="false" selection-start-line="58" selection-start-column="28" selection-end-line="58" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/services/user/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="264" column="20" lean-forward="true" selection-start-line="264" selection-start-column="20" selection-end-line="264" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/luwei/controller/EvaluateController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="26" column="13" lean-forward="false" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/luwei/controller/CourseController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="37" column="27" lean-forward="true" selection-start-line="37" selection-start-column="27" selection-end-line="37" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cms/src/main/java/com/luwei/controllers/CourseController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="54" column="32" lean-forward="false" selection-start-line="54" selection-start-column="32" selection-end-line="54" selection-end-column="32" />
-          <folding>
-            <element signature="e#1568#1569#0" expanded="true" />
-            <element signature="e#1616#1617#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/services/course/CourseService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="284" column="46" lean-forward="true" selection-start-line="284" selection-start-column="46" selection-end-line="284" selection-end-column="46" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1873,23 +1432,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="191">
           <caret line="26" column="13" lean-forward="false" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/luwei/controller/WxController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="422">
-          <caret line="48" column="25" lean-forward="false" selection-start-line="48" selection-start-column="25" selection-end-line="48" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/services/weixin/WxService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="216" column="13" lean-forward="false" selection-start-line="216" selection-start-column="13" selection-end-line="216" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1897,18 +1439,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="24">
           <caret line="118" column="0" lean-forward="false" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cms/src/main/java/com/luwei/controllers/ActivityController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="90" column="41" lean-forward="false" selection-start-line="90" selection-start-column="41" selection-end-line="90" selection-end-column="41" />
-          <folding>
-            <element signature="e#1479#1480#0" expanded="true" />
-            <element signature="e#1529#1530#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1924,6 +1454,257 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="191">
           <caret line="28" column="13" lean-forward="false" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/luwei/controller/WxController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="48" column="24" lean-forward="false" selection-start-line="48" selection-start-column="24" selection-end-line="48" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/services/weixin/WxService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="214" column="0" lean-forward="true" selection-start-line="214" selection-start-column="0" selection-end-line="214" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/luwei/controller/IntegralController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="407">
+          <caret line="35" column="37" lean-forward="true" selection-start-line="35" selection-start-column="37" selection-end-line="35" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/services/integral/bill/web/IntegralBillWebPageVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="64" column="5" lean-forward="true" selection-start-line="64" selection-start-column="5" selection-end-line="64" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/luwei/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="58" column="29" lean-forward="false" selection-start-line="58" selection-start-column="29" selection-end-line="58" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/services/integral/bill/IntegralBillService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="127" column="16" lean-forward="false" selection-start-line="127" selection-start-column="16" selection-end-line="127" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/common/enums/type/BillType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="6" column="12" lean-forward="false" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/models/integralbill/IntegralBill.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="339">
+          <caret line="39" column="16" lean-forward="false" selection-start-line="39" selection-start-column="16" selection-end-line="39" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/luwei/controller/CourseController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-25">
+          <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cms/src/main/java/com/luwei/controllers/AreaController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="35" column="16" lean-forward="false" selection-start-line="35" selection-start-column="16" selection-end-line="35" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/models/area/Area.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cms/src/main/java/com/luwei/controllers/CheckInController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="37" column="65" lean-forward="false" selection-start-line="37" selection-start-column="65" selection-end-line="37" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/models/integralset/IntegralSet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="123">
+          <caret line="37" column="38" lean-forward="false" selection-start-line="37" selection-start-column="20" selection-end-line="37" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/services/checkIn/CheckInService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="117" column="35" lean-forward="true" selection-start-line="110" selection-start-column="8" selection-end-line="117" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cms/src/main/java/com/luwei/controllers/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="63" column="32" lean-forward="false" selection-start-line="63" selection-start-column="32" selection-end-line="63" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/services/user/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="431">
+          <caret line="534" column="35" lean-forward="true" selection-start-line="534" selection-start-column="35" selection-end-line="534" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cms/src/main/java/com/luwei/controllers/ActivityController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="89" column="66" lean-forward="true" selection-start-line="89" selection-start-column="66" selection-end-line="89" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/models/activity/subcard/ActivitySubCardDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="343">
+          <caret line="23" column="31" lean-forward="true" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/luwei/controller/EvaluateController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="47" column="33" lean-forward="true" selection-start-line="47" selection-start-column="33" selection-end-line="47" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/services/evaluate/EvaluateService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="306" column="53" lean-forward="false" selection-start-line="306" selection-start-column="53" selection-end-line="306" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/models/evaluate/Evaluate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="25" column="40" lean-forward="false" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/services/course/cms/CourseDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/models/course/Course.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="624">
+          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/services/course/cms/CoursePageVo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="34" column="19" lean-forward="false" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cms/src/main/java/com/luwei/controllers/OrderController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="71" column="14" lean-forward="false" selection-start-line="71" selection-start-column="14" selection-end-line="71" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/resources/application.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="55" column="11" lean-forward="true" selection-start-line="55" selection-start-column="11" selection-end-line="55" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cms/src/main/java/com/luwei/controllers/CourseController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="48" column="30" lean-forward="true" selection-start-line="48" selection-start-column="30" selection-end-line="48" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/common/utils/DateTimeUtis.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="455">
+          <caret line="62" column="78" lean-forward="true" selection-start-line="62" selection-start-column="8" selection-end-line="62" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/services/course/cms/CourseOrderCMSPageVo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="44" column="27" lean-forward="true" selection-start-line="44" selection-start-column="27" selection-end-line="44" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/services/course/CourseService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="224" column="0" lean-forward="true" selection-start-line="224" selection-start-column="0" selection-end-line="224" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/services/area/AreaService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="424">
+          <caret line="110" column="7" lean-forward="true" selection-start-line="110" selection-start-column="7" selection-end-line="110" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/luwei/controller/ShopController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="383">
+          <caret line="32" column="31" lean-forward="false" selection-start-line="32" selection-start-column="31" selection-end-line="32" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/5.0.10.RELEASE/spring-core-5.0.10.RELEASE.jar!/org/springframework/cglib/proxy/MethodProxy.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="111" column="27" lean-forward="false" selection-start-line="111" selection-start-column="27" selection-end-line="111" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/models/course/CourseDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="18" column="17" lean-forward="false" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/luwei/services/shop/ShopService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="86" column="0" lean-forward="false" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
           <folding />
         </state>
       </provider>

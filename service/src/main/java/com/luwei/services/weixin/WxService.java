@@ -208,21 +208,7 @@ public class WxService {
         String result = decrypt(keyByte, ivByte, dataByte);
         PhoneEncrypted phoneInfo = objectMapper.readValue(result, PhoneEncrypted.class);
         User user = userService.findOne(dto.getUserId());
-        int bindPhoneIntegral = 0 ;
-        List<IntegralSet> integralSets = integralSetDao.findAll();
-        if (integralSets != null && integralSets.size()>0) {
-            IntegralSet integralSet = integralSets.get(0);
-            if (integralSet != null) {
-                bindPhoneIntegral = integralSet.getBindPhoneIntegral();
-            }
-        }
-        if (!user.getFirst()) {
-            user.setIntegral(user.getIntegral() + bindPhoneIntegral);
-            user.setFirst(false);
-            // 保存用户积分流水
-            integralBillService.save(new IntegralBillDTO(user.getUserId(), user.getNickname(), user.getPhone(), bindPhoneIntegral,
-                    user.getIntegral(), BillType.INCOME, "用户绑定手机号"));
-        }
+
         user.setPhone(phoneInfo.getPhoneNumber());
         userService.save(user);
     }

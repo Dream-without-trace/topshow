@@ -2,6 +2,8 @@ package com.luwei.common.utils;
 
 import lombok.extern.slf4j.Slf4j;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -37,7 +39,7 @@ public class DateTimeUtis {
     }
     
     
-    public static void main(String[] args){
+    public static void main(String[] args) throws ParseException {
         /*Calendar calendar = Calendar.getInstance();
         calendar.setTime(new Date());
         calendar.set(Calendar.HOUR_OF_DAY, 0);
@@ -54,7 +56,12 @@ public class DateTimeUtis {
         System.out.println(timesMonthmorning);
         int timesMonthnight = getTimesMonthnight();
         System.out.println(timesMonthnight);*/
-
+        Integer startDate = 1544803200;
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        //Date date = sdf.parse(startDate);
+        //long ts = date.getTime();
+        String format = sdf.format(new Date(Long.parseLong(startDate+"000")));
+        System.out.println(format);
 
     }
 

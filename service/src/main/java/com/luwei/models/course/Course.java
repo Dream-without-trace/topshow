@@ -27,7 +27,7 @@ public class Course extends IdEntity {
     private String title;
 
     @Column(columnDefinition = "int(11) not null default 0 comment '课程日期（时间戳）'")
-    private Long startDate;
+    private Integer startDate;
 
     @Column(columnDefinition = "varchar(64) not null default '' comment '开始时间'")
     private String startTime;

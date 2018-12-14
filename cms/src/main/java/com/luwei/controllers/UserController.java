@@ -1,5 +1,6 @@
 package com.luwei.controllers;
 
+import com.luwei.common.Response;
 import com.luwei.services.user.UserService;
 import com.luwei.services.user.cms.UserEditDTO;
 import com.luwei.services.user.cms.UserPageVO;
@@ -54,6 +55,13 @@ public class UserController {
     @ApiOperation("分页")
     public Page<UserPageVO> page(@RequestParam(required = false) String nickname, @RequestParam(required = false) String phone, @PageableDefault Pageable pageable) {
         return userService.page(pageable, nickname, phone);
+    }
+
+
+    @GetMapping("/taskFinish")
+    @ApiOperation("用户完成任务")
+    public Response taskFinish(@RequestParam Integer userId) {
+        return userService.taskFinish(userId);
     }
 
 }

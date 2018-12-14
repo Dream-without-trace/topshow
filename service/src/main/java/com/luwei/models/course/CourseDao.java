@@ -16,7 +16,7 @@ import java.util.List;
 public interface CourseDao extends JpaRepository<Course, Integer>, JpaSpecificationExecutor<Course> {
 
 
-    List<Course> findAllByStartDateAndShopIdAndDeletedFalse(Long startDate, Integer shopId);
+    List<Course> findAllByStartDateAndShopIdAndDeletedFalse(Integer startDate, Integer shopId);
     @Modifying
     @Query("update Course set deleted = 1 where courseId in ?1 and deleted <> 1")
     Integer delByIds(List<Integer> ids);

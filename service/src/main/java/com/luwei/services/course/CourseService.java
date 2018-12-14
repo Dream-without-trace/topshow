@@ -9,6 +9,7 @@ import com.luwei.common.utils.PageQuery;
 import com.luwei.models.activity.Activity;
 import com.luwei.models.activity.order.ActivityOrder;
 import com.luwei.models.activity.order.ActivityOrderDao;
+import com.luwei.models.area.Area;
 import com.luwei.models.course.Course;
 import com.luwei.models.course.CourseDao;
 import com.luwei.models.courseEnrolment.CourseEnrolment;
@@ -19,6 +20,7 @@ import com.luwei.models.user.User;
 import com.luwei.module.alisms.AliSmsProperties;
 import com.luwei.module.alisms.AliSmsService;
 import com.luwei.services.activity.web.ActivityWebListVO;
+import com.luwei.services.area.AreaService;
 import com.luwei.services.course.cms.CourseDTO;
 import com.luwei.services.course.cms.CourseOrderCMSPageVo;
 import com.luwei.services.course.cms.CoursePageVo;
@@ -74,7 +76,8 @@ public class CourseService {
     private EntityManager entityManager;
     @Resource
     private ActivityOrderDao activityOrderDao;
-
+    @Resource
+    private AreaService areaService;
     @Resource
     private AliSmsProperties aliSmsProperties;
 
@@ -85,7 +88,7 @@ public class CourseService {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         try {
             Date date = simpleDateFormat.parse(startDate);
-            long ts = date.getTime();
+            int ts = (int)(date.getTime()/1000);
             course.setStartDate(ts);
             courseDao.save(course);
         } catch (ParseException e) {
@@ -138,7 +141,7 @@ public class CourseService {
         Assert.isTrue((state == 2), "您办理的会员卡已过期！");
         CourseEnrolment courseEnrolment = new CourseEnrolment(shopId,courseId,userId,null,1);
         courseEnrolmentDao.save(courseEnrolment);
-        Long startDate = course.getStartDate();
+        Integer startDate = course.getStartDate();
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy年MM月dd日");
         String format = sdf.format(startDate * 1000);
         String courseTime =format+ course.getStartTime()+"-"+course.getEndTime();
@@ -185,14 +188,18 @@ public class CourseService {
         BeanUtils.copyProperties(course, vo);
         Integer shopId = course.getShopId();
         Assert.isTrue(shopId != null && shopId != 0,"关联的门店ID为空！");
-        Long startDate = course.getStartDate();
+        Integer startDate = course.getStartDate();
         if (startDate != null && startDate != 0) {
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-            vo.setStartDate(sdf.format(new Date(startDate*1000)));
+            vo.setStartDate(sdf.format(new Date(Long.parseLong(startDate+"000"))));
         }
         Shop shop = shopService.findOne(shopId);
         vo.setShopId(shopId);
         vo.setShopName(shop.getTitle());
+        Integer areaId = shop.getAreaId();
+        Assert.isTrue(areaId != null && areaId != 0,"关联的门店地区为空！");
+        Area area = areaService.findOne(areaId);
+        vo.setAreaName(area.getName());
         return vo;
     }
 
@@ -222,7 +229,7 @@ public class CourseService {
         Shop shop = shopService.findOne(shopId);
         Integer courseId = courseEnrolment.getCourseId();
         Course course = this.findOne(courseId);
-        Long startDate = course.getStartDate();
+        Integer startDate = course.getStartDate();
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         String format = sdf.format(new Date(startDate * 1000));
         Date createTime = courseEnrolment.getCreateTime();

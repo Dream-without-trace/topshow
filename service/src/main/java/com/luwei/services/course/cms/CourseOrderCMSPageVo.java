@@ -34,7 +34,7 @@ public class CourseOrderCMSPageVo {
     private String title;
 
     @ApiModelProperty("课程日期")
-    private Long startDate;
+    private Integer startDate;
 
     @ApiModelProperty("上课时间")
     private String startTime;
@@ -55,7 +55,7 @@ public class CourseOrderCMSPageVo {
     }
 
     public CourseOrderCMSPageVo(Integer courseEnrolmentId, String avatarUrl, String nickname, String phone, String title,
-                                Long startDate, String startTime, String endTime, String picture, Integer isInspectTicket,
+                                Integer startDate, String startTime, String endTime, String picture, Integer isInspectTicket,
                                 Date createTime) {
         this.courseEnrolmentId = courseEnrolmentId;
         this.avatarUrl = avatarUrl;
@@ -119,7 +119,7 @@ public class CourseOrderCMSPageVo {
         }
     }
 
-    public void setStartDate(Long startDate) {
+    public void setStartDate(Integer startDate) {
         this.startDate = startDate;
     }
 

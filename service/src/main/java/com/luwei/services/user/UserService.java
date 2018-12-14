@@ -11,6 +11,8 @@ import com.luwei.models.activity.order.ActivityOrder;
 import com.luwei.models.activity.order.ActivityOrderDao;
 import com.luwei.models.courseEnrolment.CourseEnrolment;
 import com.luwei.models.courseEnrolment.CourseEnrolmentDao;
+import com.luwei.models.integralbill.IntegralBill;
+import com.luwei.models.integralbill.IntegralBillDao;
 import com.luwei.models.integralset.IntegralSet;
 import com.luwei.models.integralset.IntegralSetDao;
 import com.luwei.models.membershipcard.order.MembershipCardOrder;
@@ -95,6 +97,8 @@ public class UserService {
     private IntegralSetDao integralSetDao;
     @Resource
     private QiNiuService qiNiuService;
+    @Resource
+    private IntegralBillDao integralBillDao;
 
 
     @Value("${app.constant.topshow.first-integral}")
@@ -272,19 +276,21 @@ public class UserService {
         // 判断用户验证码是否正确
         if (result) {
             user.setPhone(phone);
+            int inviteGiftIntegral = 0 ;
+            int bindPhoneIntegral = 0 ;
+            List<IntegralSet> integralSets = integralSetDao.findAll();
+            if (integralSets != null && integralSets.size()>0) {
+                IntegralSet integralSet = integralSets.get(0);
+                if (integralSet != null) {
+                    bindPhoneIntegral = integralSet.getBindPhoneIntegral();
+                    inviteGiftIntegral = integralSet.getInviteGiftIntegral();
+                }
+            }
             if (referrerPhone != null && !"".equals(referrerPhone)) {
                 List<User> userList = this.findAllByPhone(referrerPhone);
                 if (userList != null && userList.size()>0) {
                     for (User user1:userList) {
                         if (user1 != null) {
-                            int inviteGiftIntegral = 0 ;
-                            List<IntegralSet> integralSets = integralSetDao.findAll();
-                            if (integralSets != null && integralSets.size()>0) {
-                                IntegralSet integralSet = integralSets.get(0);
-                                if (integralSet != null) {
-                                    inviteGiftIntegral = integralSet.getInviteGiftIntegral();
-                                }
-                            }
                             if (inviteGiftIntegral != 0) {
                                 user1.setIntegral(user1.getIntegral() + inviteGiftIntegral);
                                 // 保存用户积分流水
@@ -298,6 +304,11 @@ public class UserService {
                     }
                 }
             }
+            user.setIntegral(user.getIntegral() + bindPhoneIntegral);
+            user.setFirst(false);
+            // 保存用户积分流水
+            integralBillService.save(new IntegralBillDTO(user.getUserId(), user.getNickname(), user.getPhone(), bindPhoneIntegral,
+                    user.getIntegral(), BillType.INCOME, "用户绑定手机号"));
             userDao.save(user);
             return true;
         } else {
@@ -504,5 +515,24 @@ public class UserService {
         }
         jsonObject.put("shareDescription",shareDescription);
         return jsonObject;
+    }
+
+    public Response taskFinish(Integer userId) {
+        User user = this.findOne(userId);
+        List<IntegralSet> IntegralSetAll = integralSetDao.findAll();
+        Assert.isTrue(IntegralSetAll != null && IntegralSetAll.size()>0,"积分设置为空！");
+        IntegralSet integralSet = IntegralSetAll.get(0);
+        Assert.isTrue(integralSet != null,"积分设置为空！");
+        Integer taskFinishIntegral = integralSet.getTaskFinishIntegral();
+        Assert.isTrue(taskFinishIntegral != null,"积分设置为空！");
+        this.addIntegral(user.getUserId(), taskFinishIntegral);
+        // 保存积分流水
+        IntegralBillDTO integralBillDTO = new IntegralBillDTO(user.getUserId(), user.getNickname(), user.getPhone(),
+                taskFinishIntegral, user.getIntegral() + taskFinishIntegral, BillType.INCOME,
+                "完成任务");
+        IntegralBill bill = new IntegralBill();
+        BeanUtils.copyProperties(integralBillDTO, bill);
+        integralBillDao.save(bill);
+        return Response.success("成功！");
     }
 }

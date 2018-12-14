@@ -136,7 +136,8 @@ public class ShopService {
             dateJsonObject.put("week",week);
             SimpleDateFormat f=new SimpleDateFormat("MM月dd日");
             dateJsonObject.put("startDate",f.format(zeroDateTime));
-            List<Course> courses = courseDao.findAllByStartDateAndShopIdAndDeletedFalse(zeroDateTime/1000,shopId);
+            int zeroDateTimeInt= (int)(zeroDateTime/1000);
+            List<Course> courses = courseDao.findAllByStartDateAndShopIdAndDeletedFalse(zeroDateTimeInt,shopId);
             JSONArray courseList = new JSONArray();
             if (courses != null && courses.size()>0) {
                 for (Course course:courses) {

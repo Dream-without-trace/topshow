@@ -26,6 +26,9 @@ public class CoursePageVo {
     private Integer shopId;
 
     @ApiModelProperty("门店名称")
+    private String areaName;
+
+    @ApiModelProperty("门店名称")
     private String shopName;
 
     @ApiModelProperty("课程日期")
