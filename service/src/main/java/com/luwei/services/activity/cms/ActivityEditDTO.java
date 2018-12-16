@@ -71,4 +71,9 @@ public class ActivityEditDTO {
 
     @ApiModelProperty("活动类型")
     private ActivityType activityType;
+
+    @NotNull(message = "活动最大报名人数不能为空")
+    @ApiModelProperty("最大报名人数")
+    private Integer maxNum;
+
 }

@@ -23,4 +23,6 @@ public interface IntegralBillDao extends JpaRepository<IntegralBill, Integer>, J
 
     Page<IntegralBill> findIntegralBillsByBillTypeAndUserIdOrderByIntegralBillIdDesc(BillType billType, Integer userId, Pageable pageable);
 
+    List<IntegralBill> findAllByBillTypeAndUserIdAndRemarkAndDeletedIsFalse(BillType billType, Integer userId,String remark);
+
 }

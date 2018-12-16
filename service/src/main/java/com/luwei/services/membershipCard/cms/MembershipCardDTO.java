@@ -41,4 +41,7 @@ public class MembershipCardDTO {
     @ApiModelProperty("会员卡价格（单位是分）")
     private Integer price;
 
+    @ApiModelProperty("地区名称")
+    private String areaName;
+
 }

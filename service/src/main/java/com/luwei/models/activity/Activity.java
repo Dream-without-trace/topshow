@@ -82,7 +82,7 @@ public class Activity extends IdEntity {
     @Column(columnDefinition = "tinyint(11) default 0 comment '活动类型'")
     private ActivityType activityType;
 
-    @Column(columnDefinition = "int(11) not null default 0 comment '最大报名人数'")
+    @Column(columnDefinition = "int(11) default 100 comment '最大报名人数'")
     private Integer maxNum;
 
 }

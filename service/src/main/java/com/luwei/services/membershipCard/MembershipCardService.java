@@ -11,6 +11,7 @@ import com.luwei.models.membershipcard.MembershipCardDao;
 import com.luwei.models.shop.Shop;
 import com.luwei.services.activity.cms.ActivityEditDTO;
 import com.luwei.services.activity.cms.ActivityPageVO;
+import com.luwei.services.area.AreaService;
 import com.luwei.services.evaluate.cms.EvaluateCmsVO;
 import com.luwei.services.membershipCard.cms.MembershipCardDTO;
 import lombok.extern.slf4j.Slf4j;
@@ -47,6 +48,8 @@ public class MembershipCardService {
 
     @Resource
     private MembershipCardDao membershipCardDao;
+    @Resource
+    private AreaService areaService;
 
     /**
      * 保存
@@ -90,6 +93,9 @@ public class MembershipCardService {
     private MembershipCardDTO toMembershipCardDTO(MembershipCard membershipCard) {
         MembershipCardDTO vo = new MembershipCardDTO();
         BeanUtils.copyProperties(membershipCard, vo);
+        Integer areaId = membershipCard.getAreaId();
+        Area area = areaService.findOne(areaId);
+        vo.setAreaName(area.getName());
         return vo;
     }
 

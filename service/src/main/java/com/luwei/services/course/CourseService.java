@@ -291,7 +291,20 @@ public class CourseService {
         Course course = this.findOne(dto.getCourseId());
         BeanUtils.copyProperties(dto, course);
         courseDao.save(course);
-        return Response.build(2000,"成功！",course);
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        try {
+            Date date = simpleDateFormat.parse(dto.getStartDate());
+            int ts = (int)(date.getTime()/1000);
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            String format = sdf.format(new Date(Long.parseLong(ts+"000")));
+            dto.setStartDate(format);
+            course.setStartDate(ts);
+            courseDao.save(course);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        return Response.build(2000,"成功！",dto);
 
     }
 }

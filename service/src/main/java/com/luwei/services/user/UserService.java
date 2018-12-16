@@ -7,8 +7,11 @@ import com.luwei.common.enums.type.BillType;
 import com.luwei.common.enums.type.FlagType;
 import com.luwei.common.exception.ExceptionMessage;
 import com.luwei.common.exception.ValidateException;
+import com.luwei.common.utils.DateTimeUtis;
 import com.luwei.models.activity.order.ActivityOrder;
 import com.luwei.models.activity.order.ActivityOrderDao;
+import com.luwei.models.checkIn.CheckIn;
+import com.luwei.models.checkIn.CheckInDao;
 import com.luwei.models.courseEnrolment.CourseEnrolment;
 import com.luwei.models.courseEnrolment.CourseEnrolmentDao;
 import com.luwei.models.integralbill.IntegralBill;
@@ -16,6 +19,7 @@ import com.luwei.models.integralbill.IntegralBillDao;
 import com.luwei.models.integralset.IntegralSet;
 import com.luwei.models.integralset.IntegralSetDao;
 import com.luwei.models.membershipcard.order.MembershipCardOrder;
+import com.luwei.models.membershipcard.order.MembershipCardOrderDao;
 import com.luwei.models.user.User;
 import com.luwei.models.user.UserDao;
 import com.luwei.models.user.receiving.ReceivingAddress;
@@ -90,6 +94,8 @@ public class UserService {
     @Resource
     private MembershipCardOrderService membershipCardOrderService;
     @Resource
+    private MembershipCardOrderDao membershipCardOrderDao;
+    @Resource
     private ActivityOrderDao activityOrderDao;
     @Resource
     private CourseEnrolmentDao courseEnrolmentDao;
@@ -99,6 +105,8 @@ public class UserService {
     private QiNiuService qiNiuService;
     @Resource
     private IntegralBillDao integralBillDao;
+    @Resource
+    private CheckInDao checkInDao;
 
 
     @Value("${app.constant.topshow.first-integral}")
@@ -154,6 +162,48 @@ public class UserService {
         } else {
             vo.setAddress("");
         }
+        int zeroTimestamp = DateTimeUtis.getZeroTimestamp();
+        List<CheckIn> checkInList = checkInDao.findAllByUserIdAndCheckInTime(user.getUserId(),zeroTimestamp);
+        vo.setIsCheckIn(1);
+        if ((checkInList != null && checkInList.size() > 0)) {
+            vo.setIsCheckIn(2);
+        }
+        List<IntegralBill> integralBills = integralBillDao.findAllByBillTypeAndUserIdAndRemarkAndDeletedIsFalse(
+                BillType.INCOME, user.getUserId(), "完成任务");
+        vo.setIsTaskFinish(1);
+        if (integralBills != null && integralBills.size() >0) {
+            vo.setIsTaskFinish(2);
+        }
+        String title = "";
+        List<MembershipCardOrder> list = membershipCardOrderDao.findAllByUserIdAndStatusAndDeletedIsFalseOrderByPayTimeDesc(user.getUserId(),MembershipCardOrderStatus.PAY);
+        if (list != null && list.size()>0) {
+            for (MembershipCardOrder membershipCardOrder:list) {
+                if(membershipCardOrder == null ){
+                    continue;
+                }
+                if (membershipCardOrder.getTitle() == null || "".equals(membershipCardOrder.getTitle())) {
+                    continue;
+                }
+                title = membershipCardOrder.getTitle();
+                if (title.equals("体验会员")) {
+                    List<CourseEnrolment> courseEnrolments = courseEnrolmentDao.findAllByUserId(user.getUserId());
+                    List<ActivityOrder> activityOrderList = activityOrderDao.findAllByUserIdAndAreaIdAndDeletedIsFalse
+                            (user.getUserId(),membershipCardOrder.getAreaId());
+                    if (activityOrderList != null && activityOrderList.size() > 0 && courseEnrolments != null &&
+                            courseEnrolments.size() > 0) {
+                        title = "";
+                    }
+                }else{
+                    Integer effective = membershipCardOrder.getEffective();
+                    long time = membershipCardOrder.getPayTime().getTime()+effective*24*3600*1000;
+                    long l = System.currentTimeMillis();
+                    if (time<l) {
+                        title = "";
+                    }
+                }
+            }
+        }
+        vo.setMembershipCardName(title);
         return vo;
     }
 
@@ -519,6 +569,8 @@ public class UserService {
 
     public Response taskFinish(Integer userId) {
         User user = this.findOne(userId);
+        List<IntegralBill> integralBills = integralBillDao.findAllByBillTypeAndUserIdAndRemarkAndDeletedIsFalse(BillType.INCOME, userId, "完成任务");
+        Assert.isTrue(integralBills == null || integralBills.size()<1,"您已完成任务！");
         List<IntegralSet> IntegralSetAll = integralSetDao.findAll();
         Assert.isTrue(IntegralSetAll != null && IntegralSetAll.size()>0,"积分设置为空！");
         IntegralSet integralSet = IntegralSetAll.get(0);

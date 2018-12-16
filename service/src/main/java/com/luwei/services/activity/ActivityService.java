@@ -80,6 +80,7 @@ import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -230,6 +231,8 @@ public class ActivityService {
         } else {
             activity.setTicketType(TicketType.VIP);
         }
+        Integer maxNum = dto.getMaxNum() == null?100:dto.getMaxNum();
+        activity.setMaxNum(maxNum);
         activityDao.save(activity);
     }
 
@@ -267,7 +270,8 @@ public class ActivityService {
         } else {
             activity.setTicketType(TicketType.VIP);
         }
-
+        Integer maxNum = dto.getMaxNum() == null?100:dto.getMaxNum();
+        activity.setMaxNum(maxNum);
         return this.toActivityPageVO(activity);
     }
 

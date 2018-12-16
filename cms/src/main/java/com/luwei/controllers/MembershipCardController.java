@@ -8,6 +8,7 @@ import com.luwei.services.activity.cms.ActivityEditDTO;
 import com.luwei.services.activity.cms.ActivityPageVO;
 import com.luwei.services.membershipCard.MembershipCardService;
 import com.luwei.services.membershipCard.cms.MembershipCardDTO;
+import com.luwei.services.membershipCard.order.MembershipCardOrderService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -35,6 +36,9 @@ public class MembershipCardController {
 
     @Resource
     private MembershipCardService membershipCardService;
+
+    @Resource
+    private MembershipCardOrderService membershipCardOrderService;
 
     @PostMapping
     @ApiOperation("添加")
@@ -67,6 +71,14 @@ public class MembershipCardController {
                                      @PageableDefault Pageable pageable) {
         return membershipCardService.page(pageable, title);
     }
+
+
+    @GetMapping("/order")
+    @ApiOperation("线下办理会员卡")
+    public Response order(@RequestParam Integer userId,@RequestParam Integer membershipCardId) {
+        return membershipCardOrderService.saveOrder(userId, membershipCardId);
+    }
+
 
 
 }

@@ -98,6 +98,7 @@ public class AreaService {
      * @return
      */
     public Area findOne(Integer areaId) {
+        Assert.isTrue(areaId != null && areaId != 0,"地区ID为空！");
         Area area = areaDao.findById(areaId).orElse(null);
         Assert.notNull(area, "地区不存在");
         return area;
@@ -196,7 +197,7 @@ public class AreaService {
     public Response save(@Valid AreaDTO dto) {
         Area area = new Area();
         List<Area> areas = areaDao.findAllByNameAndParentIdAndDeletedIsFalse(dto.getName(),dto.getParentId());
-        Assert.isTrue((areas == null || areas.size()< 2), dto.getName()+"该城市已存在！");
+        Assert.isTrue((areas == null || areas.size()< 1), dto.getName()+"该城市已存在！");
         BeanUtils.copyProperties(dto, area);
         Integer parentId = dto.getParentId();
         if (parentId == null || parentId == 0) {
@@ -211,5 +212,21 @@ public class AreaService {
 
     public void delete(Set<Integer> ids) {
         areaDao.delByIds(new ArrayList<>(ids));
+    }
+
+    public Response update(AreaDTO dto) {
+        Integer areaId = dto.getAreaId();
+        Area area = this.findOne(areaId);
+        List<Area> areas = areaDao.findAllByNameAndParentIdAndDeletedIsFalse(dto.getName(),dto.getParentId());
+        Assert.isTrue((areas == null || areas.size()< 2), dto.getName()+"该城市已存在！");
+        BeanUtils.copyProperties(dto, area);
+        Integer parentId = dto.getParentId();
+        if (parentId == null || parentId == 0) {
+            area.setSuffix("省份");
+        }else{
+            area.setSuffix("市区");
+        }
+        areaDao.save(area);
+        return Response.build(2000,"成功！",dto);
     }
 }

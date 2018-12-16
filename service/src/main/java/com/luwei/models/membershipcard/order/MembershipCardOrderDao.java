@@ -17,7 +17,7 @@ import java.util.List;
  **/
 public interface MembershipCardOrderDao extends JpaRepository<MembershipCardOrder, Integer>, JpaSpecificationExecutor<MembershipCardOrder> {
 
-    List<MembershipCardOrder> findMembershipCardOrdersByUserIdAndDeletedFalse(Integer userId);
+    List<MembershipCardOrder> findMembershipCardOrdersByUserIdAndDeletedIsFalse(Integer userId);
 
     List<MembershipCardOrder> findMembershipCardOrdersByOutTradeNoAndStatusAndDeletedFalse(String outTradeNo,MembershipCardOrderStatus status);
 
@@ -25,7 +25,7 @@ public interface MembershipCardOrderDao extends JpaRepository<MembershipCardOrde
 
     List<MembershipCardOrder> findAllByUserIdAndDeletedIsFalse(Integer userId);
 
-    List<MembershipCardOrder> findAllByUserIdAndStatusAndDeletedFalseOrderByPayTimeDesc(Integer userId, MembershipCardOrderStatus status);
+    List<MembershipCardOrder> findAllByUserIdAndStatusAndDeletedIsFalseOrderByPayTimeDesc(Integer userId, MembershipCardOrderStatus status);
 
     //@Modifying
     //@Query("update MembershipCardOrder set deleted = 1 where userId = ?1 and status = 0")

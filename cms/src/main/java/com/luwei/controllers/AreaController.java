@@ -65,7 +65,7 @@ public class AreaController {
     @PutMapping
     @ApiOperation("修改")
     public Response update(@RequestBody AreaDTO dto) {
-        return areaService.save(dto);
+        return areaService.update(dto);
     }
 
     @DeleteMapping
