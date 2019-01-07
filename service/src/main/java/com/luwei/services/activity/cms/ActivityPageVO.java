@@ -84,5 +84,7 @@ public class ActivityPageVO implements Serializable {
     @ApiModelProperty("活动类型")
     private ActivityType activityType;
 
+    @ApiModelProperty("最大报名人数")
+    private Integer maxNum;
 
 }

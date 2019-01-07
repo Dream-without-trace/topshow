@@ -1,19 +1,24 @@
 package com.luwei.services.membershipCard;
 
 import com.luwei.common.Response;
+import com.luwei.common.enums.status.MembershipCardOrderStatus;
 import com.luwei.common.enums.type.EvaluateType;
+import com.luwei.common.utils.DateTimeUtis;
 import com.luwei.models.activity.Activity;
 import com.luwei.models.activity.category.ActivityCategory;
 import com.luwei.models.activity.series.ActivitySeries;
 import com.luwei.models.area.Area;
 import com.luwei.models.membershipcard.MembershipCard;
 import com.luwei.models.membershipcard.MembershipCardDao;
+import com.luwei.models.membershipcard.order.MembershipCardOrder;
+import com.luwei.models.membershipcard.order.MembershipCardOrderDao;
 import com.luwei.models.shop.Shop;
 import com.luwei.services.activity.cms.ActivityEditDTO;
 import com.luwei.services.activity.cms.ActivityPageVO;
 import com.luwei.services.area.AreaService;
 import com.luwei.services.evaluate.cms.EvaluateCmsVO;
 import com.luwei.services.membershipCard.cms.MembershipCardDTO;
+import com.luwei.services.membershipCard.order.MembershipCardOrderService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.data.domain.Page;
@@ -30,10 +35,8 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 import javax.validation.Valid;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Set;
+import javax.validation.constraints.NotNull;
+import java.util.*;
 
 /**
  * @program: topshow
@@ -50,6 +53,8 @@ public class MembershipCardService {
     private MembershipCardDao membershipCardDao;
     @Resource
     private AreaService areaService;
+    @Resource
+    private MembershipCardOrderDao membershipCardOrderDao;
 
     /**
      * 保存
@@ -96,6 +101,24 @@ public class MembershipCardService {
         Integer areaId = membershipCard.getAreaId();
         Area area = areaService.findOne(areaId);
         vo.setAreaName(area.getName());
+        Date zeroDate = DateTimeUtis.getZeroDate();
+        int totalSales = 0;
+        int todaySales = 0;
+        List<MembershipCardOrder> membershipCardOrderList = membershipCardOrderDao.
+                findAllByMembershipCardIdAndStatusAndDeletedIsFalseOrderByPayTimeDesc(membershipCard.getMembershipCardId(), MembershipCardOrderStatus.PAY);
+        if (membershipCardOrderList != null && membershipCardOrderList.size()>0) {
+            totalSales = membershipCardOrderList.size();
+            for (MembershipCardOrder membershipCardOrder:membershipCardOrderList) {
+                if (membershipCardOrder != null) {
+                    Date payTime = membershipCardOrder.getPayTime();
+                    if(payTime != null && payTime.getTime() > zeroDate.getTime() && payTime.getTime() < (zeroDate.getTime()+86400000)){
+                        todaySales = todaySales + 1;
+                    }
+                }
+            }
+        }
+        vo.setTodaySales(todaySales);
+        vo.setTotalSales(totalSales);
         return vo;
     }
 

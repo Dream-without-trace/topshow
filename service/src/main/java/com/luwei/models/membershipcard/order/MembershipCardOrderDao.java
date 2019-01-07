@@ -34,4 +34,6 @@ public interface MembershipCardOrderDao extends JpaRepository<MembershipCardOrde
     List<MembershipCardOrder> findAllByUserIdAndTitleAndDeletedFalse(Integer userId, String title1);
 
     List<MembershipCardOrder> findAllByUserIdAndStatusAndAreaIdAndDeletedIsFalseOrderByPayTimeDesc(Integer userId, MembershipCardOrderStatus status, Integer areaId);
+
+    List<MembershipCardOrder> findAllByMembershipCardIdAndStatusAndDeletedIsFalseOrderByPayTimeDesc(Integer membershipCardId, MembershipCardOrderStatus status);
 }

@@ -94,7 +94,7 @@ public class ActivityController {
     @PutMapping("/subCard")
     @ApiOperation("修改活动次卡")
     public Response updateActivitySubCard(@RequestBody ActivitySubCardDTO dto) {
-        return activityService.saveActivitySubCardDTO(dto);
+        return activityService.updateActivitySubCardDTO(dto);
     }
 
     @GetMapping("/subCard/one")

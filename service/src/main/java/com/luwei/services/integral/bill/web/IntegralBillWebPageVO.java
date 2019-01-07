@@ -58,8 +58,10 @@ public class IntegralBillWebPageVO {
 
     public String getCreateTime() {
         if (createTime != null) {
-            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm-dd HH:mm:ss");
-            return sdf.format(createTime);
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            String format = sdf.format(createTime);
+            System.out.println(format);
+            return format;
         }
         return "";
     }

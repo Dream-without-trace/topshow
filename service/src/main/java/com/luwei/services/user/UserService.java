@@ -195,7 +195,10 @@ public class UserService {
                     }
                 }else{
                     Integer effective = membershipCardOrder.getEffective();
-                    long time = membershipCardOrder.getPayTime().getTime()+effective*24*3600*1000;
+                    long time1 = membershipCardOrder.getPayTime().getTime();
+                    long lef = 86400000;
+                    long le = effective*lef;
+                    long time = time1 + le;
                     long l = System.currentTimeMillis();
                     if (time<l) {
                         title = "";

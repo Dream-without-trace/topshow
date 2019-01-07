@@ -38,10 +38,14 @@ public class MembershipCardDTO {
     @ApiModelProperty("会员卡权益")
     private String memberBenefits;
     @NotNull(message = "会员卡价格不能为空")
-    @ApiModelProperty("会员卡价格（单位是分）")
+    @ApiModelProperty("会员卡价格")
     private Integer price;
-
     @ApiModelProperty("地区名称")
     private String areaName;
+
+    @ApiModelProperty("总销售数")
+    private Integer totalSales;
+    @ApiModelProperty("今日销售数")
+    private Integer todaySales;
 
 }

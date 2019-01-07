@@ -226,10 +226,13 @@ public class ActivityService {
         String join = Joiner.on(",").join(dto.getPrevious());
         activity.setPrevious(join);
 
-        if (dto.getPrice() < 1) {
-            activity.setTicketType(TicketType.FREE);
-        } else {
-            activity.setTicketType(TicketType.VIP);
+        Integer price = dto.getPrice();
+        if(price != null){
+            if (price < 1) {
+                activity.setTicketType(TicketType.FREE);
+            } else {
+                activity.setTicketType(TicketType.VIP);
+            }
         }
         Integer maxNum = dto.getMaxNum() == null?100:dto.getMaxNum();
         activity.setMaxNum(maxNum);
@@ -264,11 +267,13 @@ public class ActivityService {
 
         String join = Joiner.on(",").join(dto.getPrevious());
         activity.setPrevious(join);
-
-        if (dto.getPrice() < 1) {
-            activity.setTicketType(TicketType.FREE);
-        } else {
-            activity.setTicketType(TicketType.VIP);
+        Integer price = dto.getPrice();
+        if(price != null){
+            if (price < 1) {
+                activity.setTicketType(TicketType.FREE);
+            } else {
+                activity.setTicketType(TicketType.VIP);
+            }
         }
         Integer maxNum = dto.getMaxNum() == null?100:dto.getMaxNum();
         activity.setMaxNum(maxNum);
@@ -920,6 +925,17 @@ public class ActivityService {
             return vo;
         }).collect(Collectors.toList());
 
+    }
+
+
+    public Response updateActivitySubCardDTO(ActivitySubCardDTO dto) {
+        Integer activitySubCardId = dto.getActivitySubCardId();
+        Assert.isTrue(activitySubCardId != null && activitySubCardId != 0,"次卡ID不能为空！");
+        ActivitySubCard activitySubCard = activitySubCardDao.findById(activitySubCardId).orElse(null);
+        Assert.notNull(activitySubCard,"次卡ID不可用！");
+        BeanUtils.copyProperties(dto, activitySubCard);
+        activitySubCardDao.save(activitySubCard);
+        return Response.build(2000,"成功！",activitySubCard);
     }
 }
 
